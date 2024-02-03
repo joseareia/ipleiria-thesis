@@ -1,0 +1,24 @@
+\chapter{Citations \& Other Elements}
+\label{cp:citations}
+In this chapter, we provide detailed guidance on the correct procedures for citing and referencing various elements within your document. Specifically, we will cover the proper methods for citing chapters, referencing figures and tables. We also provide information on how you can cite external works provided by a BibTeX bibliography.
+
+\section{Citations}
+We present two distinct approaches for citing entries in the bibliography. The first method involves in-text citations, executed using \verb|\citet{ENTRY}|, while the second method employs \verb|\citep{ENTRY}| for citations within a paragraph. Below is an example demonstrating both usages. It's essential to note that you can cite multiple works within the same citation environment. To achieve this, you should use the following format: \verb|\citep{ENTRY1, ENTRY2, ...}|.
+
+\begin{importantbox}
+Proper citations play a crucial role in academic writing, serving as the foundation for credibility, transparency, and the advancement of knowledge. They are a fundamental aspect of responsible scholarly writing. Please ensure accurate and appropriate citations.
+\end{importantbox}
+
+\noindent\textbf{Example:} A novel signature scheme is introduced, along with an implementation of the Diffie-Hellman key distribution scheme that accomplishes a public key cryptosystem \citep{Elgamal1985}. According to \citet{Elgamal1985}, a new signature scheme that accomplishes a public key cryptosystem is introduced.
+
+\section{References}
+Much like citations, it is advisable to employ references in your document for citing crucial elements such as chapters, sections, figures, or tables. To reference these elements, begin by creating a label. This label can be generated using \verb|\label{TEXT}|, and it should be positioned within the element you intend to refer to. Once the element is created, you can utilise \verb|\ref{LABEL}| to generate an in-text reference. \textbf{We strongly recommend using} \verb|\autoref{LABEL}|. This command automatically creates a custom link with colour corresponding to the type of element being referred to. For instance, a chapter reference will appear like this: \autoref{cp:introduction}, rather than simply Chapter \ref{cp:introduction}. 
+
+\begin{importantbox}
+Just as with citations, ensuring proper references to elements within the document is of paramount importance. Remember to reference chapters and sections when necessary, \textbf{and consistently refer to other elements such as figures, tables, or listings.}
+\end{importantbox}
+
+\section{Glossary \& Acronyms}
+The document includes both a glossary and an acronym list, accessible at the beginning of the document. You can create a new entry in either the \verb|Miscellaneous/02-Glossary| or \verb|Miscellaneous/03-Acronyms| sections, depending on the type of entry you intend to add. Once the entry is created, you can reference it using \verb|\gls{ENTRY}| for glossary entries. For acronym entries, there are two ways to reference them. The first method, \verb|\acrfull{ENTRY}|, should be used the first time the acronym appears in the text as it automatically provides the definition in-text. Subsequently, to refer to the acronym without repeating its meaning, use \verb|\acrshort{ENTRY}|.
+
+\vspace{.3cm}\noindent\textbf{Example:} Utilising \Gls{latex} for \Gls{maths} is essential (...). It is advisable to seek both the \acrfull{gcd} and \acrfull{lcm} because (...). Subsequently, with the aid of \acrshort{gcd} and \acrshort{lcm}, we can (...).

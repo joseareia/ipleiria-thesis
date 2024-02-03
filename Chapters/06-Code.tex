@@ -1,0 +1,33 @@
+\chapter{Code Listings}
+At times, you may want to include source code from your programs and applications within your document. To achieve this, you can use two nested environments: \verb|\begin{listing}| to create a listing with both caption and label, and \verb|\begin{minted}| for code highlighting. \autoref{listing:c-code} provides an example of a source code in C.
+
+\begin{listing}[!htpb]
+\begin{minted}{c}
+#include <stdio.h>
+int main() {
+   printf("Hello, World!"); /*printf() outputs the quoted string*/
+   return 0;
+}
+\end{minted}
+\caption{Hello World in C}
+\label{listing:c-code}
+\end{listing}
+
+The code mentioned above was inserted into the document. However, an alternative approach is to input your code from an external file. To do so, you just need to use the command \verb|\inputminted{CODE_LANGUAGE}{FILE}|. Of course, you should place that command inside of the \verb|\begin{listing}| environment. \autoref{listing:octave-code} illustrates an example of Octave source code that has been input from an external file.
+
+\begin{listing}[!htpb]
+\inputminted{octave}{Code/BitXorMatrix.m}
+\caption{XOR Operation in Octave}
+\label{listing:octave-code}
+\end{listing}
+
+In some cases, when you simply want to highlight a specific command, it's recommended not to use \verb|listing| or \verb|minted|. Instead, you should utilise the \verb|\verb| command for inline highlighting or the \verb|\begin{verbatim}| environment for longer sections of highlighted code. An example of a lengthy \verb|verbatim| section is provided below, demonstrating how to create a \verb|listing| with an input code:
+
+\begin{verbatim}
+\begin{listing}[!htpb]
+    \inputminted{CODE_LANGUAGE}{FILE}
+    \caption{TEXT}
+    \label{TEXT}
+\end{listing}
+\end{verbatim}
+
