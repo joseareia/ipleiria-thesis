@@ -1,0 +1,29 @@
+\thispagestyle{plain} % Page style without header and footer
+\pdfbookmark[1]{Declaration of Authorship}{declaration} % Add entry to PDF
+\chapter*{Declaration of Authorship} % Chapter* to appear without numeration
+
+We declare on our honour that the work presented in this dissertation, entitled ``\thetitle,'' is original and was carried out by \textcolor{redreport}{\firstauthorname} (\firstauthornum), \textcolor{redreport}{\secondauthorname} (\secondauthornum), and \textcolor{redreport}{\thirdauthorname} (\thirdauthornum) under the supervision of Professor \textcolor{redreport}{\supname} (\supmail).
+
+\vspace{2.5\baselineskip}
+
+{\noindent\textit{\thedate}}
+
+\vspace{2.5\baselineskip}
+
+\begin{flushright}
+    \begin{tabular}{m{7cm}}
+        \hrulefill \\
+        \centering\firstauthorname \\ [8ex]
+        
+        \ifdefined\secondauthorname
+        \hrulefill \\
+        \centering\secondauthorname \\ [8ex]
+        \fi
+
+        \ifdefined\thirdauthorname
+        \hrulefill \\
+        \centering\thirdauthorname \\ [8ex]
+        \fi
+    \end{tabular}
+\end{flushright}
+\blankpage

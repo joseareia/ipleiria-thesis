@@ -1,0 +1,78 @@
+\pdfbookmark[1]{Front Page}{frontpage} % Add entry to PDF
+\newgeometry{margin=4cm}
+\begin{titlepage}
+    \fontfamily{ppl}\selectfont % Font family
+    \centering\scshape % Font style & Centering
+	\vspace*{\baselineskip} % White space at the top of the page
+
+    {\LARGE\textcolor{redreport}{\univname}\par}
+
+    \vspace{2\baselineskip}
+
+    \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} 
+	\rule{\textwidth}{0.4pt}
+	
+	\vspace{0.75\baselineskip}
+
+     % Title
+	{\Large\MakeUppercase{\thetitle}\par}
+	
+	\vspace{0.75\baselineskip}
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+	\rule{\textwidth}{1.6pt}
+
+    \vspace{2\baselineskip}
+
+    % Subtitle
+    {\large{\subname}}
+
+    \vspace*{2.5\baselineskip}
+
+    % Author
+    Authors
+	
+	\vspace{0.5\baselineskip}
+	
+	{\scshape
+        \Large{
+            \textcolor{redreport}{\firstauthorname}
+            
+            \small{\textit{Student No. \firstauthornum}}
+            \vspace{0.5\baselineskip}
+        }
+
+        \Large{
+            \ifdefined\secondauthorname
+                \textcolor{redreport}{\secondauthorname}
+                
+                \small{\textit{Student No. \secondauthornum}}
+                \vspace{0.5\baselineskip}
+            \fi
+        }
+
+        \Large{
+            \ifdefined\thirdauthorname
+                \textcolor{redreport}{\thirdauthorname} \\
+                \vspace{4px}
+                \small{\textit{Student No. \thirdauthornum}}
+                \vspace{0.5\baselineskip}
+            \fi
+        } 
+    }
+
+    \vspace*{2.5\baselineskip}
+
+    % Supervisor
+    Supervisor
+	
+	\vspace{0.5\baselineskip}
+	
+	{\scshape\Large\textcolor{redreport}{\supname}}
+	
+	\vfill
+
+    % Local and date
+    {\thedate}
+\end{titlepage}
+\restoregeometry\blankpage
