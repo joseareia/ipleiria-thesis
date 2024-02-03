@@ -1,0 +1,82 @@
+% Packages & Document Configurations
+\documentclass{PLeiriaReport}
+
+% Authors & Supervisor
+\firstauthor{John Smith}
+\firstauthorid{2230455}
+
+\secondauthor{Jane Smith}
+\secondauthorid{2230456}
+
+\thirdauthor{July Smith}
+\thirdauthorid{2230457}
+
+\supervisor{Joe Smith, PhD}
+\supervisormail{joe.smith@ipleiria.pt}
+
+% Report Title & Subtitle
+\title{A Great Title To Show That Line Breaks Work Properly in Latex}
+\subtitle{A Number of Fascinating and Life-changing Templates \\ Presented in a Clear and Concise Way}
+
+% Filiations
+\university{Polytechnic of Leiria}
+\degree{MSc Cybersecurity \& Digital Forensics}
+\school{School of Management and Technology}
+\course{Offensive \& Defensive Cybersecurity}
+
+% Local & Date
+\date{Leiria, \monthname[\month] \number\year}
+
+% Make and Load Glossary & Acronyms
+\makeglossaries
+\loadglsentries{Miscellaneous/02-Glossary}
+\loadglsentries[\acronymtype]{Miscellaneous/03-Acronyms}
+
+\begin{document}
+
+% Covers
+\include{Covers/00-Cover}
+\include{Covers/01-FrontPage}
+
+% Roman numeration
+\pagenumbering{roman}
+
+% Declaration of Authorship
+\include{Miscellaneous/00-Declaration}
+
+% Acknowledgements
+\include{Miscellaneous/01-Acknowledgements}
+
+% Abstract
+\include{Chapters/00-Abstract}
+
+% List of contents, figures, and tables
+\tableofcontents\blankpage
+\listoffigures\blankpage
+\listoftables\blankpage
+
+% Print Glossary & Acronym
+\printglossary\blankpage
+\printglossary[type=\acronymtype]\blankpage
+
+% Arabic numeration
+\pagenumbering{arabic}
+
+% Chapters
+\include{Chapters/01-Introduction}
+\include{Chapters/02-Citations}
+\include{Chapters/03-Figures}
+\include{Chapters/04-Tables}
+\include{Chapters/05-Lists}
+\include{Chapters/06-Code}
+\include{Chapters/07-Conclusion}
+
+% Bibliography
+\blankpage\printbibliography
+
+% Appendices
+\appendix
+\input{Covers/02-Appendices}
+\input{Chapters/Appendices/01-AppendixA}
+
+\end{document}
