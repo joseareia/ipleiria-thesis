@@ -7,7 +7,7 @@
 Optimize your academic document creation with this LaTeX template tailored for theses, dissertations, and project reports at the [Polytechnic University of Leiria](https://www.ipleiria.pt/). Tailored specifically for students within the School of Management and Technology (ESTG), this template guarantees a refined, timeless, and professionally formatted document. With its clean and classic aesthetic, navigating through the template is exceptionally straightforward, making document creation a seamless and efficient endeavor.
 
 ### Getting Started
-To use this template:
+To utilise this template, please follow the steps below.
 
 1. Download LaTeX:
     - Linux: Install [TeX-Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
@@ -25,22 +25,15 @@ To use this template:
 This repository has the following structure.
 
 - **Bibliography**: Contains the bibliography file used for references.
-    - **Bibliography.bib**: Bibliography file in BibTeX format.
 - **Chapters**: Includes individual chapters of the thesis.
-    - **00-Abstract.tex**: Abstract of the thesis.
-    - **01-Introduction.tex**: Introduction chapter.
-    - ...
 - **Code**: Includes any code examples related to the thesis.
-    - **CodeExample.m**: Example code written in MATLAB.
 - **Figures**: Contains figures and images used in the thesis.
-    - **FigureExample.jpg**: Example image file in JPEG format.
-- **Matter**: Contains additional matter and front/back pages for the thesis.
-    - **00-Cover.tex**: Cover page of the thesis.
-    - **01-FrontPage.tex**: Front page.
-    - ...
+- **Matter**: Contains additional matter (e.g. acronyms, glossary, etc.) and front/back pages for the thesis.
 - **IPLeiriaMain.tex**: Main LaTeX file for compiling the thesis content.
 - **IPLeiriaThesis.cls**: LaTeX class file containing the formatting and styling specifications.
 
+### Getting Help
+If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an issue in this repository, or contact me via email at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
 
 ### Contributing
 Contributions to this template are welcome! If you encounter any issues, have suggestions for improvements, or would like to add new features, please submit a pull request. We appreciate your feedback and contributions to make this template even better.
