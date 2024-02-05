@@ -7,7 +7,19 @@
 Optimize your academic document creation with this LaTeX template tailored for theses, dissertations, and project reports at the [Polytechnic University of Leiria](https://www.ipleiria.pt/), specifically designed for students in the School of Management and Technology (ESTG). This template ensures a polished, timeless, and professionally formatted document, featuring a clean and classic aesthetic.
 
 ### Getting Started
-To make the most of this template, I highly recommend using Overleaf. Overleaf is a web-based platform that supports LaTeX compilation even with a free account. It offers features such as document sharing and real-time collaboration. You can access the ready-to-use template by clicking [here](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt).
+To use this template:
+
+1. Download LaTeX:
+    - Windows: Install [TeX-Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
+    - Linux: Install [TeX-Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
+    - macOS: Install [MacTeX](https://www.tug.org/mactex/) (a macOS version of TeX-Live) or [MikTeX](https://miktex.org/).
+2. Download `IPLeiria Thesis` by either:
+    - Cloning this GitHub repository (`git clone https://github.com/joseareia/ipleiria-thesis.git`).
+    - Download the latest version as [ZIP file](https://github.com/joseareia/ipleiria-thesis/archive/refs/heads/master.zip).
+3. Compile the document with you favorite LaTeX processor (pdfLaTeX, XeLaTeX or LuaLaTeX)!
+
+> [!TIP]
+> To make the most of this template and for real-time collaboration, I highly recommend using `Overleaf`. You can access the ready-to-use template by clicking [here](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt).
 
 ### Content Overview
 This repository has the following structure.
