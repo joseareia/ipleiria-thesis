@@ -1,0 +1,67 @@
+\pdfbookmark[0]{Front Matter}{frontmatter} % Add entry to PDF bookmarks group
+\pdfbookmark[1]{Cover}{cover} % Add entry to PDF
+\newgeometry{margin=4cm}
+\begin{titlepage}
+    \fontfamily{ppl}\selectfont % Font family
+    \centering\scshape % Font style & Centering
+	\vspace*{\baselineskip} % White space at the top of the page
+
+    {\LARGE\textcolor{redreport}{\univname}\par}
+
+    \vspace{2\baselineskip}
+
+    \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} 
+	\rule{\textwidth}{0.4pt}
+	
+	\vspace{0.75\baselineskip}
+
+     % Title
+	{\Large\MakeUppercase{\thetitle}\par}
+	
+	\vspace{0.75\baselineskip}
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+	\rule{\textwidth}{1.6pt}
+
+    \vspace{2\baselineskip}
+
+    % Subtitle
+    {\large{\subname}}
+
+    \vspace*{3\baselineskip}
+
+    % Author
+    Authors
+	
+	\vspace{0.5\baselineskip}
+	
+	{\scshape\Large 
+        \textcolor{redreport}{\firstauthorname} \\ 
+
+        \ifdefined\secondauthorname
+            \textcolor{redreport}{\secondauthorname} \\
+        \fi
+
+        \ifdefined\thirdauthorname
+            \textcolor{redreport}{\thirdauthorname} \\
+        \fi
+    }
+	
+	\vspace{0.8\baselineskip}
+	
+	\textit{\schoolname}
+
+    \vspace{0.2\baselineskip}
+	
+	\textit{\degname}
+
+    \vspace{0.2\baselineskip}
+	
+	\textit{\coursename}
+	
+	\vfill
+
+    % Local and date
+    {\thedate}
+\end{titlepage}
+\restoregeometry\blankpage
