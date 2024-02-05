@@ -4,17 +4,17 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
 ### Description
-Optimize your academic document creation with this LaTeX template tailored for theses, dissertations, and project reports at the [Polytechnic University of Leiria](https://www.ipleiria.pt/), specifically designed for students in the School of Management and Technology (ESTG). This template ensures a polished, timeless, and professionally formatted document, featuring a clean and classic aesthetic.
+Optimize your academic document creation with this LaTeX template tailored for theses, dissertations, and project reports at the [Polytechnic University of Leiria](https://www.ipleiria.pt/). Tailored specifically for students within the School of Management and Technology (ESTG), this template guarantees a refined, timeless, and professionally formatted document. With its clean and classic aesthetic, navigating through the template is exceptionally straightforward, making document creation a seamless and efficient endeavor.
 
 ### Getting Started
 To use this template:
 
 1. Download LaTeX:
-    - Windows: Install [TeX-Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
     - Linux: Install [TeX-Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
+    - Windows: Install [TeX-Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
     - macOS: Install [MacTeX](https://www.tug.org/mactex/) (a macOS version of TeX-Live) or [MikTeX](https://miktex.org/).
 2. Download `IPLeiria Thesis` by either:
-    - Cloning this GitHub repository (`git clone https://github.com/joseareia/ipleiria-thesis.git`).
+    - Cloning this GitHub repository (<kbd>git clone https://github.com/joseareia/ipleiria-thesis.git</kbd>).
     - Download the latest version as [ZIP file](https://github.com/joseareia/ipleiria-thesis/archive/refs/heads/master.zip).
 3. Compile the document with you favorite LaTeX processor (pdfLaTeX, XeLaTeX or LuaLaTeX)!
 
