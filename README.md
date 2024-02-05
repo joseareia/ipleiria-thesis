@@ -12,30 +12,22 @@ To make the most of this template, I highly recommend using Overleaf. Overleaf i
 ### Content Overview
 This repository has the following structure.
 
-- `Bibliography`: Contains the bibliography file used for references.
-    - `Bibliography.bib`: Bibliography file in BibTeX format.
-
-- `Chapters`: Includes individual chapters of the thesis.
-    - `00-Abstract.tex`: Abstract of the thesis.
-    - `01-Introduction.tex`: Introduction chapter.
-    - `02-Citations.tex`: Citations chapter.
+- **Bibliography**: Contains the bibliography file used for references.
+    - **Bibliography.bib**: Bibliography file in BibTeX format.
+- **Chapters**: Includes individual chapters of the thesis.
+    - **00-Abstract.tex**: Abstract of the thesis.
+    - **01-Introduction.tex**: Introduction chapter.
     - ...
-
-- `Code`: Includes any code examples related to the thesis/report.
-    - `CodeExample.m`: Example code written in MATLAB.
-
-- `Figures`: Contains figures and images used in the thesis/report.
-    - `FigureExample.jpg`: Example image file in JPEG format.
-
-- `Matter`: Contains additional matter and front/back pages for the thesis/report.
-    - `00-Cover.tex`: Cover page of the thesis/report.
-    - `01-FrontPage.tex`: Front page.
-    - `02-Declaration.tex`: Declaration page.
+- **Code**: Includes any code examples related to the thesis.
+    - **CodeExample.m**: Example code written in MATLAB.
+- **Figures**: Contains figures and images used in the thesis.
+    - **FigureExample.jpg**: Example image file in JPEG format.
+- **Matter**: Contains additional matter and front/back pages for the thesis.
+    - **00-Cover.tex**: Cover page of the thesis.
+    - **01-FrontPage.tex**: Front page.
     - ...
-
-- `IPLeiriaMain.tex`: Main LaTeX file for compiling the thesis content.
-
-- `IPLeiriaThesis.cls`: LaTeX class file containing the formatting and styling specifications.
+- **IPLeiriaMain.tex**: Main LaTeX file for compiling the thesis content.
+- **IPLeiriaThesis.cls**: LaTeX class file containing the formatting and styling specifications.
 
 
 ### Contributing
