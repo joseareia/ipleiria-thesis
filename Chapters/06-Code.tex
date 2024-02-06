@@ -31,3 +31,63 @@ In some cases, when you simply want to highlight a specific command, it's recomm
 \end{listing}
 \end{verbatim}
 
+Sometimes it is necessary to display longer code that occupies more than one page. For this purpose, please use the environment \verb|\begin{longlisting}|. This environment will easily break your code into multiple pages for better readability without you worrying about the size of your code. An example is shown below in \autoref{listing:cobol-code}.
+
+\begin{longlisting}
+\begin{minted}{cobol}
+IDENTIFICATION DIVISION.
+PROGRAM-ID. BankingSystem.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+01 CUSTOMER-RECORD.
+   05 CUSTOMER-NAME       PIC X(30).
+   05 CUSTOMER-AGE        PIC 99.
+   05 CUSTOMER-BALANCE    PIC 9(7)V99.
+   05 CUSTOMER-STATUS     PIC X(10).
+
+01 CUSTOMER-COUNT         PIC 9999 VALUE 0.
+
+01 TEMP-VARIABLES.
+   05 TEMP-NAME            PIC X(30).
+   05 TEMP-AGE             PIC 99.
+   05 TEMP-BALANCE         PIC 9(7)V99.
+   05 TEMP-STATUS          PIC X(10).
+
+PROCEDURE DIVISION.
+
+    -- Accept customer details from the console
+    ACCEPT CUSTOMER-RECORD FROM CONSOLE.
+    ADD 1 TO CUSTOMER-COUNT.
+
+    -- Process customer records until 'EXIT' is entered
+    PERFORM PROCESS-CUSTOMER-RECORD UNTIL CUSTOMER-NAME = 'EXIT'.
+
+    -- Display total number of customers processed
+    DISPLAY 'Total number of customers: ' CUSTOMER-COUNT.
+
+    -- End the program
+    STOP RUN.
+
+PROCESS-CUSTOMER-RECORD.
+    -- Copy customer details to temporary variables
+    MOVE CUSTOMER-NAME TO TEMP-NAME.
+    MOVE CUSTOMER-AGE TO TEMP-AGE.
+    MOVE CUSTOMER-BALANCE TO TEMP-BALANCE.
+    MOVE CUSTOMER-STATUS TO TEMP-STATUS.
+
+    -- Display customer details
+    DISPLAY 'Name: ' TEMP-NAME.
+    DISPLAY 'Age: ' TEMP-AGE.
+    DISPLAY 'Balance: ' TEMP-BALANCE.
+    DISPLAY 'Status: ' TEMP-STATUS.
+
+    -- Accept next customer record
+    ACCEPT CUSTOMER-RECORD FROM CONSOLE.
+    ADD 1 TO CUSTOMER-COUNT.
+END PROGRAM BankingSystem.
+\end{minted}
+\caption{COBOL Code for a Basic Banking System}
+\label{listing:cobol-code}
+\end{longlisting}
+
