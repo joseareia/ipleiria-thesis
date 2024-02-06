@@ -1,7 +1,7 @@
 ## Polytechnic University of Leiria Thesis LaTeX Template
 [![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg?color=green)](https://www.latex-project.org/)
 [![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-green.svg)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v1.0.0-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
+[![Release](https://img.shields.io/badge/Release-v1.0.1-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
 ### Description
