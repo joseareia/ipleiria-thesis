@@ -1,4 +1,9 @@
-\pdfbookmark[1]{Front Page}{frontpage} % Add entry to PDF
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[1]{Primeira Página}{primeirapagina} % Add entry to PDF
+}{%
+    \pdfbookmark[1]{Front Page}{frontpage} % Add entry to PDF
+}
+
 \newgeometry{margin=4cm}
 \begin{titlepage}
     \fontfamily{ppl}\selectfont % Font family
@@ -30,7 +35,11 @@
     \vspace*{2.5\baselineskip}
 
     % Author
-    Authors
+    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+        Autores%
+    }{%
+        Authors%
+    }
 	
 	\vspace{0.5\baselineskip}
 	
@@ -38,7 +47,7 @@
         \Large{
             \textcolor{redreport}{\firstauthorname}
             
-            \small{\textit{Student No. \firstauthornum}}
+            \small{\textit{\studentnumberprefix\firstauthornum}}
             \vspace{0.5\baselineskip}
         }
 
@@ -46,7 +55,7 @@
             \ifdefined\secondauthorname
                 \textcolor{redreport}{\secondauthorname}
                 
-                \small{\textit{Student No. \secondauthornum}}
+                \small{\textit{\studentnumberprefix\secondauthornum}}
                 \vspace{0.5\baselineskip}
             \fi
         }
@@ -55,7 +64,7 @@
             \ifdefined\thirdauthorname
                 \textcolor{redreport}{\thirdauthorname} \\
                 \vspace{4px}
-                \small{\textit{Student No. \thirdauthornum}}
+                \small{\textit{\studentnumberprefix\thirdauthornum}}
                 \vspace{0.5\baselineskip}
             \fi
         } 
@@ -64,7 +73,11 @@
     \vspace*{2.5\baselineskip}
 
     % Supervisor
-    Supervisor
+    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+        Orientador%
+    }{%
+        Authors%
+    }
 	
 	\vspace{0.5\baselineskip}
 	

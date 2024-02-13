@@ -1,5 +1,11 @@
-\pdfbookmark[0]{Front Matter}{frontmatter} % Add entry to PDF bookmarks group
-\pdfbookmark[1]{Cover}{cover} % Add entry to PDF
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[0]{Capa}{capa} % Add entry to PDF bookmarks group
+    \pdfbookmark[1]{Frontispício}{frontispício} % Add entry to PDF
+}{%
+    \pdfbookmark[0]{Front Matter}{frontmatter} % Add entry to PDF bookmarks group
+    \pdfbookmark[1]{Cover}{cover} % Add entry to PDF
+}
+
 \newgeometry{margin=4cm}
 \begin{titlepage}
     \fontfamily{ppl}\selectfont % Font family
@@ -31,7 +37,12 @@
     \vspace*{3\baselineskip}
 
     % Author
-    Authors
+    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+        Autores%
+    }{%
+        Authors%
+    }
+    
 	
 	\vspace{0.5\baselineskip}
 	

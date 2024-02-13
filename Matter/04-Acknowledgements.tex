@@ -1,5 +1,12 @@
 \thispagestyle{plain} % Page style without header and footer
-\pdfbookmark[1]{Acknowledgements}{acknowledgements} % Add entry to PDF
-\chapter*{Acknowledgements} % Chapter* to appear without numeration
+
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[1]{Agradecimentos}{agradecimentos} % Add entry to PDF
+    \chapter*{Agradecimentos} % Chapter* to appear without numeration
+}{%
+    \pdfbookmark[1]{Acknowledgements}{acknowledgements} % Add entry to PDF
+    \chapter*{Acknowledgements} % Chapter* to appear without numeration
+}
+
 \blindtext
-\blankpage
+\plainblankpage

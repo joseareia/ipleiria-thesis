@@ -1,4 +1,9 @@
-\addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}}
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \addtocontents{toc}{\protect\contentsline{chapter}{Apêndices}{}{}}
+}{%
+    \addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}}
+}
+
 \blankpage\newgeometry{margin=4cm}
 \begin{center}
     \fontfamily{ppl}\selectfont % Font family
@@ -6,7 +11,11 @@
     \thispagestyle{empty}
         
     \vspace*{\fill}
+    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+        {\LARGE\textcolor{redreport}{Apêndices}\par}
+    }{%
         {\LARGE\textcolor{redreport}{Appendices}\par}
+    }
     \vspace*{\fill}
 \end{center}
 \restoregeometry\blankpage

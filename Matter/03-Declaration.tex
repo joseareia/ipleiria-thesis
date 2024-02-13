@@ -1,8 +1,18 @@
 \thispagestyle{plain} % Page style without header and footer
-\pdfbookmark[1]{Declaration}{declaration} % Add entry to PDF
-\chapter*{Declaration of Authorship} % Chapter* to appear without numeration
 
-We declare on our honour that the work presented in this dissertation, entitled ``\thetitle,'' is original and was carried out by \textcolor{redreport}{\firstauthorname} (\firstauthornum), \textcolor{redreport}{\secondauthorname} (\secondauthornum), and \textcolor{redreport}{\thirdauthorname} (\thirdauthornum) under the supervision of Professor \textcolor{redreport}{\supname} (\supmail).
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[1]{Declaração}{declaração} % Add entry to PDF
+    \chapter*{Declaração de Autoria} % Chapter* to appear without numeration
+}{%
+    \pdfbookmark[1]{Declaration}{declaration} % Add entry to PDF
+    \chapter*{Declaration of Authorship} % Chapter* to appear without numeration
+}
+
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    Declaramos por nossa honra que o trabalho apresentado nesta dissertação, intitulado ``\thetitle,'' é original e foi realizado por \textcolor{redreport}{\firstauthorname} (\firstauthornum), \textcolor{redreport}{\secondauthorname} (\secondauthornum), e \textcolor{redreport}{\thirdauthorname} (\thirdauthornum) sobre a orientação do Professor \textcolor{redreport}{\supname} (\supmail).%
+}{%
+    We declare on our honour that the work presented in this dissertation, entitled ``\thetitle,'' is original and was carried out by \textcolor{redreport}{\firstauthorname} (\firstauthornum), \textcolor{redreport}{\secondauthorname} (\secondauthornum), and \textcolor{redreport}{\thirdauthorname} (\thirdauthornum) under the supervision of Professor \textcolor{redreport}{\supname} (\supmail).%
+}
 
 \vspace{2.5\baselineskip}
 
@@ -26,4 +36,4 @@ We declare on our honour that the work presented in this dissertation, entitled 
         \fi
     \end{tabular}
 \end{flushright}
-\blankpage
+\plainblankpage
