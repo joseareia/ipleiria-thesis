@@ -1,5 +1,5 @@
 % Packages & Document Configurations
-\documentclass{IPLeiriaThesis}
+\documentclass[en]{IPLeiriaThesis}
 
 % Authors & Supervisor
 \firstauthor{John Smith}
@@ -14,9 +14,9 @@
 \supervisor{Joe Smith, PhD}
 \supervisormail{joe.smith@ipleiria.pt}
 
-% Report Title & Subtitle
+% Title & Subtitle
 \title{A Great Title To Show That Line Breaks Work Properly in Latex}
-\subtitle{A Number of Fascinating and Life-changing Templates \\ Presented in a Clear and Concise Way}
+\subtitle{Another Great Title That Works As A Subtitle To Show That Line Breaks Work Properly in Latex}
 
 % Filiations
 \university{Polytechnic of Leiria}
@@ -25,7 +25,7 @@
 \course{Offensive \& Defensive Cybersecurity}
 
 % Local & Date
-\date{Leiria, \monthname[\month] \number\year}
+\date{Leiria, \DTMmonthname{\month} \number\year}
 
 % Make and Load Glossary & Acronyms
 \makeglossaries
@@ -51,13 +51,13 @@
 \include{Chapters/00-Abstract}
 
 % List of contents, figures, and tables
-\tableofcontents\blankpage
-\listoffigures\blankpage
-\listoftables\blankpage
+\tableofcontents\plainblankpage
+\listoffigures\plainblankpage
+\listoftables\plainblankpage
 
 % Print Glossary & Acronym
-\printglossary\blankpage
-\printglossary[type=\acronymtype]\blankpage
+\printglossary\plainblankpage
+\printglossary[type=\acronymtype]\plainblankpage
 
 % Arabic numeration
 \pagenumbering{arabic}
@@ -74,9 +74,17 @@
 % Bibliography
 \blankpage\printbibliography
 
-% Appendices
+% Appendices: Work that *YOU* developed
 \appendix
 \input{Matter/07-Appendices}
 \input{Chapters/Appendices/00-AppendixA}
+\input{Chapters/Appendices/01-AppendixB}
+
+% Annexes: Work that *YOU DID NOT* developed
+\input{Matter/08-Annexes}
+\input{Chapters/Annexes/00-AnnexA}
+
+% Back Page
+\input{Matter/09-BackPage}
 
 \end{document}
