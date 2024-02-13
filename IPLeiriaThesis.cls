@@ -1,15 +1,39 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 1.0.1 - 2024/02/06
+% Version: 1.1.0 - 2024/02/13
+% Public Repository: https://github.com/joseareia/ipleiria-thesis
 
-% Class Information
+% Class information
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{IPLeiriaThesis}[2023/12/12 IPLeiriaThesis Class]
+\ProvidesClass{IPLeiriaThesis}[2023/12/12 IPLeiria Thesis Class]
 
-% Load Master Class
+% Process class options: document language
+\DeclareOption{en}{\def\IPLeiria@language{english}}
+\DeclareOption{pt}{\def\IPLeiria@language{portuguese}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\ProcessOptions\relax
+
+% Load master class
 \LoadClass[a4paper,twoside,11pt]{report}
 
-% Required Packages
+% Load the babel package with language settings
+\RequirePackage[main=english,portuguese]{babel}
+
+% Define a command to get the selected language
+\newcommand{\getLanguage}{\IPLeiria@language}
+\ifx\IPLeiria@language\@undefined\renewcommand{\getLanguage}{english}\fi
+
+% Select the language specified by the user
+\AtBeginDocument{%
+    \ifx\IPLeiria@language\@undefined
+        \PackageWarning{IPLeiriaThesis}{Language not specified. Defaulting to English.}%
+        \selectlanguage{english}%
+    \else
+        \selectlanguage{\IPLeiria@language}%
+    \fi
+}
+
+% Required packages
 \usepackage{graphicx} % Required for including images
 \usepackage{amsmath} % Mathematical expressions
 \usepackage{amssymb} % Mathematical symbols
@@ -17,11 +41,18 @@
 \usepackage{tocbibind} % Add list of figures and tables of contents
 \usepackage[toc,page]{appendix} % Add Appendix
 \usepackage{titling} % Titlepage and titleback customisation
-\usepackage{datetime} % Current date for titlepage and titleback
+\usepackage[calc]{datetime2} % Current date with both 
 \usepackage{tcolorbox} % Highlighted box
 \usepackage{subcaption} % For side-by-side figures
-\usepackage{blindtext} % Generate dummy text
 \usepackage{xparse} % "Davide" problem... solved!
+\usepackage{ifthen} % Conditional statements
+\usepackage{blindtext} % Generate dummy text
+\usepackage{silence} % No warnings in certain packages
+\usepackage{typearea} % KOMA options for page rotation
+\usepackage{tikz}
+
+% Silence some warnings
+\WarningsOff[blindtext] % No support for portuguese language
 
 % Colors
 \colorlet{redreport}{red!50!black}
@@ -43,6 +74,8 @@
 \usepackage{newpxtext} % Alternative use of the PX fonts
 \usepackage{newpxmath} % Alternative use of the PX fonts (Math)
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{fvextra} % Compatibility with csquotes (?)
+\usepackage{csquotes} % Compatibility with babel (?)
 \linespread{1.2} % Increase line spacing slightly
 
 % Glossary & Acronyms
@@ -67,8 +100,8 @@
 \renewcommand{\headrulewidth}{.3pt}
 \setlength{\footnotemargin}{6pt} % Footnote space
 
-\renewcommand{\chaptermark}[1]{\markboth{\textit{\thechapter.\hspace{1.8pt} #1}}{}}
-\renewcommand{\sectionmark}[1]{\markright{\textit{\thesection.\hspace{1.8pt} #1}}}
+\renewcommand{\chaptermark}[1]{\markboth{\textit{\thechapter. #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textit{\thesection. #1}}}
 
 \fancyhead[OLH]{
     \ifnum\value{section}=0\leftmark
@@ -103,40 +136,35 @@
 % Highlight both Author and Year in the citations
 \ExecuteBibliographyOptions{maxcitenames=1}
 \DeclareFieldFormat{citehyperref}{%
-    \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
-    \bibhyperref{#1}
-}
+  \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
+  \bibhyperref{#1}}
 \DeclareFieldFormat{textcitehyperref}{%
-    \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
-    \bibhyperref{%
-        #1%
-        \ifbool{cbx:parens}
-        {\bibcloseparen\global\boolfalse{cbx:parens}}{}
-    }
-}
+  \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
+  \bibhyperref{%
+    #1%
+    \ifbool{cbx:parens}
+      {\bibcloseparen\global\boolfalse{cbx:parens}}
+      {}}}
 \savebibmacro{cite}
 \savebibmacro{textcite}
 \renewbibmacro*{cite}{%
-    \printtext[citehyperref]{%
-        \restorebibmacro{cite}%
-        \usebibmacro{cite}
-    }
-}
+  \printtext[citehyperref]{%
+    \restorebibmacro{cite}%
+    \usebibmacro{cite}}}
 \renewbibmacro*{textcite}{%
-    \ifboolexpr{
-        ( not test {\iffieldundef{prenote}} and
-          test {\ifnumequal{\value{citecount}}{1}} )
-        or
-        ( not test {\iffieldundef{postnote}} and
-          test {\ifnumequal{\value{citecount}}{\value{citetotal}}} )
-    }
-    {\DeclareFieldAlias{textcitehyperref}{noformat}}{}%
-    \printtext[textcitehyperref]{%
-        \restorebibmacro{textcite}%
-        \usebibmacro{textcite}
-    }
-}
-
+  \ifboolexpr{
+    ( not test {\iffieldundef{prenote}} and
+      test {\ifnumequal{\value{citecount}}{1}} )
+    or
+    ( not test {\iffieldundef{postnote}} and
+      test {\ifnumequal{\value{citecount}}{\value{citetotal}}} )
+  }
+    {\DeclareFieldAlias{textcitehyperref}{noformat}}
+    {}%
+  \printtext[textcitehyperref]{%
+    \restorebibmacro{textcite}%
+    \usebibmacro{textcite}}}
+    
 % Tables
 \usepackage{tabularx} % Table length
 \usepackage{booktabs} % Table style
@@ -164,15 +192,19 @@
 
 % Links
 \usepackage[bookmarks]{hyperref} % Required for links
-% Capitalise the first letter when \autoref
-\renewcommand{\figureautorefname}{Figure}
-\renewcommand{\tableautorefname}{Table}
-\renewcommand{\partautorefname}{Part}
-\renewcommand{\appendixautorefname}{Appendix}
-\renewcommand{\chapterautorefname}{Chapter}
-\renewcommand{\sectionautorefname}{Section}
-\renewcommand{\subsectionautorefname}{Section}
-\renewcommand{\subsubsectionautorefname}{Section}
+
+% Capitalise the first letter when \autoref for both English and Portuguese
+\addto\extrasenglish{\def\figureautorefname{Figure}}
+\addto\extrasenglish{\def\chapterautorefname{Chapter}}
+\addto\extrasenglish{\def\sectionautorefname{Section}}
+\addto\extrasenglish{\def\subsectionautorefname{Section}}
+\addto\extrasenglish{\def\subsubsectionautorefname{Section}}
+\addto\extrasenglish{\def\tableautorefname{Table}}
+\addto\extrasenglish{\def\partautorefname{Part}}
+\addto\extrasenglish{\def\appendixautorefname{Appendix}}
+\addto\extrasportuguese{\def\sectionautorefname{Secção}}
+\addto\extrasportuguese{\def\subsectionautorefname{Secção}}
+\addto\extrasportuguese{\def\subsubsectionautorefname{Secção}}
 
 % Custom color for citations and references
 \hypersetup{
@@ -221,14 +253,18 @@
     \addtocounter{page}{1}%
     \vspace*{\fill}
     \begin{center}
-        \textcolor{gray!50}{\textit{This page intentionally left blank.}}
+        \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+            \textcolor{gray!50}{\textit{Página intencionalmente deixada em branco.}}
+        }{%
+            \textcolor{gray!50}{\textit{This page intentionally left blank.}}
+        }
     \end{center}
     \vspace*{\fill}
     \clearpage
-}
+}   
 
 % Todo notes
-\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1.}}
 
 % Define a custom environment for the highlighted box
 \newenvironment{importantbox}{%
@@ -241,19 +277,56 @@
 % Code highlighting and printing
 \usepackage[newfloat]{minted}
 \newenvironment{code}{\captionsetup{type=listing}}{}
-\SetupFloatingEnvironment{listing}{name=Listing}
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \SetupFloatingEnvironment{listing}{name=Listagem}
+}{%
+    \SetupFloatingEnvironment{listing}{name=Listing}
+}
 \captionsetup[listing]{skip=-7pt}
 
 \newenvironment{longlisting}{\captionsetup{type=listing}}
 
 % Define a new minted style
 \setminted{
-  frame=lines,
-  framesep=2mm,
-  baselinestretch=1.2,
-  fontsize=\footnotesize,
-  linenos,
-  tabsize=4,
-  breaklines=true,
-  breakanywhere=true
+    frame=lines,
+    framesep=2mm,
+    baselinestretch=1.2,
+    fontsize=\footnotesize,
+    linenos,
+    tabsize=4,
+    breaklines=true,
+    breakanywhere=true
+}
+
+% Create a plainpage followed by a blankpage
+\newcommand{\plainblankpage}{\thispagestyle{plain}\blankpage}
+
+% Landscape mode done correctly
+% https://tex.stackexchange.com/questions/9071/how-to-translate-and-rotate-the-heading-of-landscaped-pages
+\makeatletter
+\def\ifGm@preamble#1{\@firstofone}
+\appto\restoregeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}
+\apptocmd\newgeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}{}{}
+\makeatother
+
+\newenvironment{landscapemode}[2]{%
+    \newgeometry{paperwidth=#1,paperheight=#2,hmargin=3cm,vmargin=5cm,top=3cm,landscape}
+    \fancyheadoffset{0pt}
+    %\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+}{%
+    \restoregeometry
+    \fancyheadoffset{0pt}
+}
+
+% Command to display "Student No." in the languages supported
+\newcommand{\studentnumberprefix}{%
+    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+        Estudante N.º%
+    }{%
+        Student No.%
+    }
 }
