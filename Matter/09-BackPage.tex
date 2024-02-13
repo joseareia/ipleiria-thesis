@@ -1,0 +1,48 @@
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[0]{Contra Capa}{contracapa} % Add entry to PDF
+}{%
+    \pdfbookmark[0]{Back Page}{backpage} % Add entry to PDF
+}
+
+\blankpage\newgeometry{margin=4cm}
+\fontfamily{ppl}\selectfont % Font family
+\scshape % Font style
+\small
+\thispagestyle{empty}
+    
+\vspace*{\fill}
+\begin{flushright}
+    \begin{minipage}{0.5\linewidth}
+        \begin{flushright}
+            \textcolor{redreport}{\univname}
+        
+            \vspace{1.5\baselineskip}
+        
+            % https://tex.stackexchange.com/questions/10130/use-the-values-of-title-author-and-date-on-a-custom-title-page
+            \makeatletter{\@title}\makeatother
+    
+            \vspace{1.5\baselineskip}
+    
+            \textcolor{redreport}{\firstauthorname} \\
+            \textit{\studentnumberprefix\firstauthornum}
+            \vspace{0.5\baselineskip}
+    
+            \ifdefined\secondauthorname
+                \textcolor{redreport}{\secondauthorname} \\
+                \textit{\studentnumberprefix\secondauthornum}
+                \vspace{0.5\baselineskip}
+            \fi
+    
+            \ifdefined\thirdauthorname
+                \textcolor{redreport}{\thirdauthorname} \\
+                \textit{\studentnumberprefix\thirdauthornum}
+                \vspace{0.5\baselineskip}
+            \fi
+    
+            \vspace{1.5\baselineskip}
+            
+            {\thedate}
+        \end{flushright}
+    \end{minipage}
+\end{flushright}
+\restoregeometry
