@@ -34,7 +34,7 @@ This repository has the following structure.
 - **IPLeiriaThesis.cls**: LaTeX class file containing the formatting and styling specifications.
 
 ### Multilanguage Support
-This template offers multilanguage support in two languages: English and Portuguese. If you wish to add support for more languages, please contact me. To change the language, simply modify the first line (document class definition) of the `IPLeiriaThesis.tex` file to the desired language: `pt` for Portuguese and `en` for English. Here is an example: `\documentclass[en]{IPLeiriaThesis}`. Easy, right?
+This template offers multilanguage support in two languages: English and Portuguese. <u>If you wish to add support for more languages, please contact me</u>. To change the language, simply modify the first line (*document class definition*) of the `IPLeiriaThesis.tex` file to the desired language: `pt` for Portuguese and `en` for English. Here is an example: `\documentclass[en]{IPLeiriaThesis}`. Easy, right?
 
 ### Getting Help
 If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an issue in this repository, or contact me via email at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
