@@ -1,0 +1,22 @@
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \addtocontents{toc}{\protect\contentsline{chapter}{Anexos}{}{}}
+}{%
+    \addtocontents{toc}{\protect\contentsline{chapter}{Annexes}{}{}}
+}
+
+\setcounter{chapter}{12} % To start at the "M" chapter
+\blankpage\newgeometry{margin=4cm}
+\begin{center}
+    \fontfamily{ppl}\selectfont % Font family
+    \scshape % Font style
+    \thispagestyle{empty}
+        
+    \vspace*{\fill}
+    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+        {\LARGE\textcolor{redreport}{Anexos}\par}
+    }{%
+        {\LARGE\textcolor{redreport}{Annexes}\par}
+    }
+    \vspace*{\fill}
+\end{center}
+\restoregeometry\blankpage
