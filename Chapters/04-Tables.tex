@@ -9,7 +9,7 @@ Tables play a vital role in presenting your findings effectively. In this chapte
 The conventional \verb|\begin{tabular}| environment enables you to create a simple yet elegant table. \autoref{tab:table-01} is generated using a centering environment for added emphasis. It also incorporates the \verb|booktab| configuration for a more sophisticated table style.
 
 \begin{table}[!htpb]
-    \caption{A Table Showcasing the Usage of the Tabular Environment.}
+    \caption{A Table Showcasing the Usage of the Tabular Environment}
     \label{tab:table-01}
     \centering
     \begin{tabular}{llc}
@@ -29,7 +29,7 @@ The conventional \verb|\begin{tabular}| environment enables you to create a simp
 Employ the \verb|\begin{tabularx}| package to construct a table featuring automatically expanding multi-columns. To achieve this automatic behaviour for multi-columns, utilise the following environment: \verb|\begin{tabularx}{\textwidth}{@{}lX@{}}|. Take note that we substitute \verb|X| in place of \verb|l| or \verb|c|, explicitly indicating that the column will function as a multi-column, occupying the entire available space. \autoref{tab:table-02} showcases the usage of the \verb|begin{tabularx}| environment.
 
 \begin{table}[!htpb]
-    \caption{A Table Showcasing the Usage of the Tabularx Environment.}
+    \caption{A Table Showcasing the Usage of the Tabularx Environment}
     \label{tab:table-02}
     \begin{tabularx}{\textwidth}{@{}lX@{}}
         \toprule
@@ -48,7 +48,7 @@ Employ the \verb|\begin{tabularx}| package to construct a table featuring automa
 At times, when dealing with exceptionally lengthy tables, it becomes necessary to split them across multiple pages. In \LaTeX, this can be achieved using the \verb|\begin{longtable}| environment. Feel free to consult \autoref{tab:table-03} for a detailed demonstration of how the \verb|longtable| operates.
 
 \begin{longtable}[c]{llll}
-\caption{A Table Showcasing the Usage of the Longtable Environment.}
+\caption{A Table Showcasing the Usage of the Longtable Environment}
 \label{tab:table-03} \\
 \toprule
 Names & E-Mails & Job/Role \\ \midrule
@@ -91,7 +91,7 @@ Samuel White & samuel.white@email.com & Research Scientist \\ \bottomrule
 Creating intricate tables in \LaTeX\ can be a somewhat challenging task. Therefore, we highly recommend using the \href{https://www.tablesgenerator.com/}{Table Generator}. With this tool, you can design your table with the desired style and then easily copy and paste it into your document. This approach simplifies the process and helps ensure the accurate representation of complex tables in your \LaTeX\ document. However, it's crucial to keep in mind that a table should be easily comprehensible for the reader and should not be overly complex. The complexity of a table may impede understanding. For example, \autoref{tab:table-04} presents a table with intricate details.
 
 \begin{table}[!htpb]
-    \caption{A Table Showcasing the Usage of the Complex Tables.}
+    \caption{A Table Showcasing the Usage of the Complex Tables}
     \label{tab:table-04}
     \centering
     \begin{tabular}{lcc}
