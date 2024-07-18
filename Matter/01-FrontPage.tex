@@ -81,7 +81,24 @@
 	
 	\vspace{0.5\baselineskip}
 	
-	{\scshape\Large\textcolor{redreport}{\supname}}
+	{\scshape
+		\Large{
+			\textcolor{redreport}{\supname}
+		}
+
+		\Large{
+			\ifdefined\thirdsupname
+				\textcolor{redreport}{\secondsupname}
+			\fi
+		}
+
+		\Large{
+			\ifdefined\thirdsupname
+				\textcolor{redreport}{\thirdsupname}
+			\fi
+		}
+
+	}
 	
 	\vfill
 
