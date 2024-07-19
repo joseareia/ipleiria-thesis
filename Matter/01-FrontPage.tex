@@ -70,13 +70,17 @@
         } 
     }
 
-    \vspace*{2.5\baselineskip}
+    \ifdefined\secondsupervisor
+        \vspace*{1.5\baselineskip}
+    \else
+        \vspace*{2.5\baselineskip}
+    \fi
 
     % Supervisor
     \ifthenelse{\equal{\getLanguage}{portuguese}}{%
         Orientador%
     }{%
-        Supervisor%
+        Supersivor%
     }
 	
 	\vspace{0.5\baselineskip}
@@ -87,17 +91,18 @@
 		}
 
 		\Large{
-			\ifdefined\thirdsupname
+			\ifdefined\secondsupervisor
 				\textcolor{redreport}{\secondsupname}
+                \vspace{0.2\baselineskip}
 			\fi
 		}
 
 		\Large{
 			\ifdefined\thirdsupname
 				\textcolor{redreport}{\thirdsupname}
+                \vspace{0.2\baselineskip}
 			\fi
 		}
-
 	}
 	
 	\vfill
