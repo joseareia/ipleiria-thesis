@@ -222,7 +222,11 @@
 \NewDocumentCommand{\secondauthorid}{m}{\newcommand{\secondauthornum}{#1}}
 \NewDocumentCommand{\thirdauthorid}{m}{\newcommand{\thirdauthornum}{#1}}
 \NewDocumentCommand{\supervisor}{m}{\newcommand{\supname}{#1}}
+\NewDocumentCommand{\secondsupervisor}{m}{\newcommand{\secondsupname}{#1}}
+\NewDocumentCommand{\thirdsupervisor}{m}{\newcommand{\thirdsupname}{#1}}
 \NewDocumentCommand{\supervisormail}{m}{\newcommand{\supmail}{#1}}
+\NewDocumentCommand{\secondsupervisormail}{m}{\newcommand{\secondsupmail}{#1}}
+\NewDocumentCommand{\thirdsupervisormail}{m}{\newcommand{\thirdsupmail}{#1}}
 \NewDocumentCommand{\subtitle}{m}{\newcommand{\subname}{#1}}
 \NewDocumentCommand{\university}{m}{\newcommand{\univname}{#1}}
 \NewDocumentCommand{\school}{m}{\newcommand{\schoolname}{#1}}
