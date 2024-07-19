@@ -7,6 +7,11 @@
 ### Description
 Optimize your academic document creation with this LaTeX template tailored for theses, dissertations, and project reports at the [Polytechnic University of Leiria](https://www.ipleiria.pt/). Tailored specifically for students within the School of Management and Technology (ESTG), this template guarantees a refined, timeless, and professionally formatted document. With its clean and classic aesthetic, navigating through the template is exceptionally straightforward, making document creation a seamless and efficient endeavor. Curious? Explore the [demo](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf) to see more!
 
+<p float="left">
+  <img src="https://github.com/joseareia/nob-article/blob/master/Assets/01.png" width="400"/>
+  <img src="https://github.com/joseareia/nob-article/blob/master/Assets/02.png" width="400"/>
+</p>
+
 ### Getting Started
 To utilise this template, please follow the steps below.
 
