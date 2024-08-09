@@ -1,57 +1,28 @@
 % Packages & Document Configurations
 \documentclass[en]{IPLeiriaThesis}
 
-% Authors & Supervisor
-\firstauthor{John Smith}
-\firstauthorid{2230455}
-
-\secondauthor{Jane Smith}
-\secondauthorid{2230456}
-
-\thirdauthor{July Smith}
-\thirdauthorid{2230457}
-
-\supervisor{Joe Smith, PhD}
-\supervisormail{joe.smith@ipleiria.pt}
-
-\secondsupervisor{Steve Smith, PhD}
-\secondsupervisormail{steve.smith@ipleiria.pt}
-
-\thirdsupervisor{Shak Smith, PhD}
-\thirdsupervisormail{shak.smith@ipleiria.pt}
-
-% Title & Subtitle
-\title{A Great Title To Show That Line Breaks Work Properly in Latex}
-\subtitle{Another Great Title That Works As A Subtitle To Show That Line Breaks Work Properly in Latex}
-
-% Filiations
-\university{Polytechnic of Leiria}
-\degree{MSc Cybersecurity \& Digital Forensics}
-\school{School of Management and Technology}
-\course{Offensive \& Defensive Cybersecurity}
-
-% Local & Date
-\date{Leiria, \DTMmonthname{\month} \number\year}
+% Document Variables (Title, Author, etc.)
+\input{Variables/Variables}
 
 % Make and Load Glossary & Acronyms
 \makeglossaries
-\loadglsentries{Matter/05-Glossary}
-\loadglsentries[\acronymtype]{Matter/06-Acronyms}
+\loadglsentries{Matter/04-Glossary}
+\loadglsentries[\acronymtype]{Matter/05-Acronyms}
 
 \begin{document}
 
 % Front Matter
 \include{Matter/00-Cover}
-\include{Matter/01-FrontPage}
+\include{Matter/01-FPage}
 
 % Roman numeration
 \pagenumbering{roman}
 
 % Declaration of Authorship
-\include{Matter/03-Declaration}
+\include{Matter/02-Declaration}
 
 % Acknowledgements
-\include{Matter/04-Acknowledgements}
+\include{Matter/03-Acknowledgements}
 
 % Abstract
 \include{Chapters/00-Abstract}
@@ -70,27 +41,29 @@
 
 % Chapters
 \include{Chapters/01-Introduction}
-\include{Chapters/02-Citations}
-\include{Chapters/03-Figures}
-\include{Chapters/04-Tables}
-\include{Chapters/05-Lists}
-\include{Chapters/06-Code}
-\include{Chapters/07-Conclusion}
+\include{Chapters/02-Variables}
+\include{Chapters/03-Notes}
+\include{Chapters/04-Citations}
+\include{Chapters/05-Figures}
+\include{Chapters/06-Tables}
+\include{Chapters/07-Lists}
+\include{Chapters/08-Code}
+\include{Chapters/09-Conclusion}
 
 % Bibliography
 \blankpage\printbibliography
 
 % Appendices: Work that *YOU* developed
 \appendix
-\input{Matter/07-Appendices}
+\input{Matter/06-Appendices}
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
 % Annexes: Work that *YOU DID NOT* developed
-\input{Matter/08-Annexes}
+\input{Matter/07-Annexes}
 \input{Chapters/Annexes/00-AnnexA}
 
 % Back Page
-\input{Matter/09-BackPage}
+\input{Matter/08-BPage}
 
 \end{document}
