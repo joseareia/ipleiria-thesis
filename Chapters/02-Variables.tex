@@ -1,0 +1,45 @@
+\chapter{Document Variables}
+\label{cp:variables}
+
+In this document, it is possible to change the value of various variables, such as the author's name, the title of the work, and others, so that the author has greater flexibility in their work. The file that operates these variables is \verb|Variables/Variables.tex|. Below, in \autoref{tab:doc-variables}, you can see all the variables that can be changed, as well as whether or not they must be filled in for the theme to work correctly. Please note that in order to omit a variable, it is only necessary to comment it out. Additionally, if you wish to suggest any other variable, please contact me via the contacts available on GitHub or in the class file of the template.
+
+\begin{table}[!htpb]
+    \centering
+    \caption{Document variables that can be changed.}
+    \label{tab:doc-variables}
+    \begin{tabular}{lcc}
+        \toprule
+            \textbf{Variable} & \textbf{Mandatory} & \textbf{Optional} \\
+        \midrule
+            Title & $\checkmark$ & - \\
+            Subtitle & $\checkmark$ & - \\
+            University & $\checkmark$ & - \\
+            School & $\checkmark$ & - \\
+            Department & $\checkmark$ & - \\
+            Degree & $\checkmark$ & - \\
+            Course & - & $\checkmark$ \\
+            Local and date & $\checkmark$ & - \\ 
+            
+            First author name & $\checkmark$ & - \\
+            First author identification & $\checkmark$ & - \\ 
+
+            Second author name & - & $\checkmark$ \\
+            Second author identification & - & $\checkmark$ \\ 
+
+            Third author name & - & $\checkmark$ \\
+            Third author identification & - & $\checkmark$ \\ 
+
+            Supervisor name & $\checkmark$ & - \\
+            Supervisor e-mail & $\checkmark$ & - \\
+            Supervisor title and affiliation & $\checkmark$ & - \\ 
+
+            Co-supervisor name & - & $\checkmark$ \\
+            Co-supervisor e-mail & - & $\checkmark$ \\
+            Co-supervisor title and affiliation & - & $\checkmark$ \\ 
+
+            Second co-supervisor name & - & $\checkmark$ \\
+            Second co-supervisor e-mail & - & $\checkmark$ \\
+            Second co-supervisor title and affiliation & - & $\checkmark$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
