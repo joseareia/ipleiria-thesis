@@ -1,0 +1,25 @@
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[0]{Contra Capa}{contracapa} % Add entry to PDF
+}{%
+    \pdfbookmark[0]{Back Page}{backpage} % Add entry to PDF
+}
+
+\blankpage
+
+\clearpage
+\null
+\thispagestyle{empty}
+
+\newcommand\BackgroundPicBackPage{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth+0.15cm,height=\paperheight+0.15cm,keepaspectratio]{Figures/Theme/Back-Page-BG.pdf}%
+    \vfill
+}}}
+\AddToShipoutPictureBG*{\BackgroundPicBackPage}
+
+\newgeometry{margin=1.98cm, top=1.47cm, bottom=1.47cm}
+\noindent\clearpage
+\restoregeometry

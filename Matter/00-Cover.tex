@@ -6,73 +6,85 @@
     \pdfbookmark[1]{Cover}{cover} % Add entry to PDF
 }
 
-\newgeometry{margin=4cm}
+% Add background picture
+\newcommand\BackgroundPicCover{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth+0.15cm,height=\paperheight+0.15cm,keepaspectratio]{Figures/Theme/Cover-BG.pdf}%
+    \vfill
+}}}
+\AddToShipoutPictureBG*{\BackgroundPicCover}
+
+\newgeometry{margin=1.98cm, top=2.15cm, bottom=1.47cm}
 \begin{titlepage}
-    \fontfamily{ppl}\selectfont % Font family
-    \centering\scshape % Font style & Centering
-	\vspace*{\baselineskip} % White space at the top of the page
+    \latofont % Switch to Lato font for the title page
+    \color{white} % Define the color to use within this page
+    \vspace*{\baselineskip} % White space at the top of the page
 
-    {\LARGE\textcolor{redreport}{\univname}\par}
+    \begin{figure}
+        \includegraphics[width=0.32\linewidth]{Figures/Theme/IPLeiria-Logo-W.pdf}
+    \end{figure}
 
-    \vspace{2\baselineskip}
+    \vspace{5.5\baselineskip}
 
-    \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} 
-	\rule{\textwidth}{0.4pt}
-	
-	\vspace{0.75\baselineskip}
+    % Title
+	\noindent
+    \makebox[\textwidth][l]{%
+        \parbox{\dimexpr\textwidth-2.5cm\relax}{
+            \setstretch{1.03}
+            \raggedright\bfseries\fontsize{20}{26}\selectfont\thetitle
+        }
+    }
 
-     % Title
-	{\Large\MakeUppercase{\thetitle}\par}
-	
-	\vspace{0.75\baselineskip}
-	
-	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
-	\rule{\textwidth}{1.6pt}
-
-    \vspace{2\baselineskip}
+    \vspace{0.8\baselineskip}
 
     % Subtitle
-    {\large{\subname}}
+    \noindent
+    \makebox[\textwidth][l]{%
+        \parbox{\dimexpr\textwidth-7cm\relax}{
+            \setstretch{1.03}
+            \raggedright\fontsize{14}{19}\selectfont\subname
+        }
+    }
 
-    \vspace*{3\baselineskip}
+    \vspace{35pt}  
 
     % Author
-    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
-        Autores%
-    }{%
-        Authors%
-    }
-    
-	
-	\vspace{0.5\baselineskip}
-	
-	{\scshape\Large 
-        \textcolor{redreport}{\firstauthorname} \\ 
+    {\noindent\bfseries\fontsize{14}{19}\selectfont\firstauthorname}
 
-        \ifdefined\secondauthorname
-            \textcolor{redreport}{\secondauthorname} \\
-        \fi
+    \ifdefined\secondauthorname
+        \vspace{8pt}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\secondauthorname}
+	\fi
 
-        \ifdefined\thirdauthorname
-            \textcolor{redreport}{\thirdauthorname} \\
-        \fi
-    }
-	
-	\vspace{0.8\baselineskip}
-	
-	\textit{\schoolname}
-
-    \vspace{0.2\baselineskip}
-	
-	\textit{\degname}
-
-    \vspace{0.2\baselineskip}
-	
-	\textit{\coursename}
-	
+    \ifdefined\thirdauthorname
+        \vspace{8pt}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\thirdauthorname}
+	\fi
+ 
 	\vfill
 
-    % Local and date
-    {\thedate}
+    % School
+	{\noindent\fontsize{10}{12}\selectfont\schoolname}
+	
+    % Department
+	{\noindent\fontsize{10}{12}\selectfont\departmentname}
+
+    % Degree
+	{\noindent\fontsize{10}{12}\selectfont\degname}
+
+    % Course
+    \ifdefined\coursename
+        {\noindent\fontsize{10}{12}\selectfont\coursename}
+	\fi
+
+    \vspace{125pt}
+
+    % Local & Date
+	{\noindent\fontsize{10}{12}\selectfont\thedate}
+
+    \vspace{68pt}
 \end{titlepage}
 \restoregeometry\blankpage
