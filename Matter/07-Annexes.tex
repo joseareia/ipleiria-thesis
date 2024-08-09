@@ -7,15 +7,14 @@
 \setcounter{chapter}{12} % To start at the "M" chapter
 \blankpage\newgeometry{margin=4cm}
 \begin{center}
-    \fontfamily{ppl}\selectfont % Font family
     \scshape % Font style
     \thispagestyle{empty}
         
     \vspace*{\fill}
     \ifthenelse{\equal{\getLanguage}{portuguese}}{%
-        {\LARGE\textcolor{redreport}{Anexos}\par}
+        {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Anexos}\par}
     }{%
-        {\LARGE\textcolor{redreport}{Annexes}\par}
+        {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Annexes}\par}
     }
     \vspace*{\fill}
 \end{center}

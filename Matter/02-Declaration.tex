@@ -1,0 +1,40 @@
+\thispagestyle{plain} % Page style without header and footer
+
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \pdfbookmark[1]{Declaração}{declaração} % Add entry to PDF
+    \chapter*{Declaração de Autoria} % Chapter* to appear without numeration
+}{%
+    \pdfbookmark[1]{Declaration}{declaration} % Add entry to PDF
+    \chapter*{Declaration of Authorship} % Chapter* to appear without numeration
+}
+
+\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    O abaixo assinado declara que o presente trabalho intitulado ``\thetitle'' é um trabalho original e que não foi anteriormente apresentado, na sua totalidade ou em parte, a nenhuma universidade ou instituição de ensino superior para a obtenção de qualquer grau, diploma ou outras qualificações.
+    Declara-se igualmente que, tanto quanto é do seu conhecimento, este trabalho não contém material previamente publicado ou escrito por outra pessoa, exceto quando é feita a devida referência, reconhecimento e citação.%
+}{%
+    Has undersigned, hereby it his declared that this work entitled ``\thetitle'' is the original work and that it has not previously in its entirety or in part been submitted at any university or higher education institution for the award of any degree, diploma, or other qualifications. It is also hereby declared that to the best of the knowledge, this work contains no material previously published or written by another person, except where due reference, acknowledgement, and citation is made.%
+}
+
+\vspace{2.5\baselineskip}
+
+{\noindent\textit{\thedate}}
+
+\vspace{2\baselineskip}
+
+\begin{flushright}
+    \begin{tabular}{m{7cm}}
+        \hrulefill \\
+        \centering\firstauthorname \\ [8ex]
+        
+        \ifdefined\secondauthorname
+            \hrulefill \\
+            \centering\secondauthorname \\ [8ex]
+        \fi
+
+        \ifdefined\thirdauthorname
+            \hrulefill \\
+            \centering\thirdauthorname \\ [8ex]
+        \fi
+    \end{tabular}
+\end{flushright}
+\plainblankpage
