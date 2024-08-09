@@ -1,0 +1,80 @@
+\chapter{Code Listings}
+At times, you may want to include source code from your programs and applications within your document. To achieve this, you can use two nested environments: \verb|\begin{listing}| to create a listing with both caption and label, and \verb|\begin{minted}| for code highlighting. \autoref{listing:c-code} provides an example of a source code in C.
+
+\begin{listing}[!htpb]
+\begin{minted}{c}
+#include <stdio.h>
+int main() {
+   printf("Hello, World!"); /*printf() outputs the quoted string*/
+   return 0;
+}
+\end{minted}
+\caption{Hello world in C.}
+\label{listing:c-code}
+\end{listing}
+
+The code mentioned above was inserted into the document. However, an alternative approach is to input your code from an external file. To do so, you just need to use the command \verb|\inputminted{CODE_LANGUAGE}{FILE}|. Of course, you should place that command inside of the \verb|\begin{listing}| environment. \autoref{listing:octave-code} illustrates an example of Octave source code that has been input from an external file.
+
+\begin{listing}[!htpb]
+\inputminted{octave}{Code/BitXorMatrix.m}
+\caption{XOR operation in Octave.}
+\label{listing:octave-code}
+\end{listing}
+
+In some cases, when you simply want to highlight a specific command, it's recommended not to use \verb|listing| or \verb|minted|. Instead, you should utilise the \verb|\verb| command for inline highlighting or the \verb|\begin{verbatim}| environment for longer sections of highlighted code. An example of a lengthy \verb|verbatim| section is provided below, demonstrating how to create a \verb|listing| with an input code:
+
+\begin{verbatim}
+\begin{listing}[!htpb]
+    \inputminted{CODE_LANGUAGE}{FILE}
+    \caption{TEXT}
+    \label{TEXT}
+\end{listing}
+\end{verbatim}
+
+Sometimes it is necessary to display longer code that occupies more than one page. For this purpose, please use the environment \verb|\begin{longlisting}|. This environment will easily break your code into multiple pages for better readability without you worrying about the size of your code. An example is shown below in \autoref{listing:lisp-code}.
+
+\begin{longlisting}
+\begin{minted}{lisp}
+(defun factorial (n)
+  "Calculate the factorial of a number."
+  (if (zerop n)
+      (* n (factorial (1- n)))))
+
+(defun fibonacci (n)
+  "Calculate the nth Fibonacci number."
+  (cond ((zerop n) 0)
+        ((= n 1) 1)
+        (t (+ (fibonacci (1- n)) (fibonacci (- n 2))))))
+
+(defun gcd (a b)
+  "Calculate the greatest common divisor of a and b."
+  (if (zerop b)
+      a
+      (gcd b (mod a b))))
+
+(defun primes-up-to (limit)
+  "Return a list of all prime numbers up to LIMIT."
+  (let ((primes '()))
+    (loop for i from 2 to limit
+          unless (some (lambda (p) (zerop (mod i p))) primes)
+          do (push i primes))
+    (nreverse primes)))
+
+(defun example-function (x)
+  "An example function to demonstrate Lisp capabilities."
+  (let ((result (list (factorial x)
+                      (fibonacci x)
+                      (gcd x 10)
+                      (primes-up-to x))))
+    (format t "Factorial of ~A: ~A~%" x (factorial x))
+    (format t "Fibonacci of ~A: ~A~%" x (fibonacci x))
+    (format t "GCD of ~A and 10: ~A~%" x (gcd x 10))
+    (format t "Primes up to ~A: ~A~%" x (primes-up-to x))
+    result))
+
+(example-function 10)
+\end{minted}
+\caption{A sample of functions in Lisp.}
+\label{listing:lisp-code}
+\end{longlisting}
+
