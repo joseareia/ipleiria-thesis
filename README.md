@@ -1,11 +1,11 @@
 ## Polytechnic University of Leiria: LaTeX Thesis Template
 [![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg?color=green)](https://www.latex-project.org/)
 [![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-green.svg)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v1.2.0-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
+[![Release](https://img.shields.io/badge/Release-v2.0.0-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
 ### Description
-Optimize your academic document creation with this LaTeX template tailored for theses, dissertations, and project reports at the [Polytechnic University of Leiria](https://www.ipleiria.pt/). Tailored specifically for students within the School of Management and Technology (ESTG), this template guarantees a refined, timeless, and professionally formatted document. With its clean and classic aesthetic, navigating through the template is exceptionally straightforward, making document creation a seamless and efficient endeavor. Curious? Explore the [demo](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf) to see more!
+Optimize your academic document creation with this LaTeX template tailored for theses and dissertations at the [Polytechnic University of Leiria](https://www.ipleiria.pt/). Tailored specifically for students within the School of Management and Technology (ESTG), this template guarantees a refined, timeless, and professionally formatted document. With its clean and classic aesthetic, navigating through the template is exceptionally straightforward, making document creation a seamless and efficient endeavor. Curious? Explore the [demo](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf) to see more!
 
 <p float="left">
   <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/01_B.png" width="400"/>
@@ -35,6 +35,7 @@ This repository has the following structure.
 - **Code**: Includes any code examples related to the thesis.
 - **Figures**: Contains figures and images used in the thesis.
 - **Matter**: Contains additional matter (e.g. acronyms, glossary, etc.) and front/back pages for the thesis.
+- **Variables**: Includes the `Variables.tex` document, where you can change the all the document variables.
 - **IPLeiriaMain.tex**: Main LaTeX file for compiling the thesis content.
 - **IPLeiriaThesis.cls**: LaTeX class file containing the formatting and styling specifications.
 
