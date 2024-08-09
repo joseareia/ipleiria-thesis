@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 1.2.0 - 2024/07/19
+% Version: 2.0.0 - 2024/08/08
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 
 % Class information
@@ -49,13 +49,19 @@
 \usepackage{blindtext} % Generate dummy text
 \usepackage{silence} % No warnings in certain packages
 \usepackage{typearea} % KOMA options for page rotation
-\usepackage{tikz}
+\usepackage{eso-pic} % For the background in both front and back matter
+\usepackage{setspace} % For line height adjusts
+\usepackage{varwidth} % Dependency for the custom boxes
+
+% Load more libaries from tcolorbox package
+\tcbuselibrary{most}
 
 % Silence some warnings
 \WarningsOff[blindtext] % No support for portuguese language
 
 % Colors
-\colorlet{redreport}{red!50!black}
+\colorlet{darkred}{red!50!black}
+\definecolor{frontpagedark}{HTML}{1c1c1c}
 
 % Margins
 \usepackage[
@@ -65,18 +71,54 @@
 	right=3.2cm, % Right margin
 	footskip=1.6cm, % Space from the bottom margin to footer
 	headsep=0.75cm, % Space from the top margin to header
-	%showframe % Uncomment to show frames around the margins for debugging
+	% showframe % Uncomment to show frames around the margins for debugging
 ]{geometry}
 
 % Fonts
-\usepackage[utf8]{inputenc} % Required for international characters
+% \usepackage[utf8]{inputenc} % Required for international characters
 \usepackage[T1]{fontenc} % Font encoding for international characters
-\usepackage{newpxtext} % Alternative use of the PX fonts
+% \usepackage{newpxtext} % Alternative use of the PX fonts
 \usepackage{newpxmath} % Alternative use of the PX fonts (Math)
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+% \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage{fvextra} % Compatibility with csquotes (?)
 \usepackage{csquotes} % Compatibility with babel (?)
 \linespread{1.2} % Increase line spacing slightly
+
+% Ensure compilation with XeLaTeX or LuaLaTeX for fontspec
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}[LetterSpace=0.7]
+
+% Define a command to switch to Lato font
+\newcommand{\latofont}{\fontspec{Lato}}
+
+% Document variables
+\NewDocumentCommand{\firstauthor}{m}{\newcommand{\firstauthorname}{#1}}
+\NewDocumentCommand{\firstauthorid}{m}{\newcommand{\firstauthornum}{#1}}
+
+\NewDocumentCommand{\secondauthor}{m}{\newcommand{\secondauthorname}{#1}}
+\NewDocumentCommand{\secondauthorid}{m}{\newcommand{\secondauthornum}{#1}}
+
+\NewDocumentCommand{\thirdauthor}{m}{\newcommand{\thirdauthorname}{#1}}
+\NewDocumentCommand{\thirdauthorid}{m}{\newcommand{\thirdauthornum}{#1}}
+
+\NewDocumentCommand{\supervisor}{m}{\newcommand{\supname}{#1}}
+\NewDocumentCommand{\supervisormail}{m}{\newcommand{\supmail}{#1}}
+\NewDocumentCommand{\supervisortitle}{m}{\newcommand{\suptitle}{#1}}
+
+\NewDocumentCommand{\cosupervisor}{m}{\newcommand{\cosupname}{#1}}
+\NewDocumentCommand{\cosupervisormail}{m}{\newcommand{\cosupmail}{#1}}
+\NewDocumentCommand{\cosupervisortitle}{m}{\newcommand{\cosuptitle}{#1}}
+
+\NewDocumentCommand{\seccosupervisor}{m}{\newcommand{\seccosupname}{#1}}
+\NewDocumentCommand{\seccosupervisormail}{m}{\newcommand{\seccosupmail}{#1}}
+\NewDocumentCommand{\seccosupervisortitle}{m}{\newcommand{\seccosuptitle}{#1}}
+
+\NewDocumentCommand{\subtitle}{m}{\newcommand{\subname}{#1}}
+\NewDocumentCommand{\university}{m}{\newcommand{\univname}{#1}}
+\NewDocumentCommand{\school}{m}{\newcommand{\schoolname}{#1}}
+\NewDocumentCommand{\department}{m}{\newcommand{\departmentname}{#1}}
+\NewDocumentCommand{\degree}{m}{\newcommand{\degname}{#1}}
+\NewDocumentCommand{\course}{m}{\newcommand{\coursename}{#1}}
 
 % Glossary & Acronyms
 \usepackage[toc,acronym]{glossaries} 
@@ -87,7 +129,7 @@
 \setlength\LTright{0pt} % Right margin
 \setlength\glsdescwidth{0.94\hsize} % Glossary description width
 \renewcommand{\glsnamefont}[1]{\textbf{#1}} % Notation in bold
-\renewcommand{\glossaryentrynumbers}[1]{\textit{(p. \textcolor{redreport}{#1})}} % Page number customisation
+\renewcommand{\glossaryentrynumbers}[1]{\textit{(p. \textcolor{darkred}{#1})}} % Page number customisation
 
 % Adjust the height of the text area
 \addtolength{\textheight}{-20pt}
@@ -125,6 +167,7 @@
 	bibstyle=authoryear, % Bibliography style
 	sorting=nyt, % Order references
     natbib=true, % Use natbib compatibility mode
+    dashed=false, % Always print the author in the bibliography
     uniquelist=false % Only show one author, e.g. (Author et al., 2023)
 ]{biblatex}
 
@@ -210,28 +253,9 @@
 \hypersetup{
 	colorlinks=true, % Whether to color the text of links
 	urlcolor=black, % Color for \url and \href links
-	linkcolor=redreport, % Color for \nameref links
-	citecolor=redreport, % Color of reference citations
+	linkcolor=darkred, % Color for \nameref links
+	citecolor=darkred, % Color of reference citations
 }
-
-% Titlepage and titleback variables
-\NewDocumentCommand{\firstauthor}{m}{\newcommand{\firstauthorname}{#1}}
-\NewDocumentCommand{\secondauthor}{m}{\newcommand{\secondauthorname}{#1}}
-\NewDocumentCommand{\thirdauthor}{m}{\newcommand{\thirdauthorname}{#1}}
-\NewDocumentCommand{\firstauthorid}{m}{\newcommand{\firstauthornum}{#1}}
-\NewDocumentCommand{\secondauthorid}{m}{\newcommand{\secondauthornum}{#1}}
-\NewDocumentCommand{\thirdauthorid}{m}{\newcommand{\thirdauthornum}{#1}}
-\NewDocumentCommand{\supervisor}{m}{\newcommand{\supname}{#1}}
-\NewDocumentCommand{\secondsupervisor}{m}{\newcommand{\secondsupname}{#1}}
-\NewDocumentCommand{\thirdsupervisor}{m}{\newcommand{\thirdsupname}{#1}}
-\NewDocumentCommand{\supervisormail}{m}{\newcommand{\supmail}{#1}}
-\NewDocumentCommand{\secondsupervisormail}{m}{\newcommand{\secondsupmail}{#1}}
-\NewDocumentCommand{\thirdsupervisormail}{m}{\newcommand{\thirdsupmail}{#1}}
-\NewDocumentCommand{\subtitle}{m}{\newcommand{\subname}{#1}}
-\NewDocumentCommand{\university}{m}{\newcommand{\univname}{#1}}
-\NewDocumentCommand{\school}{m}{\newcommand{\schoolname}{#1}}
-\NewDocumentCommand{\degree}{m}{\newcommand{\degname}{#1}}
-\NewDocumentCommand{\course}{m}{\newcommand{\coursename}{#1}}
 
 % Chapters & Sections
 \usepackage{titlesec}
@@ -240,7 +264,7 @@
 {\flushright\normalsize%
 {\fontsize{25}{25}\selectfont\hspace*{-1em}\rule[-2pt]{.1pt}{30pt}\hspace{0.5em}\raisebox{4.5pt}{\thechapter}}}%
 {10pt}%
-{\huge\scshape\textls[50]}%
+{\addfontfeature{LetterSpace=6}\huge\scshape}%
 
 % Abstract Keywords
 \NewDocumentCommand{\keywordsen}{m}{
@@ -267,15 +291,50 @@
     \clearpage
 }   
 
-% Todo notes
-\newcommand{\todo}[1]{\textcolor{red}{TODO: #1.}}
-
 % Define a custom environment for the highlighted box
 \newenvironment{importantbox}{%
   \begin{tcolorbox}[colback=gray!20, colframe=gray!50, arc=5pt, boxrule=1pt, left=15pt, right=15pt, top=10pt, bottom=10pt]%
   \small
 }{%
   \end{tcolorbox}%
+}
+
+% Define of both \note and \todo commands
+\newtcolorbox{custombox}[2][]{enhanced,
+    before skip=2mm,after skip=2mm,colframe=gray!30,boxrule=0.2mm,
+    attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+    varwidth boxed title*=-3cm,
+    boxed title style={frame code={
+        \path[fill=tcbcolback!30!black]
+            ([yshift=-1mm,xshift=-1mm]frame.north west)
+            arc[start angle=0,end angle=180,radius=1mm]
+            ([yshift=-1mm,xshift=1mm]frame.north east)
+            arc[start angle=180,end angle=0,radius=1mm];
+        \path[left color=tcbcolback!80!black,right color=tcbcolback!80!black,
+            middle color=tcbcolback!80!black]
+            ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+            [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+            -- (frame.south east) -- (frame.south west)
+            -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+            [sharp corners]-- cycle;
+        },interior engine=empty,
+    },
+    fonttitle=\MakeUppercase\small\ttfamily\bfseries,
+    title={#2},#1
+}
+
+\newcommand{\todo}[1]{
+    \vspace{.5cm}
+    \begin{custombox}[colbacktitle=red,colback=red!10,breakable]{TODO}
+        \small\ttfamily #1
+    \end{custombox}
+}
+
+\newcommand{\note}[1]{
+    \vspace{.5cm}
+    \begin{custombox}[colbacktitle=blue,colback=blue!10,breakable]{NOTE}
+        \small\ttfamily #1
+    \end{custombox}
 }
 
 % Code highlighting and printing
@@ -324,13 +383,4 @@
 }{%
     \restoregeometry
     \fancyheadoffset{0pt}
-}
-
-% Command to display "Student No." in the languages supported
-\newcommand{\studentnumberprefix}{%
-    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
-        Estudante N.º%
-    }{%
-        Student No.%
-    }
 }
