@@ -1,7 +1,7 @@
 ## Polytechnic University of Leiria: LaTeX Thesis Template
 [![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg?color=green)](https://www.latex-project.org/)
 [![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-green.svg)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v2.0.0-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
+[![Release](https://img.shields.io/badge/Release-v2.1.0-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
 ### Description
@@ -41,6 +41,9 @@ This repository has the following structure.
 
 ### Multilanguage Support
 This template offers multilanguage support in two languages: English and Portuguese. **If you wish to add support for more languages, please contact me**. To change the language, simply modify the first line (*document class definition*) of the `IPLeiriaThesis.tex` file to the desired language: `pt` for Portuguese and `en` for English. Here is an example: `\documentclass[en]{IPLeiriaThesis}`. Easy, right?
+
+### Ease of Changing Style
+Don't like the new modern cover? No problem, I’ve got you *covered*! This template now includes a new class option, `bwcover`, which allows you to switch the cover to a black-and-white mode. Simply add it like this: `\documentclass[en,bwcover]{IPLeiriaThesis}`, and the change will be applied automatically. If you have any other style suggestions, feel free to share them with me!
 
 ### Getting Help
 If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an issue in this repository, or contact me via email at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
