@@ -1,10 +1,10 @@
 \ifthenelse{\equal{\getLanguage}{portuguese}}{%
-    \pdfbookmark[1]{Primeira Página}{primeirapagina} % Add entry to PDF
+    \pdfbookmark[1]{Primeira Página}{primeirapagina} % Add entry to PDF.
 }{%
-    \pdfbookmark[1]{Front Page}{frontpage} % Add entry to PDF
+    \pdfbookmark[1]{Front Page}{frontpage} % Add entry to PDF.
 }
 
-% Add background picture
+% Add background picture.
 \newcommand\BackgroundPicFrontPage{%
     \put(0,0){%
     \parbox[b][\paperheight]{\paperwidth}{%
@@ -17,9 +17,9 @@
 
 \newgeometry{margin=1.98cm, top=2.15cm, bottom=1.47cm}
 \begin{titlepage}
-    \latofont % Switch to Lato font for the title page
-    \color{frontpagedark} % Define the color to use within this page
-    \vspace*{\baselineskip} % White space at the top of the page
+    \latofont % Switch to Lato font for the title page.
+    \color{frontpagedark} % Define the color to use within this page.
+    \vspace*{\baselineskip} % White space at the top of the page.
 
     \begin{figure}
         \includegraphics[width=0.32\linewidth]{Figures/Theme/IPLeiria-Logo-B.pdf}
@@ -27,7 +27,7 @@
 
     \vspace{3.5\baselineskip}
 
-    % Title
+    % Title.
 	\noindent
     \makebox[\textwidth][l]{%
         \parbox{\dimexpr\textwidth-2.5cm\relax}{
@@ -38,7 +38,7 @@
 
     \vspace{0.8\baselineskip}
 
-    % Subtitle
+    % Subtitle.
     \noindent
     \makebox[\textwidth][l]{%
         %\fbox{%
@@ -51,7 +51,7 @@
 
     \vspace{35pt}
 
-    % Author
+    % Author.
     {\noindent\bfseries\fontsize{14}{19}\selectfont\firstauthorname}
 
     \ifdefined\secondauthorname
@@ -89,23 +89,28 @@
     
     \vfill
 	
-    % School
+    % School.
 	{\noindent\fontsize{10}{12}\selectfont\schoolname}
 	
-    % Department
+    % Department.
 	{\noindent\fontsize{10}{12}\selectfont\departmentname}
 
-    % Degree
+    % Degree.
 	{\noindent\fontsize{10}{12}\selectfont\degname}
 
-    % Course
+    % Course.
     \ifdefined\coursename
         {\noindent\fontsize{10}{12}\selectfont\coursename}
 	\fi
 
-    \vspace{90pt}
+    \vspace{45pt}
 
-    % Local & Date
+    % Thesis option.
+	{\noindent\fontsize{10}{12}\itshape\selectfont\thesisthemeop}
+
+    \vspace{45pt}
+
+    % Local and date.
 	{\noindent\fontsize{10}{12}\selectfont\thedate}
 
     \vspace{68pt}
