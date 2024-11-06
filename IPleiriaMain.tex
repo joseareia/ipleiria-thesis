@@ -1,45 +1,45 @@
-% Packages & Document Configurations
+% Packages and document configurations.
 \documentclass[en]{IPLeiriaThesis}
 
-% Document Variables (Title, Author, etc.)
+% Document variables.
 \input{Variables/Variables}
 
-% Make and Load Glossary & Acronyms
+% Loading of the glossary and acronyms.
 \makeglossaries
 \loadglsentries{Matter/04-Glossary}
 \loadglsentries[\acronymtype]{Matter/05-Acronyms}
 
 \begin{document}
 
-% Front Matter
+% Front matter.
 \include{Matter/00-Cover}
 \include{Matter/01-FPage}
 
-% Roman numeration
+% Roman numeration.
 \pagenumbering{roman}
 
-% Declaration of Authorship
+% Declaration of authorship.
 \include{Matter/02-Declaration}
 
-% Acknowledgements
+% Acknowledgements.
 \include{Matter/03-Acknowledgements}
 
-% Abstract
+% Abstract.
 \include{Chapters/00-Abstract}
 
-% List of contents, figures, and tables
+% List of contents, figures, and tables.
 \tableofcontents\plainblankpage
 \listoffigures\plainblankpage
 \listoftables\plainblankpage
 
-% Print Glossary & Acronym
+% Print glossary and acronyms.
 \printglossary\plainblankpage
 \printglossary[type=\acronymtype]\plainblankpage
 
-% Arabic numeration
+% Arabic numeration.
 \pagenumbering{arabic}
 
-% Chapters
+% Chapters.
 \include{Chapters/01-Introduction}
 \include{Chapters/02-Variables}
 \include{Chapters/03-Notes}
@@ -50,20 +50,20 @@
 \include{Chapters/08-Code}
 \include{Chapters/09-Conclusion}
 
-% Bibliography
+% Bibliography.
 \blankpage\printbibliography
 
-% Appendices: Work that *YOU* developed
+% Appendices: Work that *YOU* developed.
 \appendix
 \input{Matter/06-Appendices}
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
-% Annexes: Work that *YOU DID NOT* developed
+% Annexes: Work that *YOU DID NOT* developed.
 \input{Matter/07-Annexes}
 \input{Chapters/Annexes/00-AnnexA}
 
-% Back Page
+% Back page.
 \input{Matter/08-BPage}
 
 \end{document}
