@@ -1,31 +1,55 @@
 \ifthenelse{\equal{\getLanguage}{portuguese}}{%
-    \pdfbookmark[0]{Capa}{capa} % Add entry to PDF bookmarks group
-    \pdfbookmark[1]{Frontispício}{frontispício} % Add entry to PDF
+    \pdfbookmark[0]{Capa}{capa} % Add entry to PDF bookmarks group.
+    \pdfbookmark[1]{Frontispício}{frontispício} % Add entry to PDF.
 }{%
-    \pdfbookmark[0]{Front Matter}{frontmatter} % Add entry to PDF bookmarks group
-    \pdfbookmark[1]{Cover}{cover} % Add entry to PDF
+    \pdfbookmark[0]{Front Matter}{frontmatter} % Add entry to PDF bookmarks group.
+    \pdfbookmark[1]{Cover}{cover} % Add entry to PDF.
 }
 
-% Add background picture
-\newcommand\BackgroundPicCover{%
+% Add background picture depending on the 'bwcover' variable.
+\ifbwcover
+    \newcommand\BackgroundPicCover{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Front-Page-BG.pdf}%
+    \vfill
+    }}}
+\else
+    \newcommand\BackgroundPicCover{%
     \put(0,0){%
     \parbox[b][\paperheight]{\paperwidth}{%
     \vfill
     \centering
     \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Cover-BG.pdf}%
     \vfill
-}}}
+    }}}
+\fi
+
 \AddToShipoutPictureBG*{\BackgroundPicCover}
 
 \newgeometry{margin=1.98cm, top=2.15cm, bottom=1.47cm}
 \begin{titlepage}
-    \latofont % Switch to Lato font for the title page
-    \color{white} % Define the color to use within this page
-    \vspace*{\baselineskip} % White space at the top of the page
+    \latofont % Switch to Lato font for the title page.
+   
+    \ifbwcover
+        \color{frontpagedark} % Define the color to use within this page.
+    \else
+        \color{white} % Define the color to use within this page.
+    \fi
+    
+    \vspace*{\baselineskip} % White space at the top of the page.
 
-    \begin{figure}
-        \includegraphics[width=0.32\linewidth]{Figures/Theme/IPLeiria-Logo-W.pdf}
-    \end{figure}
+    \ifbwcover
+        \begin{figure}
+            \includegraphics[width=0.32\linewidth]{Figures/Theme/IPLeiria-Logo-B.pdf}
+        \end{figure}
+    \else
+        \begin{figure}
+            \includegraphics[width=0.32\linewidth]{Figures/Theme/IPLeiria-Logo-W.pdf}
+        \end{figure}
+    \fi
 
     \vspace{5.5\baselineskip}
 
