@@ -34,15 +34,15 @@ To use this template locally, ensure that you have the following dependencies in
 - **Texgyre Fonts:** Essential for specific font styles; install with: `sudo apt install fonts-texgyre`.
 - **Rubber** and **inotify-tools** (Optional): Necessary for automated compilation. Can be installed with:
 
-```bash
-sudo apt install rubber inotify-tools
+```
+$ sudo apt install rubber inotify-tools
 ```
 - **Make**: Required to run the build scripts, install with: `sudo apt install make`.
 - **Latexmk** (Optional): Necessary for automated compilation and argument parsing. Can be installed with:
 
-```bash
-sudo apt install perl # Perl should be already installed.
-sudo apt install latexmk
+```
+$ sudo apt install perl # Perl should be already installed.
+$ sudo apt install latexmk
 ```
 Make sure all these dependencies are in place to ensure smooth usage of the template.
 
@@ -58,9 +58,9 @@ To compile this template, you have two options:
 
 Both methods have been successfully tested with the following versions:
 
-- **TeXLive 2024**
-- **Latexmk 4.85**
-- **Make 4.3**
+- TeXLive 2024
+- Latexmk 4.85
+- Make 4.3
 
 Choose the method that best fits your workflow!
 
