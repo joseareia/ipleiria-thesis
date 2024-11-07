@@ -27,6 +27,43 @@ To utilise this template, please follow the steps below.
 > [!TIP]
 > To make the most of this template and for real-time collaboration, I highly recommend using [Overleaf](https://www.overleaf.com/home-2). You can access the ready-to-use template by clicking [here](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt).
 
+### Dependecies
+To use this template locally, ensure that you have the following dependencies installed:
+
+- **Lato Font:** Required for document styling. Can be downloaded [here](https://fonts.google.com/specimen/Lato?query=lato).
+- **Texgyre Fonts:** Essential for specific font styles; install with: `sudo apt install fonts-texgyre`.
+- **Rubber** and **inotify-tools** (Optional): Necessary for automated compilation. Can be installed with:
+
+```bash
+sudo apt install rubber inotify-tools
+```
+- **Make**: Required to run the build scripts, install with: `sudo apt install make`.
+- **Latexmk** (Optional): Necessary for automated compilation and argument parsing. Can be installed with:
+
+```bash
+sudo apt install perl # Perl should be already installed.
+sudo apt install latexmk
+```
+Make sure all these dependencies are in place to ensure smooth usage of the template.
+
+### Compile
+
+To compile this template, you have two options:
+
+1. **Using the Makefile**: Simply run `make` in the terminal to automatically build the document.
+2. **Using Latexmk**: Alternatively, you can use **Latexmk** with the provided configuration file `.latexmkrc` for automated compilation.
+
+> [!NOTE]
+> These methods are intended for use in a local environment.
+
+Both methods have been successfully tested with the following versions:
+
+- **TeXLive 2024**
+- **Latexmk 4.85**
+- **Make 4.3**
+
+Choose the method that best fits your workflow!
+
 ### Content Overview
 This repository has the following structure.
 
