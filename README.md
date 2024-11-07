@@ -41,8 +41,7 @@ $ sudo apt install rubber inotify-tools
 - **Latexmk** (Optional): Necessary for automated compilation and argument parsing. Can be installed with:
 
 ```
-$ sudo apt install perl # Perl should be already installed.
-$ sudo apt install latexmk
+$ sudo apt install perl latexmk
 ```
 Make sure all these dependencies are in place to ensure smooth usage of the template.
 
