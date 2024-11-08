@@ -12,6 +12,21 @@ Optimize your academic document creation with this LaTeX template tailored for t
   <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="400"/>
 </p>
 
+### Getting started using vscode and devcontainer (docker)
+
+The simplest way to get started is to install Latex and all necessary tools in a docker container via the devcontainer feature of vscode.
+
+1. Install [docker](https://docs.docker.com/engine/install/) and [vscode](https://code.visualstudio.com/download).
+1. Open this directory in vscode.
+1. Install the "Remote Development" extension pack in vscode using the extensions panel.
+1. Do Ctrl+Shift+P and run "Dev Container: open folder in container". 
+1. Open IPleiriaMain.tex, click the "TeX" icon the bar on the left, and click on "Build LaTeX project".
+
+If you have access to Gitub Codespaces you can also start a codespace on this repository in order to work on the latex document directly on the web without installing anything on your computer. Just do Code > Codespaces > '+'.
+
+> **Note:**
+> It might take upwards of 30 minutes to install texlive in the container.
+
 ### Getting Started
 To utilise this template, please follow the steps below.
 
@@ -30,8 +45,8 @@ To utilise this template, please follow the steps below.
 ### Dependecies
 To use this template locally, ensure that you have the following dependencies installed:
 
-- **Lato Font:** Required for document styling. Can be downloaded [here](https://fonts.google.com/specimen/Lato?query=lato).
-- **Texgyre Fonts:** Essential for specific font styles; install with: `sudo apt install fonts-texgyre`.
+- **Lato Font:** Required for document styling. On debian-based systems install with `sudo apt install fonts-lato`. Can be downloaded [here](https://fonts.google.com/specimen/Lato?query=lato).
+- **Texgyre Fonts:** Essential for specific font styles; On debian-based systems install with: `sudo apt install fonts-texgyre`.
 - **Rubber** and **inotify-tools** (Optional): Necessary for automated compilation. Can be installed with:
 
 ```
@@ -49,8 +64,8 @@ Make sure all these dependencies are in place to ensure smooth usage of the temp
 
 To compile this template, you have two options:
 
-1. **Using the Makefile**: Simply run `make` in the terminal to automatically build the document.
-2. **Using Latexmk**: Alternatively, you can use **Latexmk** with the provided configuration file `.latexmkrc` for automated compilation.
+1. **Using the Makefile**: Simply run `make` in the terminal to automatically build the document. This requires the the rubber tool.
+2. **Using Latexmk**: Alternatively, you can use **Latexmk** with the provided configuration file `.latexmkrc` for automated compilation. Just run `latexmk` in the terminal.
 
 > [!NOTE]
 > These methods are intended for use in a local environment.

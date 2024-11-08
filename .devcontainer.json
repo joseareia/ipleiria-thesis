@@ -1,0 +1,19 @@
+{
+  "name": "estg-ipleiria-latex",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/prulloac/devcontainer-features/latex:1.3.1": {
+      "scheme": "full",
+      "mirror": "https://mirrors.ircam.fr/pub/CTAN/systems/texlive/tlnet/"
+    },
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "postCreateCommand": "sudo apt update; sudo apt install -y fonts-texgyre fonts-lato; pip install Pygments", 
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "valentjn.vscode-ltex"
+      ]
+    }
+  }
+}
