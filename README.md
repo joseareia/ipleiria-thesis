@@ -12,21 +12,6 @@ Optimize your academic document creation with this LaTeX template tailored for t
   <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="400"/>
 </p>
 
-### Getting started using vscode and devcontainer (docker)
-
-The simplest way to get started is to install Latex and all necessary tools in a docker container via the devcontainer feature of vscode.
-
-1. Install [docker](https://docs.docker.com/engine/install/) and [vscode](https://code.visualstudio.com/download).
-1. Open this directory in vscode.
-1. Install the "Remote Development" extension pack in vscode using the extensions panel.
-1. Do Ctrl+Shift+P and run "Dev Container: open folder in container". 
-1. Open IPleiriaMain.tex, click the "TeX" icon the bar on the left, and click on "Build LaTeX project".
-
-If you have access to Gitub Codespaces you can also start a codespace on this repository in order to work on the latex document directly on the web without installing anything on your computer. Just do Code > Codespaces > '+'.
-
-> **Note:**
-> It might take upwards of 30 minutes to install texlive in the container.
-
 ### Getting Started
 To utilise this template, please follow the steps below.
 
@@ -41,6 +26,23 @@ To utilise this template, please follow the steps below.
 
 > [!TIP]
 > To make the most of this template and for real-time collaboration, I highly recommend using [Overleaf](https://www.overleaf.com/home-2). You can access the ready-to-use template by clicking [here](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt).
+
+
+### Getting Started: Using VSCode and DevContainer (Docker)
+
+The simplest way to get started is to install LaTeX and all the necessary tools in a Docker container via the `devcontainer` feature of VSCode.
+
+1. Install [Docker](https://docs.docker.com/engine/install/) and [VSCode](https://code.visualstudio.com/download).
+1. Open this directory in VSCode.
+1. Install the `Remote Development` extension pack in VSCode using the extensions panel.
+1. Do `Ctrl+Shift+P` and run `Dev Container: open folder in container`. 
+1. Open `IPleiriaMain.tex`, click the `TeX` icon the bar on the left, and click on `Build LaTeX project`.
+
+If you have access to Gitub Codespaces you can also start a codespace on this repository in order to work on the LaTeX document directly on the web without installing anything on your computer. Just do `Code` > `Codespaces` > `'+'`.
+
+> [!NOTE]
+> It might take upwards of 30 minutes to install texlive in the container.
+
 
 ### Dependecies
 To use this template locally, ensure that you have the following dependencies installed:
