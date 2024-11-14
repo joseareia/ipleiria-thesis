@@ -1,45 +1,45 @@
-% Packages and document configurations.
-\documentclass[en]{IPLeiriaThesis}
+%%% Packages and Document Configurations %%%
+\documentclass[en,estg]{IPLeiriaThesis}
 
-% Document variables.
+%%% Document Variables %%%
 \input{Variables/Variables}
 
-% Loading of the glossary and acronyms.
+%%% Loading of Glossary and Acronyms %%%
 \makeglossaries
 \loadglsentries{Matter/04-Glossary}
 \loadglsentries[\acronymtype]{Matter/05-Acronyms}
 
 \begin{document}
 
-% Front matter.
+%%% Front Matter %%%
 \include{Matter/00-Cover}
 \include{Matter/01-FPage}
 
-% Roman numeration.
+%%% Roman Numeration %%%
 \pagenumbering{roman}
 
-% Declaration of authorship.
+%%% Declaration of Authorship %%%
 \include{Matter/02-Declaration}
 
-% Acknowledgements.
+%%% Acknowledgements %%%
 \include{Matter/03-Acknowledgements}
 
-% Abstract.
+%%% Abstract %%%
 \include{Chapters/00-Abstract}
 
-% List of contents, figures, and tables.
+%%% Table of Contents, List of Figures and List of Tables %%%
 \tableofcontents\plainblankpage
 \listoffigures\plainblankpage
 \listoftables\plainblankpage
 
-% Print glossary and acronyms.
-\printglossary\plainblankpage
-\printglossary[type=\acronymtype]\plainblankpage
+%%% Print: Glossary and Acronyms %%%
+\glossarytoc\printglossary\plainblankpage
+\acronymtoc\printglossary[type=\acronymtype]\plainblankpage
 
-% Arabic numeration.
+%%% Arabic Numeration %%%
 \pagenumbering{arabic}
 
-% Chapters.
+%%% Chapters %%%
 \include{Chapters/01-Introduction}
 \include{Chapters/02-Variables}
 \include{Chapters/03-Notes}
@@ -50,20 +50,20 @@
 \include{Chapters/08-Code}
 \include{Chapters/09-Conclusion}
 
-% Bibliography.
-\blankpage\printbibliography
+%%% Bibliography %%%
+\blankpage\printbibliography[title={\refname},heading=bibintoc]
 
-% Appendices: Work that *YOU* developed.
+%%% Appendices: Work that *YOU* Developed %%%
 \appendix
 \input{Matter/06-Appendices}
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
-% Annexes: Work that *YOU DID NOT* developed.
+%%% Annexes: Work that *YOU DID NOT* Developed %%%
 \input{Matter/07-Annexes}
 \input{Chapters/Annexes/00-AnnexA}
 
-% Back page.
+%%% Back Page %%%
 \input{Matter/08-BPage}
 
 \end{document}
