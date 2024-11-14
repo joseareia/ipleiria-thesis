@@ -1,0 +1,24 @@
+%%% Tables %%%
+\usepackage{tabularx} % Table length.
+\usepackage{booktabs} % Table style.
+\usepackage{multirow} % Multirow.
+\usepackage{longtable} % For long tables.
+\newcommand{\customtableformatting}{
+    \renewcommand{\arraystretch}{1.1}\small
+} % Increase space between rows and smaller font.
+\AtBeginEnvironment{tabular}{\customtableformatting} % Apply to tabular.
+\AtBeginEnvironment{tabularx}{\customtableformatting} % Apply to tabularx.
+\preto\longtable{\customtableformatting} % Apply to longtable.
+
+%%% Captions %%%
+\usepackage{caption} % Required for customizing captions.
+\captionsetup{skip=6pt} % Whitespace between figures/tables and the caption.
+\captionsetup{
+    labelfont={bf,small},
+    textfont={it,small}
+} % Caption font style.
+\captionsetup[table]{skip=3pt} % Align left.
+
+%%% Lists %%%
+\usepackage{enumitem} % Required for list customization.
+\setlist{noitemsep} % Customize spacing around and inside lists.
