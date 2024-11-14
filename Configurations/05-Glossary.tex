@@ -1,0 +1,10 @@
+%%% Glossary and Acronyms %%%
+\usepackage[acronym]{glossaries} 
+% https://www.dickimaw-books.com/gallery/glossaries-styles/#tree-style
+% https://tex.stackexchange.com/questions/346681/space-between-acronym-entry-and-it-description
+\setglossarystyle{long} % Glossary style.
+\setlength\LTleft{-6pt} % Left margin.
+\setlength\LTright{0pt} % Right margin.
+\setlength\glsdescwidth{0.94\hsize} % Glossary description width.
+\renewcommand{\glsnamefont}[1]{\textbf{#1}} % Notation in bold.
+\renewcommand{\glossaryentrynumbers}[1]{\textit{(p. \textcolor{darkred}{#1})}} % Page number customisation.

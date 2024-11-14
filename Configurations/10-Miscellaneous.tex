@@ -1,0 +1,46 @@
+% Capitalise the first letter when \autoref for both English and Portuguese.
+\addto\extrasenglish{\def\figureautorefname{Figure}}
+\addto\extrasenglish{\def\chapterautorefname{Chapter}}
+\addto\extrasenglish{\def\sectionautorefname{Section}}
+\addto\extrasenglish{\def\subsectionautorefname{Section}}
+\addto\extrasenglish{\def\subsubsectionautorefname{Section}}
+\addto\extrasenglish{\def\tableautorefname{Table}}
+\addto\extrasenglish{\def\partautorefname{Part}}
+\addto\extrasenglish{\def\appendixautorefname{Appendix}}
+\addto\extrasportuguese{\def\sectionautorefname{Secção}}
+\addto\extrasportuguese{\def\subsectionautorefname{Secção}}
+\addto\extrasportuguese{\def\subsubsectionautorefname{Secção}}
+
+%%% Links %%%
+\usepackage[bookmarks]{hyperref} % Required for links.
+\hypersetup{
+	colorlinks=true, % Whether to color the text of links.
+	urlcolor=black, % Color for \url and \href links.
+	linkcolor=darkred, % Color for \nameref links.
+	citecolor=darkred, % Color of reference citations.
+}
+
+% Landscape mode done correctly.
+% https://tex.stackexchange.com/questions/9071/how-to-translate-and-rotate-the-heading-of-landscaped-pages
+\makeatletter
+\def\ifGm@preamble#1{\@firstofone}
+\appto\restoregeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}
+\apptocmd\newgeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}{}{}
+\makeatother
+
+\newenvironment{landscapemode}[2]{%
+    \newgeometry{paperwidth=#1,paperheight=#2,hmargin=3cm,vmargin=5cm,top=3cm,landscape}
+    \fancyheadoffset{0pt}
+    %\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+}{%
+    \restoregeometry
+    \fancyheadoffset{0pt}
+}
+
+%%% Document Colors Definition %%%
+\colorlet{darkred}{red!50!black}
+\definecolor{frontpagedark}{HTML}{1c1c1c}
