@@ -20,10 +20,10 @@ clean:
 	@echo "Clean complete."
 
 watch:
-ifeq ($(SHELL),/bin/zsh)
-	@echo "Watching $(PAPER) for changes (zsh)..."
-	@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
-else
-	@echo "Watching $(PAPER) for changes (bash)..."
-	@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
-endif
+	ifeq ($(SHELL),/bin/zsh)
+		@echo "Watching $(PAPER) for changes (zsh)..."
+		@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
+	else
+		@echo "Watching $(PAPER) for changes (bash)..."
+		@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
+	endif
