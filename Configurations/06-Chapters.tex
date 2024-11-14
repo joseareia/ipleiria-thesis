@@ -1,0 +1,16 @@
+%%% Chapters and Sections %%%
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\flushright\normalsize\huge\color{black}}%
+{\flushright\normalsize%
+{\fontsize{25}{25}\selectfont\hspace*{-1em}\rule[-2pt]{.1pt}{30pt}\hspace{0.5em}\raisebox{4.5pt}{\thechapter}}}%
+{10pt}%
+{\addfontfeature{LetterSpace=6}\huge\scshape}%
+
+% Abstract keywords.
+\NewDocumentCommand{\keywordsen}{m}{
+    \vspace{.4cm}\noindent\textbf{Keywords:} #1
+}
+\NewDocumentCommand{\keywordspt}{m}{
+    \vspace{.4cm}\noindent\textbf{Palavras-Chave:} #1
+}
