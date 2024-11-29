@@ -53,7 +53,7 @@
     \fi
 }
 
-%%% Required Packages (With Additional Information) %%%
+%%% Required Packages %%%
 \usepackage{graphicx} % Required for including images.
 \usepackage{amsmath} % Mathematical expressions.
 \usepackage{amssymb} % Mathematical symbols.
