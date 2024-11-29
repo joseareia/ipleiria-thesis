@@ -31,6 +31,28 @@
 
 \ProcessOptions\relax
 
+%%% Load Master Class %%%
+\LoadClass[a4paper,twoside,11pt]{report}
+
+%%% Load Babel Package (Language) %%%
+\RequirePackage[main=english,portuguese]{babel}
+\newcommand{\getLanguage}{\IPLeiria@language}
+\ifx\IPLeiria@language\@undefined\renewcommand{\getLanguage}{english}\fi
+
+\AtBeginDocument{%
+    \ifx\IPLeiria@language\@undefined
+        \PackageWarning{IPLeiriaThesis}{Language not specified. Defaulting to English.}%
+        \selectlanguage{english}%
+    \else
+        \selectlanguage{\IPLeiria@language}%
+    \fi
+
+    \ifschoolset\else
+        \estgtrue
+        \PackageWarning{IPLeiriaThesis}{No specific school option passed. Defaulting to ESTG.}%
+    \fi
+}
+
 %%% Required Packages (With Additional Information) %%%
 \usepackage{graphicx} % Required for including images.
 \usepackage{amsmath} % Mathematical expressions.
