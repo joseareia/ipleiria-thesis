@@ -16,45 +16,20 @@
 \newif\ifbwcover\DeclareOption{bwcover}{\bwcovertrue}
 
 %%% School Logotype Options %%%
-\newif\ifestg\DeclareOption{estg}{\estgtrue}
-\newif\ifesad\DeclareOption{esad}{\esadtrue}
-\newif\ifesecs\DeclareOption{esecs}{\esecstrue}
-\newif\ifesslei\DeclareOption{esslei}{\essleitrue}
-\newif\ifestm\DeclareOption{estm}{\estmtrue}
+\newif\ifestg
+\newif\ifesad
+\newif\ifesecs
+\newif\ifesslei
+\newif\ifestm
+\newif\ifschoolset
+
+\DeclareOption{estg}{\estgtrue\schoolsettrue}
+\DeclareOption{esad}{\esadtrue\schoolsettrue}
+\DeclareOption{esecs}{\esecstrue\schoolsettrue}
+\DeclareOption{esslei}{\essleitrue\schoolsettrue}
+\DeclareOption{estm}{\estmtrue\schoolsettrue}
 
 \ProcessOptions\relax
-
-%%% Load Master Class %%%
-\LoadClass[a4paper,twoside,11pt]{report}
-
-%%% Load Babel Package (Language) %%%
-\RequirePackage[main=english,portuguese]{babel}
-\newcommand{\getLanguage}{\IPLeiria@language}
-\ifx\IPLeiria@language\@undefined\renewcommand{\getLanguage}{english}\fi
-
-\AtBeginDocument{%
-    \ifx\IPLeiria@language\@undefined
-        \PackageWarning{IPLeiriaThesis}{Language not specified. Defaulting to English.}%
-        \selectlanguage{english}%
-    \else
-        \selectlanguage{\IPLeiria@language}%
-    \fi
-}
-
-\AtBeginDocument{%
-    \ifx\ifestgtrue\undefined
-        \ifx\ifesadtrue\undefined
-            \ifx\ifesecstrue\undefined
-                \ifx\ifessleitrue\undefined
-                    \ifx\ifestmtrue\undefined
-                        \estgtrue
-                        \PackageWarning{IPLeiriaThesis}{No specific school option passed. Defaulting to ESTG.}%
-                    \fi
-                \fi
-            \fi
-        \fi
-    \fi
-}
 
 %%% Required Packages (With Additional Information) %%%
 \usepackage{graphicx} % Required for including images.
