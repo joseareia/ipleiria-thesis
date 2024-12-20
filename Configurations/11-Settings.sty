@@ -1,0 +1,30 @@
+%%% Document Settings %%%
+\NewDocumentCommand{\FirstAuthor}{m}{\newcommand{\GetFirstAuthor}{#1}}
+\NewDocumentCommand{\FirstAuthorNumber}{m}{\newcommand{\GetFirstAuthorNumber}{#1}}
+\NewDocumentCommand{\SecondAuthor}{m}{\newcommand{\GetSecondAuthor}{#1}}
+\NewDocumentCommand{\SecondAuthorNumber}{m}{\newcommand{\GetSecondAuthorNumber}{#1}}
+\NewDocumentCommand{\ThirdAuthor}{m}{\newcommand{\GetThirdAuthor}{#1}}
+\NewDocumentCommand{\ThirdAuthorNumber}{m}{\newcommand{\GetThirdAuthorNumber}{#1}}
+\NewDocumentCommand{\Supervisor}{m}{\newcommand{\GetSupervisor}{#1}}
+\NewDocumentCommand{\SupervisorMail}{m}{\newcommand{\GetSupervisorMail}{#1}}
+\NewDocumentCommand{\SupervisorTitle}{m}{\newcommand{\GetSupervisorTitle}{#1}}
+\NewDocumentCommand{\CoSupervisor}{m}{\newcommand{\GetCoSupervisor}{#1}}
+\NewDocumentCommand{\CoSupervisorMail}{m}{\newcommand{\GetCoSupervisorMail}{#1}}
+\NewDocumentCommand{\CoSupervisorTitle}{m}{\newcommand{\GetCoSupervisorTitle}{#1}}
+\NewDocumentCommand{\SecCoSupervisor}{m}{\newcommand{\GetSecCoSupervisor}{#1}}
+\NewDocumentCommand{\SecCoSupervisorMail}{m}{\newcommand{\GetSecCoSupervisorMail}{#1}}
+\NewDocumentCommand{\SecCoSupervisorTitle}{m}{\newcommand{\GetSecCoSupervisorTitle}{#1}}
+\NewDocumentCommand{\Subtitle}{m}{\newcommand{\GetSubtitle}{#1}}
+\NewDocumentCommand{\University}{m}{\newcommand{\GetUniversity}{#1}}
+\NewDocumentCommand{\School}{m}{\newcommand{\GetSchool}{#1}}
+\NewDocumentCommand{\Department}{m}{\newcommand{\GetDepartment}{#1}}
+\NewDocumentCommand{\Degree}{m}{\newcommand{\GetDegree}{#1}}
+\NewDocumentCommand{\Course}{m}{\newcommand{\GetCourse}{#1}}
+\NewDocumentCommand{\ThesisType}{m}{\newcommand{\GetThesisType}{#1}}
+\NewDocumentCommand{\AcademicYear}{m}{\newcommand{\GetAcademicYear}{#1}}
+
+% Redefine the commands to Pascal Case.
+\let\Title\title
+\newcommand{\GetTitle}{\@title}
+\let\Date\date
+\newcommand{\GetDate}{\@date}
