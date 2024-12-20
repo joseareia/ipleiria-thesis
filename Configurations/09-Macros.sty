@@ -1,0 +1,64 @@
+%%% Document Macros %%%
+\newcommand\blankpage{
+    \clearpage
+    \thispagestyle{empty}%
+    \addtocounter{page}{1}%
+    \vspace*{\fill}
+    \begin{center}
+        \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+            \textcolor{gray!50}{\textit{Página intencionalmente deixada em branco.}}
+        }{%
+            \textcolor{gray!50}{\textit{This page intentionally left blank.}}
+        }
+    \end{center}
+    \vspace*{\fill}
+    \clearpage
+} % Blank page with a warning indicating it is intentionally left blank.
+
+\newcommand{\plainblankpage}{\thispagestyle{plain}\blankpage}
+
+% Define a custom environment for a highlighted box.
+\newenvironment{importantbox}{%
+    \begin{tcolorbox}[colback=gray!20, colframe=gray!50, arc=5pt, boxrule=1pt, left=15pt, right=15pt, top=10pt, bottom=10pt]%
+    \small
+}{%
+    \end{tcolorbox}%
+}
+
+% Define the '\note' and '\todo' commands.
+\newtcolorbox{custombox}[2][]{enhanced,
+    before skip=2mm,after skip=2mm,colframe=gray!30,boxrule=0.2mm,
+    attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+    varwidth boxed title*=-3cm,
+    boxed title style={frame code={
+        \path[fill=tcbcolback!30!black]
+            ([yshift=-1mm,xshift=-1mm]frame.north west)
+            arc[start angle=0,end angle=180,radius=1mm]
+            ([yshift=-1mm,xshift=1mm]frame.north east)
+            arc[start angle=180,end angle=0,radius=1mm];
+        \path[left color=tcbcolback!80!black,right color=tcbcolback!80!black,
+            middle color=tcbcolback!80!black]
+            ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+            [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+            -- (frame.south east) -- (frame.south west)
+            -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+            [sharp corners]-- cycle;
+        },interior engine=empty,
+    },
+    fonttitle=\MakeUppercase\small\ttfamily\bfseries,
+    title={#2},#1
+}
+
+\newcommand{\todo}[1]{
+    \vspace{.5cm}
+    \begin{custombox}[colbacktitle=red,colback=red!10,breakable]{TODO}
+        \small\ttfamily #1
+    \end{custombox}
+}
+
+\newcommand{\note}[1]{
+    \vspace{.5cm}
+    \begin{custombox}[colbacktitle=blue,colback=blue!10,breakable]{NOTE}
+        \small\ttfamily #1
+    \end{custombox}
+}
