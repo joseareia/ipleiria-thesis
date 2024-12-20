@@ -1,10 +1,3 @@
-\ifthenelse{\equal{\getLanguage}{portuguese}}{%
-    \pdfbookmark[1]{Primeira Página}{primeirapagina} % Add entry to PDF.
-}{%
-    \pdfbookmark[1]{Front Page}{frontpage} % Add entry to PDF.
-}
-
-% Add background picture.
 \newcommand\BackgroundPicFrontPage{%
     \put(0,0){%
     \parbox[b][\paperheight]{\paperwidth}{%
@@ -17,35 +10,39 @@
 
 \newgeometry{margin=1.98cm, top=2.15cm, bottom=1.47cm}
 \begin{titlepage}
-    \latofont % Switch to Lato font for the title page.
-    \color{frontpagedark} % Define the color to use within this page.
-    \vspace*{\baselineskip} % White space at the top of the page.
+    \latofont
+    \color{frontpagedark}
+    \vspace*{\baselineskip}
 
-    \ifestg
+    \ifthenelse{\equal{\SchoolOption}{estg}}{
         \begin{figure}
             \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-B.pdf}
         \end{figure}
-    \fi
-    \ifesad
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{esad}}{
         \begin{figure}
             \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-B.pdf}
         \end{figure}
-    \fi
-    \ifesslei
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{esslei}}{
         \begin{figure}
             \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-B.pdf}
         \end{figure}
-    \fi
-    \ifestm
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{estm}}{
         \begin{figure}
             \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-B.pdf}
         \end{figure}
-    \fi
-    \ifesecs
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{esecs}}{
         \begin{figure}
             \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-B.pdf}
         \end{figure}
-    \fi
+    }
 
     \vspace{3.5\baselineskip}
 
@@ -54,7 +51,7 @@
     \makebox[\textwidth][l]{%
         \parbox{\dimexpr\textwidth-2.5cm\relax}{
             \setstretch{1.03}
-            \raggedright\bfseries\fontsize{20}{26}\selectfont\thetitle
+            \raggedright\bfseries\fontsize{20}{26}\selectfont\GetTitle
         }
     }
 
@@ -63,27 +60,25 @@
     % Subtitle.
     \noindent
     \makebox[\textwidth][l]{%
-        %\fbox{%
-            \parbox{\dimexpr\textwidth-7cm\relax}{
-                \setstretch{1.03}
-                \raggedright\fontsize{14}{19}\selectfont\subname
-            }
-        %}
+        \parbox{\dimexpr\textwidth-7cm\relax}{
+            \setstretch{1.03}
+            \raggedright\fontsize{14}{19}\selectfont\GetSubtitle
+        }
     }
 
     \vspace{35pt}
 
     % Author.
-    {\noindent\bfseries\fontsize{14}{19}\selectfont\firstauthorname}
+    {\noindent\bfseries\fontsize{14}{19}\selectfont\GetFirstAuthor}
 
-    \ifdefined\secondauthorname
+    \ifdefined\GetSecondAuthor
         \vspace{8pt}
-        {\noindent\bfseries\fontsize{14}{19}\selectfont\secondauthorname}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\GetSecondAuthor}
 	\fi
 
-    \ifdefined\thirdauthorname
+    \ifdefined\GetThirdAuthor
         \vspace{8pt}
-        {\noindent\bfseries\fontsize{14}{19}\selectfont\thirdauthorname}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\GetThirdAuthor}
 	\fi
 
     \vspace{70pt}    
@@ -94,17 +89,17 @@
     \fontsize{10}{12}\selectfont
     \renewcommand{\arraystretch}{0.1}
     \hspace*{-2.5pt}\begin{tabular}{@{}r@{\hspace{5pt}}>{\raggedright\arraybackslash}m{6cm}@{}}
-        \textbf{Supervisor:} & \supname \\ [-.7ex]
-        & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \suptitle} \\ [2ex]
+        \textbf{Supervisor:} & \GetSupervisor \\ [-.7ex]
+        & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \GetSupervisorTitle} \\ [2ex]
         
-        \ifdefined\cosupname
-            \textbf{Co-supervisor:} & \cosupname \\ [-.7ex]
-            & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \cosuptitle} \\ [.5ex]
+        \ifdefined\GetCoSupervisor
+            \textbf{Co-supervisor:} & \GetCoSupervisor \\ [-.7ex]
+            & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \GetCoSupervisorTitle} \\ [.5ex]
         \fi
 
-        \ifdefined\seccosupname        
-            & \seccosupname \\ [-.7ex]
-            & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \seccosuptitle} \\
+        \ifdefined\GetSecCoSupervisor        
+            & \GetSecCoSupervisor \\ [-.7ex]
+            & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \GetSecCoSupervisorTitle} \\
         \fi
     \end{tabular}
     }
@@ -112,28 +107,28 @@
     \vfill
 	
     % School.
-	{\noindent\fontsize{10}{12}\selectfont\schoolname}
+	{\noindent\fontsize{10}{12}\selectfont\GetSchool}
 	
     % Department.
-	{\noindent\fontsize{10}{12}\selectfont\departmentname}
+	{\noindent\fontsize{10}{12}\selectfont\GetDepartment}
 
     % Degree.
-	{\noindent\fontsize{10}{12}\selectfont\degname}
+	{\noindent\fontsize{10}{12}\selectfont\GetDegree}
 
     % Course.
-    \ifdefined\coursename
-        {\noindent\fontsize{10}{12}\selectfont\coursename}
+    \ifdefined\GetCourse
+        {\noindent\fontsize{10}{12}\selectfont\GetCourse}
 	\fi
 
     \vspace{45pt}
 
     % Thesis option.
-	{\noindent\fontsize{10}{12}\itshape\selectfont\thesisthemeop}
+	{\noindent\fontsize{10}{12}\itshape\selectfont\GetThesisType}
 
     \vspace{45pt}
 
     % Local and date.
-	{\noindent\fontsize{10}{12}\selectfont\thedate}
+	{\noindent\fontsize{10}{12}\selectfont\GetDate}
 
     \vspace{68pt}
 \end{titlepage}
