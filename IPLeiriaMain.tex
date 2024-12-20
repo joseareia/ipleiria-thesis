@@ -1,0 +1,69 @@
+%%% Document Configurations %%%
+\documentclass[school=estg,style=classic,cover=classic,language=english]{IPLeiriaThesis}
+
+%%% Document Variables %%%
+\input{Variables/Variables}
+
+%%% Loading of Glossary and Acronyms %%%
+\makeglossaries
+\loadglsentries{Matter/04-Glossary}
+\loadglsentries[\acronymtype]{Matter/05-Acronyms}
+
+\begin{document}
+
+%%% Front Matter %%%
+\include{Matter/00-Cover}
+\include{Matter/01-FPage}
+
+%%% Copyright Statement %%%
+\include{Matter/02-Copyright}
+
+%%% Roman Numeration %%%
+\pagenumbering{roman}
+
+%%% Acknowledgements %%%
+\include{Matter/03-Acknowledgements}
+
+%%% Abstract %%%
+\include{Chapters/00-Abstract}
+
+%%% Table of Contents, List of Figures and List of Tables %%%
+\bookmarktocentry\tableofcontents\plainblankpage
+\listoffigures\plainblankpage
+\listoftables\plainblankpage
+
+%%% Print: Glossary and Acronyms %%%
+\glossarytoc\printglossary\plainblankpage
+\acronymtoc\printglossary[type=\acronymtype]\plainblankpage
+
+%%% Arabic Numeration %%%
+\pagenumbering{arabic}
+
+%%% Chapters (**Insert Yours Here**) %%%
+\include{Chapters/01-Introduction}
+\include{Chapters/02-Variables}
+\include{Chapters/03-Notes}
+\include{Chapters/04-Citations}
+\include{Chapters/05-Figures}
+\include{Chapters/06-Tables}
+\include{Chapters/07-Lists}
+\include{Chapters/08-Code}
+\include{Chapters/09-Conclusion}
+
+%%% Bibliography %%%
+\blankpage\printbibliography[title={\refname},heading=bibintoc]
+
+%%% Appendices: Work that *YOU* Developed %%%
+\appendix
+\input{Matter/06-Appendices}
+\input{Chapters/Appendices/00-AppendixA}
+\input{Chapters/Appendices/01-AppendixB}
+
+%%% Annexes: Work that *YOU DID NOT* Develop %%%
+\input{Matter/07-Annexes}
+\input{Chapters/Annexes/00-AnnexA}
+
+%%% Back Page %%%
+\input{Matter/08-BPage}
+
+\end{document}
