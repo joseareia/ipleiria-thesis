@@ -1,0 +1,54 @@
+%%% Bibliography %%%
+\usepackage[
+	backend=biber, % Use Biber for bibliography compilation.
+	citestyle=authoryear, % Style for in-text citations.
+	bibstyle=authoryear, % Style for the bibliography.
+	sorting=nyt, % Sort references by name, year, and title.
+    natbib=true, % Enable natbib compatibility.
+    dashed=false, % Always display author names in the bibliography.
+    uniquelist=false % Display only the first author (e.g., Author et al., Year).
+]{biblatex}
+
+\setlength\bibitemsep{1.5\itemsep} % Increase spacing between bibliography items.
+\setlength\bibhang{0pt} % Remove hanging indent for bibliography entries.
+\renewcommand*{\bibfont}{\small} % Set smaller font size for bibliography.
+\addbibresource{Bibliography/Bibliography.bib} % Load the bibliography file.
+
+% Configure citation style to include both author and year prominently.
+\ExecuteBibliographyOptions{maxcitenames=1}
+\DeclareFieldFormat{citehyperref}{%
+    \DeclareFieldAlias{bibhyperref}{noformat}%
+    \bibhyperref{#1}%
+}
+
+\DeclareFieldFormat{textcitehyperref}{%
+    \DeclareFieldAlias{bibhyperref}{noformat}%
+    \bibhyperref{%
+        #1%
+        \ifbool{cbx:parens}
+        {\bibcloseparen\global\boolfalse{cbx:parens}}
+    {}}%
+}
+    
+\savebibmacro{cite}
+\savebibmacro{textcite}
+\renewbibmacro*{cite}{%
+    \printtext[citehyperref]{%
+        \restorebibmacro{cite}%
+        \usebibmacro{cite}%
+    }}
+    
+\renewbibmacro*{textcite}{%
+    \ifboolexpr{
+        ( not test {\iffieldundef{prenote}} and
+          test {\ifnumequal{\value{citecount}}{1}} )
+        or
+        ( not test {\iffieldundef{postnote}} and
+          test {\ifnumequal{\value{citecount}}{\value{citetotal}}} )
+    }
+    {\DeclareFieldAlias{textcitehyperref}{noformat}}
+    {}%
+    \printtext[textcitehyperref]{%
+    \restorebibmacro{textcite}%
+    \usebibmacro{textcite}}%
+}
