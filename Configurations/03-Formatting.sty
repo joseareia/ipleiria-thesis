@@ -1,0 +1,21 @@
+%%% Header and Footer %%%
+\usepackage{fancyhdr} % For custom headers and footers.
+\usepackage[bottom,hang]{footmisc} % Align footnotes to the bottom.
+\pagestyle{fancy} \fancyhf{} % Clear default header and footer style.
+\renewcommand{\headrulewidth}{.3pt} % Set a thin line for the header rule.
+\setlength{\footnotemargin}{6pt} % Set margin space for footnotes.
+
+\renewcommand{\chaptermark}[1]{\markboth{\textit{\thechapter. #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textit{\thesection. #1}}}
+
+% Dynamic section or chapter name in the header.
+\fancyhead[OLH]{\ifnum\value{section}=0\leftmark\else\rightmark\fi\vspace{3pt}}
+\fancyhead[ERH]{\leftmark\vspace{3pt}}
+\fancyhead[ORH,ELH]{\thepage\vspace{3pt}}
+
+% Style for plain pages (e.g., chapter starting pages).
+\fancypagestyle{plain}{%
+    \fancyhf{}% Clear header and footer.
+    \renewcommand{\headrulewidth}{0pt}% Remove header rule.
+    \fancyfoot[ORF,ELF]{\thepage\vspace{3pt}}% Place page number at the bottom.
+}
