@@ -5,7 +5,7 @@
 # Reference Link: https://scaron.info/blog/makefiles-for-latex.html
 # Dependencies: ["rubber", "inotify-tools"]
 
-PAPER=IPleiriaMain.tex
+PAPER=IPLeiriaMain.tex
 SHELL=/bin/bash
 
 all:
@@ -16,7 +16,7 @@ all:
 clean:
 	@echo "Cleaning up..."
 	rubber --clean $(PAPER)
-	rm *.acn *.acr *.alg *.fls *.xdv *.fdb_latexmk
+	rm *.acn *.acr *.alg *.fls *.xdv *.fdb_latexmk *.toc
 	@echo "Clean complete."
 
 watch:
