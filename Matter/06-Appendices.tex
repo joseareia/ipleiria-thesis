@@ -1,16 +1,16 @@
-\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+\ifthenelse{\equal{\LanguageOption}{portuguese}}{
     \addtocontents{toc}{\protect\contentsline{chapter}{Apêndices}{}{}}
-}{%
+}{
     \addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}}
 }
 
 \blankpage\newgeometry{margin=4cm}
 \begin{center}
-    \scshape % Font style
+    \minionfont\scshape
     \thispagestyle{empty}
         
     \vspace*{\fill}
-    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
         {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Apêndices}\par}
     }{%
         {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Appendices}\par}

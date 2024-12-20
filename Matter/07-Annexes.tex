@@ -1,17 +1,17 @@
-\ifthenelse{\equal{\getLanguage}{portuguese}}{%
+\ifthenelse{\equal{\LanguageOption}{portuguese}}{
     \addtocontents{toc}{\protect\contentsline{chapter}{Anexos}{}{}}
-}{%
+}{
     \addtocontents{toc}{\protect\contentsline{chapter}{Annexes}{}{}}
 }
 
 \setcounter{chapter}{12} % To start at the "M" chapter
 \blankpage\newgeometry{margin=4cm}
 \begin{center}
-    \scshape % Font style
+    \minionfont\scshape
     \thispagestyle{empty}
         
     \vspace*{\fill}
-    \ifthenelse{\equal{\getLanguage}{portuguese}}{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
         {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Anexos}\par}
     }{%
         {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Annexes}\par}
