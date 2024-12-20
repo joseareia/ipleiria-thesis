@@ -13,6 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install rubber
+      run: sudo apt-get update && sudo apt-get install -y rubber
     
-    - name: Compile Project
+    - name: Compile project
       run: make
