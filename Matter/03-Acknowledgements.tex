@@ -1,11 +1,7 @@
-\thispagestyle{plain} % Page style without header and footer
-
-\ifthenelse{\equal{\getLanguage}{portuguese}}{%
-    \pdfbookmark[1]{Agradecimentos}{agradecimentos} % Add entry to PDF
-    \chapter*{Agradecimentos} % Chapter* to appear without numeration
+\ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+    \chapter*{Agradecimentos}
 }{%
-    \pdfbookmark[1]{Acknowledgements}{acknowledgements} % Add entry to PDF
-    \chapter*{Acknowledgements} % Chapter* to appear without numeration
+    \chapter*{Acknowledgements}
 }
 
 In the \textit{Acknowledgment} section, express your gratitude to those who helped and supported your work. Start by thanking your advisors, mentors, or supervisors who provided guidance and expertise. Mention any colleagues, classmates, or team members who contributed to discussions or offered assistance. You can also acknowledge specific organisations, institutions, or funding sources that supported your research or work. Lastly, include any personal acknowledgments for family or friends who offered encouragement and moral support during the project. Keep this section sincere, concise, and professional.
