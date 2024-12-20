@@ -1,22 +1,4 @@
-\ifthenelse{\equal{\getLanguage}{portuguese}}{%
-    \pdfbookmark[0]{Capa}{capa} % Add entry to PDF bookmarks group.
-    \pdfbookmark[1]{Frontispício}{frontispício} % Add entry to PDF.
-}{%
-    \pdfbookmark[0]{Front Matter}{frontmatter} % Add entry to PDF bookmarks group.
-    \pdfbookmark[1]{Cover}{cover} % Add entry to PDF.
-}
-
-% Add background picture depending on the 'bwcover' variable.
-\ifbwcover
-    \newcommand\BackgroundPicCover{%
-    \put(0,0){%
-    \parbox[b][\paperheight]{\paperwidth}{%
-    \vfill
-    \centering
-    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Front-Page-BG.pdf}%
-    \vfill
-    }}}
-\else
+\ifthenelse{\equal{\CoverOption}{classic}}{
     \newcommand\BackgroundPicCover{%
     \put(0,0){%
     \parbox[b][\paperheight]{\paperwidth}{%
@@ -25,134 +7,146 @@
     \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Cover-BG.pdf}%
     \vfill
     }}}
-\fi
+}{
+    \newcommand\BackgroundPicCover{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Front-Page-BG.pdf}%
+    \vfill
+    }}}
+} 
 
 \AddToShipoutPictureBG*{\BackgroundPicCover}
 
 \newgeometry{margin=1.98cm, top=2.15cm, bottom=1.47cm}
 \begin{titlepage}
-    \latofont % Switch to Lato font for the title page.
-   
-    \ifbwcover
-        \color{frontpagedark} % Define the color to use within this page.
-    \else
-        \color{white} % Define the color to use within this page.
-    \fi
-    
-    \vspace*{\baselineskip} % White space at the top of the page.
+    \latofont
+    \ifthenelse{\equal{\CoverOption}{classic}}{\color{white}}{\color{frontpagedark}}
+    \vspace*{\baselineskip}
 
-    \ifbwcover
-        \ifestg
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-B.pdf}
-            \end{figure}
-        \fi
-        \ifesad
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-B.pdf}
-            \end{figure}
-        \fi
-        \ifesslei
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-B.pdf}
-            \end{figure}
-        \fi
-        \ifestm
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-B.pdf}
-            \end{figure}
-        \fi
-        \ifesecs
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-B.pdf}
-            \end{figure}
-        \fi
-    \else
-        \ifestg
+    \ifthenelse{\equal{\CoverOption}{classic}}{
+        \ifthenelse{\equal{\SchoolOption}{estg}}{
             \begin{figure}
                 \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-W.pdf}
             \end{figure}
-        \fi
-        \ifesad
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esad}}{
             \begin{figure}
                 \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-W.pdf}
             \end{figure}
-        \fi
-        \ifesslei
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esslei}}{
             \begin{figure}
                 \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-W.pdf}
             \end{figure}
-        \fi
-        \ifestm
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{estm}}{
             \begin{figure}
                 \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-W.pdf}
             \end{figure}
-        \fi
-        \ifesecs
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esecs}}{
             \begin{figure}
                 \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-W.pdf}
             \end{figure}
-        \fi
-    \fi
+        }{}
+    } {
+        \ifthenelse{\equal{\SchoolOption}{estg}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-B.pdf}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esad}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-B.pdf}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esslei}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-B.pdf}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{estm}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-B.pdf}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esecs}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-B.pdf}
+            \end{figure}
+        }{}
+    }
 
     \vspace{5.5\baselineskip}
 
-    % Title
+    % Title.
 	\noindent
     \makebox[\textwidth][l]{%
         \parbox{\dimexpr\textwidth-2.5cm\relax}{
             \setstretch{1.03}
-            \raggedright\bfseries\fontsize{20}{26}\selectfont\thetitle
+            \raggedright\bfseries\fontsize{20}{26}\selectfont\GetTitle
         }
     }
 
     \vspace{0.8\baselineskip}
 
-    % Subtitle
+    % Subtitle.
     \noindent
     \makebox[\textwidth][l]{%
         \parbox{\dimexpr\textwidth-7cm\relax}{
             \setstretch{1.03}
-            \raggedright\fontsize{14}{19}\selectfont\subname
+            \raggedright\fontsize{14}{19}\selectfont\GetSubtitle
         }
     }
 
     \vspace{35pt}  
 
-    % Author
-    {\noindent\bfseries\fontsize{14}{19}\selectfont\firstauthorname}
+    % Author.
+    {\noindent\bfseries\fontsize{14}{19}\selectfont\GetFirstAuthor}
 
-    \ifdefined\secondauthorname
+    \ifdefined\GetSecondAuthor
         \vspace{8pt}
-        {\noindent\bfseries\fontsize{14}{19}\selectfont\secondauthorname}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\GetSecondAuthor}
 	\fi
 
-    \ifdefined\thirdauthorname
+    \ifdefined\GetThirdAuthor
         \vspace{8pt}
-        {\noindent\bfseries\fontsize{14}{19}\selectfont\thirdauthorname}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\GetThirdAuthor}
 	\fi
  
 	\vfill
 
-    % School
-	{\noindent\fontsize{10}{12}\selectfont\schoolname}
+    % School.
+	{\noindent\fontsize{10}{12}\selectfont\GetSchool}
 	
-    % Department
-	{\noindent\fontsize{10}{12}\selectfont\departmentname}
+    % Department.
+	{\noindent\fontsize{10}{12}\selectfont\GetDepartment}
 
-    % Degree
-	{\noindent\fontsize{10}{12}\selectfont\degname}
+    % Degree.
+	{\noindent\fontsize{10}{12}\selectfont\GetDegree}
 
-    % Course
-    \ifdefined\coursename
-        {\noindent\fontsize{10}{12}\selectfont\coursename}
+    % Course.
+    \ifdefined\GetCourse
+        {\noindent\fontsize{10}{12}\selectfont\GetCourse}
 	\fi
 
     \vspace{125pt}
 
-    % Local & Date
-	{\noindent\fontsize{10}{12}\selectfont\thedate}
+    % Local & Date.
+	{\noindent\fontsize{10}{12}\selectfont\GetDate}
 
     \vspace{68pt}
 \end{titlepage}
-\restoregeometry\blankpage
+\restoregeometry
+\blankpage
