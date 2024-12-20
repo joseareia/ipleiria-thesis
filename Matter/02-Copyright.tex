@@ -1,0 +1,25 @@
+\pagenumbering{gobble} % Prevent page numbering.
+
+\vspace*{\fill}
+
+\ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+    \noindent \textbf{\GetTitle}
+    
+    \noindent Copyright \textcopyright~\the\year{} - \GetFirstAuthor, \GetSchool.
+    
+    \vspace{.575em}
+    
+    \noindent A presente dissertação é um trabalho original, elaborado exclusivamente para este fim, tendo sido devidamente citados todos os autores cujos estudos e publicações contribuíram para a sua elaboração. É permitida a sua reprodução parcial com indicação do autor e referência ao grau, ano letivo, instituição - \textit{Politécnico de Leiria} - e data da defesa pública.
+}{%
+    \noindent \textbf{\GetTitle}
+    
+    \noindent Copyright \textcopyright~\the\year{} - \GetFirstAuthor, \GetSchool.
+    
+    \vspace{.575em}
+    
+    \noindent This dissertation is original work, written solely for this purpose, and all the authors whose studies and publications contributed to it have been duly cited. Partial reproduction is allowed with acknowledgment of the author and reference to the degree, academic year, institution - \textit{Polytechnic University of Leiria} - and public defense date.
+}
+
+\vspace*{\fill}
+
+\plainblankpage
