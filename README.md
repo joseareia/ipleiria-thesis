@@ -22,7 +22,7 @@ To utilise this template, please follow the steps below.
 2. Download `IPLeiria Thesis` by either:
     - Cloning this GitHub repository (<kbd>git clone https://github.com/joseareia/ipleiria-thesis.git</kbd>).
     - Download the latest version as [ZIP file](https://github.com/joseareia/ipleiria-thesis/archive/refs/heads/master.zip).
-3. Compile the document with you favorite LaTeX processor (pdfLaTeX, XeLaTeX or LuaLaTeX)!
+3. Compile the document with you favorite LaTeX processor (XeLaTeX or LuaLaTeX)!
 
 > [!TIP]
 > To make the most of this template and for real-time collaboration, I highly recommend using [Overleaf](https://www.overleaf.com/home-2). You can access the ready-to-use template by clicking [here](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt).
