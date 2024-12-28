@@ -62,3 +62,24 @@
         \small\ttfamily #1
     \end{custombox}
 }
+
+% A small macro that indicates that a writing guide will be shown.
+\newcommand{\guideinfo}[1]{%
+  \textcolor{blue}{\faInfoCircle\ \textbf{Writing Guidance}}%
+  \\[.55em]%
+  \noindent #1%
+}
+
+\newcommand{\guiainfo}[1]{%
+  \textcolor{blue}{\faInfoCircle\ \textbf{Orientação Para a Escrita}}%
+  \\[.55em]%
+  \noindent #1%
+}
+
+\setlength{\ULdepth}{1.8pt}
+\contourlength{1.3pt}
+
+\newcommand{\myuline}[1]{
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
