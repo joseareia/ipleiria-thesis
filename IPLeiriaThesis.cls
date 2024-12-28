@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 3.0.0 - 2024/11/16
+% Version: 2.3.0 - 2024/11/28
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 
 %%% Class Information %%%
@@ -54,13 +54,13 @@
 \newcommand{\CoverOption}{\g_IPLeiriaThesis_mycover_tl}
 \newcommand{\ChapterOption}{\g_IPLeiriaThesis_style_tl}
 
-% \AtBeginDocument
-% {
-%     \iow_log:e { School:~\g_IPLeiriaThesis_myschool_tl }
-%     \iow_log:e { Cover:~\g_IPLeiriaThesis_mycover_tl }
-%     \iow_log:e { Language:~\g_IPLeiriaThesis_mylanguage_tl }
-%     \iow_log:e { Style:~\g_IPLeiriaThesis_style_tl }
-% }
+\AtBeginDocument
+{
+    \iow_log:e { School:~\g_IPLeiriaThesis_myschool_tl }
+    \iow_log:e { Cover:~\g_IPLeiriaThesis_mycover_tl }
+    \iow_log:e { Language:~\g_IPLeiriaThesis_mylanguage_tl }
+    \iow_log:e { Style:~\g_IPLeiriaThesis_style_tl }
+}
 
 \ProcessKeyOptions[IPLeiriaThesis]
 \ExplSyntaxOff
@@ -100,6 +100,9 @@
 \RequirePackage{setspace} % Adjust line spacing.
 \RequirePackage[newfloat]{minted} % Syntax highlighting for code.
 \RequirePackage{silence} % Suppress specific package warnings.
+\RequirePackage{fontawesome5} % Font awesome icons.
+\RequirePackage{contour} % Countour words in a given color.
+\RequirePackage{ulem} % A better underline.
 \RequirePackage{blindtext} % Generate placeholder text.
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
