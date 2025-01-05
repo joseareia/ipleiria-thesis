@@ -120,4 +120,4 @@
 \usepackage{Configurations/08-Code}
 \usepackage{Configurations/09-Macros}
 \usepackage{Configurations/10-Extras}
-\usepackage{Configurations/11-Settings}
+\usepackage{Configurations/11-Metadata}
