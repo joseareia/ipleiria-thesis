@@ -1,5 +1,10 @@
-%%% Document Configurations %%%
-\documentclass[school=estg,style=classic,cover=classic,language=english]{IPLeiriaThesis}
+%%% Document Options %%%
+\documentclass[
+    school=estg,
+    language=english,
+    chapterstyle=classic,
+    coverstyle=classic
+]{IPLeiriaThesis}
 
 %%% Document Metadata %%%
 \input{Metadata/Metadata}
@@ -41,14 +46,8 @@
 
 %%% Chapters (**Insert Yours Here**) %%%
 \include{Chapters/01-Introduction}
-\include{Chapters/02-Variables}
-\include{Chapters/03-Notes}
-\include{Chapters/04-Citations}
-\include{Chapters/05-Figures}
-\include{Chapters/06-Tables}
-\include{Chapters/07-Lists}
-\include{Chapters/08-Code}
-\include{Chapters/09-Conclusion}
+\include{Chapters/02-User-Guide}
+\include{Chapters/03-Latex-Tutorial}
 
 %%% Bibliography %%%
 \blankpage\printbibliography[title={\refname},heading=bibintoc]
