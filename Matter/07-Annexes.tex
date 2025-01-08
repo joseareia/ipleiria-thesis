@@ -4,18 +4,18 @@
     \addtocontents{toc}{\protect\contentsline{chapter}{Annexes}{}{}}
 }
 
-\setcounter{chapter}{12} % To start at the "M" chapter
-\blankpage\newgeometry{margin=4cm}
+\setcounter{chapter}{11} % To start at the "L" chapter.
+\blankpage
 \begin{center}
-    \minionfont\scshape
+    \minionfont
     \thispagestyle{empty}
         
     \vspace*{\fill}
     \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
-        {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Anexos}\par}
+        {\LARGE\fontsize{26}{26}\selectfont\textcolor{darkred}{Anexos}\par}
     }{%
-        {\LARGE\fontsize{20}{26}\selectfont\textcolor{darkred}{Annexes}\par}
+        {\LARGE\fontsize{26}{26}\selectfont\textcolor{darkred}{Annexes}\par}
     }
     \vspace*{\fill}
 \end{center}
-\restoregeometry\blankpage
+\blankpage
