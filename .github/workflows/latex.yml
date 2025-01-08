@@ -1,5 +1,11 @@
 name: Build LaTeX Document
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    paths-ignore:
+        - '**/README.md'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
