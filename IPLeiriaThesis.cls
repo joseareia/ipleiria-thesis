@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.3.0 - 2024/11/28
+% Version: 2.2.0 - 2025/01/08
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 
 %%% Class Information %%%
@@ -21,13 +21,13 @@
     school .default:n = { estg },
     school .initial:n = { estg },
 
-    cover .choices:nn =
+    coverstyle .choices:nn =
         { classic, bw }
         { \tl_gset:Nn \g_IPLeiriaThesis_mycover_tl { #1 } },
-    cover / unknown .code:n = 
-        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'cover'~not~available.~Defaulting~to~'classic'} },
-    cover .default:n = { classic },
-    cover .initial:n = { classic },
+    coverstyle / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'coverstyle'~not~available.~Defaulting~to~'classic'} },
+    coverstyle .default:n = { classic },
+    coverstyle .initial:n = { classic },
 
     language .choices:nn = 
         { english, portuguese } 
@@ -37,13 +37,13 @@
     language .default:n = { english },
     language .initial:n = { english },
 
-    style .choices:nn = 
+    chapterstyle .choices:nn = 
         { classic, fancy, modern } 
         { \tl_gset:Nn \g_IPLeiriaThesis_style_tl { #1 } },
-    style / unknown .code:n = 
-        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'style'~not~available.~Defaulting~to~'classic'} },
-    style .default:n = { classic },
-    style .initial:n = { classic },
+    chapterstyle / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'chapterstyle'~not~available.~Defaulting~to~'classic'} },
+    chapterstyle .default:n = { classic },
+    chapterstyle .initial:n = { classic },
 
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
@@ -101,8 +101,10 @@
 \RequirePackage[newfloat]{minted} % Syntax highlighting for code.
 \RequirePackage{silence} % Suppress specific package warnings.
 \RequirePackage{fontawesome5} % Font awesome icons.
+\RequirePackage{calc} % Infix notation arithmetic.
 \RequirePackage{contour} % Countour words in a given color.
-\RequirePackage{ulem} % A better underline.
+\RequirePackage[normalem]{ulem} % A better underline.
+\RequirePackage{mfirstuc} % Capitalise words in a sentence.
 \RequirePackage{blindtext} % Generate placeholder text.
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
@@ -119,5 +121,4 @@
 \usepackage{Configurations/07-Elements}
 \usepackage{Configurations/08-Code}
 \usepackage{Configurations/09-Macros}
-\usepackage{Configurations/10-Extras}
-\usepackage{Configurations/11-Metadata}
+\usepackage{Configurations/10-Metadata}
