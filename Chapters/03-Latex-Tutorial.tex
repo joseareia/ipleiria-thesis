@@ -1,0 +1,369 @@
+\chapter[Essential LaTeX Tutorial: Fundamentals and Key Concepts]{Essential LaTeX Tutorial Fundamentals and Key Concepts}
+\label{cp:latex-tutorial}
+
+{
+\parindent0pt
+
+In this chapter, we will introduce the \LaTeX~working environment, highlighting the basic essentials you will need to produce your thesis. First of all, \LaTeX~(pronounced ``LAY-tek'' or ``LAH-tek'') is a tool for creating professional-quality documents. Unlike \textit{What You See Is What You Get} editors like Microsoft Word, \LaTeX~uses plain text files containing both content and formatting commands. These files are processed by a TeX engine, which interprets the commands to produce a polished, typeset PDF. This approach lets you focus on your content, leaving the precise formatting and layout to \LaTeX~and the TeX engine, ensuring a professional result every time. While this chapter will introduce you to some important functionalities of \LaTeX~, please take the time to learn \LaTeX~from the beginning. You can always refer to the Overleaf \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Learn LaTeX} series for guidance.
+
+% Moreover, if you are spending an enormous amount of time writing your thesis, it's better to use a proper tool where you don't need to worry about professional layout but can focus solely on the content.
+
+\section{Citations}
+\label{sec:citations}
+We present two distinct approaches for citing entries in the bibliography. The first method involves in-text citations, executed using \verb|\citet{ENTRY}|, while the second method employs \verb|\citep{ENTRY}| for citations within a paragraph. Below is an example demonstrating both usages. It's essential to note that you can cite multiple works within the same citation environment. To achieve this, you should use the following format: \verb|\citep{ENTRY1, ENTRY2, ...}|. It is also possible to cite only the title of the work or the author of the same. To do this, please use \verb|\citetitle{ENTRY}| for title citations and \verb|\citeauthor{ENTRY}| for author citations.
+
+\begin{block}[tip]
+\textit{Proper citations play a crucial role in academic writing, serving as the foundation for credibility, transparency, and the advancement of knowledge. They are a fundamental aspect of responsible scholarly writing. Please ensure accurate and appropriate citations.}
+\end{block}
+
+\noindent\textbf{Example:} A novel signature scheme is introduced, along with an implementation of the Diffie-Hellman key distribution scheme that accomplishes a public key cryptosystem \citep{Elgamal1985}. According to \citet{Elgamal1985}, a new signature scheme that accomplishes a public key cryptosystem is introduced (...) This template was created by \citeauthor{IPLeiriaThesis}, with the title \citetitle{IPLeiriaThesis}.
+
+\section{References}
+Much like citations, it is advisable to employ references in your document for citing crucial elements such as chapters, sections, figures, or tables. To reference these elements, begin by creating a label. This label can be generated using \verb|\label{TEXT}|, and it should be positioned within the element you intend to refer to. Once the element is created, you can utilise \verb|\ref{LABEL}| to generate an in-text reference. \textbf{We strongly recommend using} \verb|\autoref{LABEL}|. This command automatically creates a custom link with colour corresponding to the type of element being referred to. For instance, a chapter reference will appear like this: \autoref{cp:introduction}, rather than simply Chapter \ref{cp:introduction}. 
+
+\begin{block}[tip]
+\textit{Properly referencing elements within the document, such as \textbf{chapters, sections, figures, tables, or listings}, is crucial.}
+\end{block}
+
+\section{Glossary and Acronyms}
+The document includes both a glossary and an acronym list, accessible at the beginning of the document. You can create a new entry in either the \verb|Matter/02-Glossary| or \verb|Matter/03-Acronyms| sections, depending on the type of entry you intend to add. Once the entry is created, you can reference it using \verb|\gls{ENTRY}| for glossary entries. For acronym entries, there are two ways to reference them. The first method, \verb|\acrfull{ENTRY}|, should be used the first time the acronym appears in the text as it automatically provides the definition in-text. Subsequently, to refer to the acronym without repeating its meaning, use \verb|\acrshort{ENTRY}|.
+
+\vspace{.875em}
+\textbf{Example:} Utilising \Gls{latex} for \Gls{maths} is essential (...). It is advisable to seek both the \acrfull{gcd} and \acrfull{lcm} because (...). Subsequently, with the aid of \acrshort{gcd} and \acrshort{lcm}, we can (...).
+
+\section{Figures}
+In \LaTeX, integrating figures is a straightforward process. To insert them, you should utilise the environment \verb|\begin{figure}|. You can customise the \verb|width| parameter according to your requirements, but it is crucial to select a high-quality figure when inserting it into your documents. It is equally crucial to furnish a well-crafted caption. If necessary, consider including citations or references to indicate the figure's origin. The caption environment is denoted as \verb|\caption{TEXT}|. To generate a smaller caption for the Table of Figures, be sure to utilise the format \verb|\caption[SMALL_TEXT]{BIG_TEXT}|. By following the aforementioned tips, we can create a figure as demonstrated in \autoref{fig:figure-01}.
+
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/PezizaTuberosa.jpg}
+    \caption[Illustration of the fungus Dumontinia tuberosa.]{Illustration of the fungus Dumontinia tuberosa by physician, mycologist, and illustrator Charles Tulasne (1816–1884) in the book Selecta Fungorum Carpologia (1861–65). (Name of the original work: Peziza tuberosa parasite on Anemone nemorosa).}
+    \label{fig:figure-01}
+\end{figure}
+
+For the purpose of comparing or for other reasons, you can insert side-by-side figures using both the \verb|\begin{figure}| and \verb|\begin{subfigure}| environments. You can also refer to the sub-figure as \autoref{fig:figure-02.1} and \autoref{fig:figure-02.2}.
+
+\begin{figure}[!htpb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{Figures/PezizaTuberosa.jpg}
+        \caption{Caption for figure 1.}
+        \label{fig:figure-02.1}
+    \end{subfigure}
+    \hspace{.5cm} % Adjust the space as needed.
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{Figures/PezizaTuberosa.jpg}
+        \caption{Caption for figure 2.}
+        \label{fig:figure-02.2}
+    \end{subfigure}
+    \caption{Overall caption of the figure.}
+    \label{fig:figure-02}
+\end{figure}
+
+\section{Tables}
+Tables are vital for presenting findings effectively. This chapter explores techniques for conveying information through tables using various template environments. Defining tables in \LaTeX\ seems complex, but this template simplifies the process.
+
+\begin{block}[tip]
+\textit{Prior to showcasing the different table environments, it's crucial to note that each one must be enclosed within a \texttt{\textbackslash begin\{table\}} environment. Additionally, it is recommended to utilise the \texttt{[!htpb]} float options for improved document placement. \textbf{This advice should be taken into consideration when positioning figures as well}.}
+\end{block}
+
+\subsection{Tabular Environment}
+The conventional \verb|\begin{tabular}| environment enables you to create a simple yet elegant table. \autoref{tab:table-01} is generated using a centering environment for added emphasis. It also incorporates the \verb|booktab| configuration for a more sophisticated table style.
+
+\begin{table}[!htpb]
+    \caption{A table showcasing the usage of the tabular environment.}
+    \label{tab:table-01}
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Header 01} & \textbf{Header 02} & \textbf{Header 03} \\ 
+        \midrule
+        Lorem Ipsum         & Pharetra Dolor    & $\checkmark$  \\
+        Amet Consectetuer   & Curabitur Aliquet & -             \\
+        Praesent Mauris     & Praesent Libero   & $\checkmark$  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Tabularx Environment}
+Employ the \verb|\begin{tabularx}| package to construct a table featuring automatically expanding multi-columns. To achieve this automatic behaviour for multi-columns, you can use the following environment: \verb|\begin{tabularx}{\textwidth}{lX}|, where \verb|X| is the column that will function as a multi-column. \autoref{tab:table-02} showcases the usage of the \verb|begin{tabularx}| environment.
+%Take note that we substitute \verb|X| in place of \verb|l| or \verb|c|, explicitly indicating that the column will function as a multi-column, occupying the entire available space.
+
+\begin{table}[!htpb]
+    \caption{A table showcasing the usage of the tabularx environment.}
+    \label{tab:table-02}
+    \begin{tabularx}{\textwidth}{lX}
+        \toprule
+        \textbf{Header 01} & \textbf{Header 02} \\ 
+        \midrule
+        Foo Bar Baz & Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. \\
+        Ipsum Dolor & Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur aliquet quam id dui. \\
+        Dolor Sit & Phasellus condimentum elementum justo, quis interdum est sagittis ac. Vestibulum non arcu sit amet justo lobortis semper. \\
+        Amet Consectetuer & Integer nec odio praesent libero sed cursus ante dapibus diam sed nisi vestibulum non arcu. \\
+        Consectetuer Adipiscing & Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Longtable Environment}
+At times, when dealing with exceptionally lengthy tables, it becomes necessary to split them across multiple pages. In \LaTeX, this can be achieved using the \verb|\begin{longtable}| environment. This environment is slightly more complex than others, as you need to define the header twice: once for the initial appearance of the table and again for when the table spans additional pages. This repeated header ensures the reader can correctly identify the columns on subsequent pages. Feel free to consult \autoref{tab:table-03} for a detailed demonstration of how the \verb|longtable| environment works.
+
+\begin{longtable}[c]{llll}
+\caption{A table showcasing the usage of the longtable environment.}
+\label{tab:table-03} \\
+\toprule
+\textbf{Names} & \textbf{E-Mails} & \textbf{Job/Role} \\ \midrule
+\endfirsthead
+%
+\multicolumn{4}{c}%
+{{\textit{\bfseries Table \thetable\ continued from previous page.}}} \\
+\toprule
+\textbf{Names} & \textbf{E-Mails} & \textbf{Job/Role} \\ \midrule
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+Alice Johnson & alice.johnson@email.com & Project Manager \\
+Bob Thompson & bob.thompson@email.com & Data Analyst \\
+Charlie Davis & charlie.davis@email.com & Marketing Specialist \\
+David Miller & david.miller@email.com & QA Tester \\
+Emily White & emily.white@email.com & Graphic Designer \\
+Frank Martin & frank.martin@email.com & HR Coordinator \\
+Grace Turner & grace.turner@email.com & Financial Analyst \\
+Henry Lee & henry.lee@email.com & System Administrator \\
+Ivy Carter & ivy.carter@email.com & Customer Support \\
+Jack Wilson & jack.wilson@email.com & Frontend Developer \\
+Jane Reed & jane.reed@email.com & UX Designer \\
+Kevin Evans & kevin.evans@email.com & Product Manager \\
+Linda Adams & linda.adams@email.com & Accountant \\
+Mike Hill & mike.hill@email.com & Network Engineer \\
+Nina Garcia & nina.garcia@email.com & Business Analyst \\
+Oliver Smith & oliver.smith@email.com & Sales Representative \\
+Pamela Turner & pamela.turner@email.com & Legal Counsel \\
+Quincy Brown & quincy.brown@email.com & IT Consultant \\
+Rachel Moore & rachel.moore@email.com & Content Writer \\
+Samuel White & samuel.white@email.com & Research Scientist \\ 
+Amy Harris & amy.harris@email.com & Digital Strategist \\
+Brian Cook & brian.cook@email.com & Operations Manager \\
+Catherine Ross & catherine.ross@email.com & Brand Manager \\
+Daniel Green & daniel.green@email.com & Database Administrator \\
+Emma Taylor & emma.taylor@email.com & Social Media Manager \\
+Felix Carter & felix.carter@email.com & Compliance Officer \\
+Gloria Scott & gloria.scott@email.com & Procurement Specialist \\
+Harold Bennett & harold.bennett@email.com & DevOps Engineer \\
+Isla Cooper & isla.cooper@email.com & User Researcher \\
+James Black & james.black@email.com & Mobile App Developer \\
+Katie Brown & katie.brown@email.com & UI Designer \\
+Leo Perez & leo.perez@email.com & Scrum Master \\
+Megan Clark & megan.clark@email.com & Event Coordinator \\
+Nathan Ward & nathan.ward@email.com & Security Analyst \\
+Olivia Harris & olivia.harris@email.com & Corporate Trainer \\
+Paul King & paul.king@email.com & Territory Manager \\
+Queen Foster & queen.foster@email.com & Paralegal \\
+Rebecca Adams & rebecca.adams@email.com & Copy Editor \\
+Steven Martin & steven.martin@email.com & Robotics Engineer \\
+\bottomrule
+\end{longtable}
+
+\subsection{Complex Tables}
+Creating intricate tables in \LaTeX\ can be a somewhat challenging task. Therefore, we highly recommend using the \href{https://www.tablesgenerator.com/}{Table Generator}. With this tool, you can design your table with the desired style and then easily copy and paste it into your document. This approach simplifies the process and helps ensure the accurate representation of complex tables in your \LaTeX\ document. However, it's crucial to keep in mind that a table should be easily comprehensible for the reader and should not be overly complex. \textbf{The complexity of a table may impede understanding.} For example, \autoref{tab:table-04} presents a table with intricate details.
+
+\begin{table}[!htpb]
+    \caption{A table showcasing the usage of the complex tables.}
+    \label{tab:table-04}
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \multirow{2}{*}{\textbf{Component}} & \multicolumn{2}{c}{\textbf{Specifications}} \\
+        \cmidrule(lr){2-3}
+        & \textbf{Characteristic} & \textbf{Supported} \\
+        \midrule
+        \multirow{4}{*}{CPU} & Core Count (e.g., 8 Cores) & $\checkmark$ \\
+        & Clock Speed (e.g., 3.6 GHz) & $\checkmark$ \\
+        & Hyper-Threading & $\checkmark$ \\
+        & Integrated Graphics & - \\
+        \midrule
+        \multirow{4}{*}{GPU} & CUDA Cores (e.g., 5120) & $\checkmark$ \\
+        & Base Clock (e.g., 1.5 GHz) & $\checkmark$ \\
+        & Ray Tracing Support & $\checkmark$ \\
+        & Multi-GPU Support (SLI/CrossFire) & - \\
+        \midrule
+        \multirow{4}{*}{Memory} & Type (e.g., DDR5, GDDR6) & $\checkmark$ \\
+        & Capacity (e.g., 16 GB) & $\checkmark$ \\
+        & Memory Bandwidth (e.g., 448 GB/s) & $\checkmark$ \\
+        & ECC Support & - \\
+        \midrule
+        \multirow{3}{*}{Motherboard Features} & PCIe 5.0 Support & $\checkmark$ \\
+        & Wi-Fi 6E & $\checkmark$ \\
+        & Thunderbolt 4 & - \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Lists}
+Creating lists in \LaTeX\ is straightforward, offering various options to suit your needs. You can generate a bullet list using \verb|\begin{itemize}|, or opt for a numbered list with \verb|\begin{enumerate}|. Below is an example with the \verb|\begin{itemize}| environment.
+
+\begin{itemize}
+  \item List entries start with the \verb|\item| command.
+  \item Individual entries are indicated with a black dot, a so-called bullet.
+  \item The text in the entries may be of any length.
+\end{itemize}
+
+As mentioned earlier, you can generate a numbered list using the \verb|\begin{enumerate}| environment. Here is an example:
+
+\begin{enumerate}
+  \item Items are numbered automatically.
+  \item The numbers start at 1 with each use of the \verb|enumerate| environment.
+  \item Another entry in the list.
+\end{enumerate}
+
+You can also nest list entries by creating a list inside another list of the same type. Here is an example:
+
+\begin{enumerate}
+    \item First level item
+    \item First level item
+    \begin{enumerate}
+        \item Second level item
+        \item Second level item
+    \begin{enumerate}
+        \item Third level item
+        \item Third level item
+    \begin{enumerate}
+        \item Fourth level item
+        \item Fourth level item
+    \end{enumerate}
+    \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\begin{block}[tip]
+\textit{Please note that the labels change automatically regardless of the environment being the same for every list. \textbf{This demonstrates that there's no need to worry about changing the environment for something different.} However, if desired, you have the flexibility to do so.}
+\end{block}
+
+You can also modify the label of your list to something entirely different that suits your needs. To accomplish this, insert a new \verb|\item| and enclose your desired label in square brackets. For example, \verb|\item[!]| will result in an exclamation point as your new label. Below are some examples of modified labels.
+
+\begin{itemize}
+  \item This is my first point
+  \item Another point I want to make 
+  \item[!] A point to exclaim something!
+  \item[$\blacksquare$] Make the point fair and square.
+  \item[] A blank label?
+\end{itemize}
+
+Finally, you can create a description list. Unlike having a bullet point or a numbered label, a description list enables you to use custom descriptions that suit your list. In the example below, there are three \verb|\item| entries: one without a label, and two with descriptions.
+
+\begin{description}
+    \item[Item 1:] This is the first item with a description.
+    \item[Item 2:] Another item with a different description.
+    \item An item without a specific label.
+\end{description}
+
+\section{Code Listings}
+At times, you may want to include source code from your programs and applications within your document. To achieve this, you can use two nested environments: \verb|\begin{listing}| to create a listing with both caption and label, and \verb|\begin{minted}| for code highlighting. \autoref{listing:c-code} provides an example of a source code in C.
+
+\begin{listing}[!htpb]
+\begin{minted}{c}
+#include <stdio.h>
+int main() {
+   printf("Hello, World!"); /* printf() outputs the quoted string */
+   return 0;
+}
+\end{minted}
+\caption{Hello world in C.}
+\label{listing:c-code}
+\end{listing}
+
+The code mentioned above was inserted into the document. However, an alternative approach is to input your code from an external file. To do so, you just need to use the command \verb|\inputminted{CODE_LANGUAGE}{FILE}|. Of course, you should place that command inside of the \verb|\begin{listing}| environment. \autoref{listing:haskell-code} illustrates an example of Haskell source code that has been input from an external file.
+
+\begin{listing}[!htpb]
+\inputminted{haskell}{Code/Factorial.hs}
+\caption{Factorial in Haskell.}
+\label{listing:haskell-code}
+\end{listing}
+
+In some cases, when you simply want to highlight a specific command, it's recommended not to use \verb|listing| or \verb|minted|. Instead, you should utilise the \verb|\verb| command for inline highlighting or the \verb|\begin{verbatim}| environment for longer sections of highlighted code. An example of a lengthy \verb|verbatim| section is provided below, demonstrating how to create a \verb|listing| with an input code:
+
+\begin{verbatim}
+\begin{listing}[!htpb]
+    \inputminted{CODE_LANGUAGE}{FILE}
+    \caption{TEXT}
+    \label{TEXT}
+\end{listing}
+\end{verbatim}
+
+Sometimes it is necessary to display longer code that occupies more than one page. For this purpose, please use the environment \verb|\begin{longlisting}|. This environment will easily break your code into multiple pages for better readability without you worrying about the size of your code. An example is shown below in \autoref{listing:lisp-code}.
+
+\begin{longlisting}
+\begin{minted}{lisp}
+(defun factorial (n)
+  "Calculate the factorial of a number."
+  (if (zerop n)
+      (* n (factorial (1- n)))))
+
+(defun fibonacci (n)
+  "Calculate the nth Fibonacci number."
+  (cond ((zerop n) 0)
+        ((= n 1) 1)
+        (t (+ (fibonacci (1- n)) (fibonacci (- n 2))))))
+
+(defun gcd (a b)
+  "Calculate the greatest common divisor of a and b."
+  (if (zerop b)
+      a
+      (gcd b (mod a b))))
+
+(defun primes-up-to (limit)
+  "Return a list of all prime numbers up to LIMIT."
+  (let ((primes '()))
+    (loop for i from 2 to limit
+          unless (some (lambda (p) (zerop (mod i p))) primes)
+          do (push i primes))
+    (nreverse primes)))
+
+(defun example-function (x)
+  "An example function to demonstrate Lisp capabilities."
+  (let ((result (list (factorial x)
+                      (fibonacci x)
+                      (gcd x 10)
+                      (primes-up-to x))))
+    (format t "Factorial of ~A: ~A~%" x (factorial x))
+    (format t "Fibonacci of ~A: ~A~%" x (fibonacci x))
+    (format t "GCD of ~A and 10: ~A~%" x (gcd x 10))
+    (format t "Primes up to ~A: ~A~%" x (primes-up-to x))
+    result))
+
+(example-function 10)
+\end{minted}
+\caption{A sample of functions in Lisp.}
+\label{listing:lisp-code}
+\end{longlisting}
+
+\section{Equations}
+When writing equations and other mathematical expressions, \LaTeX~is a powerful and versatile tool. You can enter a formula in inline mode using the environment \verb|\(FORMULA\)| or use \verb|\begin{equation}| to display it in ``math mode'' with numbering. If you prefer not to display the equation number, you can use the environment \verb|\[FORMULA\]|.
+
+\vspace{.875em}
+\textbf{Example:} In physics, the mass-energy equivalence is expressed by the equation \(E=mc^2\), discovered in 1905 by Albert Einstein. In natural units ($c = 1$), the formula (\ref{eq:equation-01}) expresses the identity:
+
+\begin{equation}
+\label{eq:equation-01}
+E=m
+\end{equation}
+
+\textbf{Example:} Below is a equation -- \textit{without numbering} -- for the regularised loss function in supervised learning, combining the average prediction loss over the training dataset and an $L_2$ regularisation term to prevent overfitting:
+
+\[
+\mathcal{L}(\boldsymbol{\theta}) = \frac{1}{N} \sum_{i=1}^{N} \ell(y_i, f(\mathbf{x}_i; \boldsymbol{\theta})) + \lambda \|\boldsymbol{\theta}\|_2^2
+\]
+
+Equations can be a bit challenging to create, so we advise using an online editor, like the \href{https://latexeditor.lagrida.com/}{LaTeX Equation Editor}. Simply build your formulas there and copy and paste them into your document, either inline or in a math block, as shown above.
+
+\section{Footnotes}
+Sometimes it is important to present information that is not central to the main text in a footnote. In \LaTeX\, this can be easily achieved using the command \verb|\footnote{TEXT}|. The text will appear at the bottom of the page\footnote{This is a simple footnote.}.
+
+If you want to use footnotes within tables, it is best to reconsider, as \LaTeX\ does not provide an easy way to handle them. Instead, you can place a ``*'' wherever you want the footnote reference to appear. Then, below the table \textbf{but before ending the table environment}, place the ``*'' along with the footnote text. This will create a similar footnote, but it will appear below the table rather than at the bottom of the page.
+}
