@@ -1,4 +1,4 @@
-## IPLeiria Thesis: A LaTeX Thesis Template
+# IPLeiria Thesis: A LaTeX Thesis Template
 
 [Report a Bug](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=bug)
 ·
@@ -6,10 +6,10 @@
 ·
 [Ask a Question](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=question)
 
-[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-green.svg?style=for-the-badge)](https://www.latex-project.org/)
-[![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=for-the-badge)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=for-the-badge)](https://github.com/joseareia/ipleiria-thesis/releases)
-[![Maintenance](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=for-the-badge)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-green.svg?style=flat-square)](https://www.latex-project.org/)
+[![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=flat-square)](https://www.latex-project.org/lppl/lppl-1-3c)
+[![Release](https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=flat-square)](https://github.com/joseareia/ipleiria-thesis/releases)
+[![Maintenance](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=flat-square)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
 An open-source LaTeX template for professional, polished theses and reports at Polytechnic University of Leiria.
 
