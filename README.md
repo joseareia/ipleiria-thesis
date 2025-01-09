@@ -25,9 +25,9 @@ Curious to see it in action? Check out the <a href="https://www.overleaf.com/lat
 </p>
 
 <p align="center">
-  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/01_B.png" width="275"/>
-  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="275"/>
-  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/03_B.png" width="275"/>
+  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/01_B.png" width="273"/>
+  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="273"/>
+  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/03_B.png" width="273"/>
 </p>
 
 <p float="left">
