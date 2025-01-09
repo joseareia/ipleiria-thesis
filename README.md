@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-    <a href="https://www.latex-project.org"><img src="https://img.shields.io/badge/Made%20with-LaTeX-green.svg?style=flat-square"></a>
+    <a href="https://www.latex-project.org"><img src="https://img.shields.io/badge/Made%20with-LaTeX-red.svg?style=flat-square"></a>
     <a href="https://www.latex-project.org/lppl/lppl-1-3c"><img src="https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=flat-square"></a>
     <a href="https://github.com/joseareia/ipleiria-thesis/releases"><img src="https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=flat-square"></a>
     <a href="https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=flat-square"></a>
@@ -34,14 +34,6 @@ Curious to see it in action? Check out the <a href="https://www.overleaf.com/lat
 <p float="left">
 This repository contains all the <b>source code for the template</b>, organised into a clear and well-structured file hierarchy. It also includes various tools and <b>configuration files necessary for compiling</b> the template across different workspaces.
 </p>
-
-<!-- ## About
-**IPLeiria Thesis** is an open-source LaTeX template designed for creating professional theses, dissertations, and academic reports specifically tailored for the [Polytechnic University of Leiria](https://www.ipleiria.pt/). This template ensures your document is not only polished and timeless but also adheres to professional formatting standards. Featuring a clean, classic design, the template simplifies the process of structuring and styling your work, making it intuitive and efficient for users of all skill levels. Curious to see it in action? Check out the [demo](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf) for a preview!
-
-<p float="left">
-  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/01_B.png" width="400"/>
-  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="400"/>
-</p> -->
 
 ## Installation and Documentation
 This template is available online on [Overleaf](https://www.overleaf.com/latex/templates/polytechnic-university-of-leiria-thesis-template/tqgbrncfhwgt), offering a **hassle-free way to compile it without needing to install any dependencies**. If you plan to use it locally or have any questions about the template, please refer to our [GitHub Wiki](https://github.com/joseareia/ipleiria-thesis/wiki) for detailed guidance.
