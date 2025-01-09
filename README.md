@@ -36,7 +36,9 @@ This repository contains all the <b>source code for the template</b>, organised 
 </p>
 
 ## Installation and Documentation
-This template is available online on [Overleaf](https://www.overleaf.com/latex/templates/polytechnic-university-of-leiria-thesis-template/tqgbrncfhwgt), offering a **hassle-free way to compile it without needing to install any dependencies**. If you plan to use it locally or have any questions about the template, please refer to our [GitHub Wiki](https://github.com/joseareia/ipleiria-thesis/wiki) for detailed guidance.
+This template is available online on [Overleaf](https://www.overleaf.com/latex/templates/polytechnic-university-of-leiria-thesis-template/tqgbrncfhwgt), providing a **hassle-free way to compile it without the need to install any dependencies**. If you plan to use the template locally or have any questions, please refer to our [GitHub Wiki](https://github.com/joseareia/ipleiria-thesis/wiki) for comprehensive guidance. 
+
+Before you start using the template, be sure to read the [Instructions for Using the Template](https://github.com/joseareia/ipleiria-thesis/wiki/Instructions-for-Using-the-Template) to gain a better understanding of its features and setup.
 
 ## Getting Help
 If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an issue in this repository, or contact me via email at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
