@@ -1,8 +1,15 @@
 # IPLeiria Thesis: LaTeX Thesis Template
-[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg?color=green)](https://www.latex-project.org/)
-[![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-green.svg)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v2.2.0-blue.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
+
+[Report a Bug](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=bug)
+·
+[Request a Feature](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=enhancement)
+·
+[Ask a Question](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=question)
+
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-green.svg?style=for-the-badge)](https://www.latex-project.org/)
+[![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=for-the-badge)](https://www.latex-project.org/lppl/lppl-1-3c)
+[![Release](https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=for-the-badge)](https://github.com/joseareia/ipleiria-thesis/releases)
+[![Maintenance](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=for-the-badge)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
 ## About
 **IPLeiria Thesis** is an open-source LaTeX template designed for creating professional theses, dissertations, and academic reports specifically tailored for the [Polytechnic University of Leiria](https://www.ipleiria.pt/). This template ensures your document is not only polished and timeless but also adheres to professional formatting standards. Featuring a clean, classic design, the template simplifies the process of structuring and styling your work, making it intuitive and efficient for users of all skill levels. Curious to see it in action? Check out the [demo](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf) for a preview!
