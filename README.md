@@ -15,7 +15,7 @@
     <a href="https://www.latex-project.org/lppl/lppl-1-3c"><img src="https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=flat-square"></a>
     <a href="https://github.com/joseareia/ipleiria-thesis/releases"><img src="https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=flat-square"></a>
     <a href="https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=flat-square"></a>
-    <a href=""><img src="https://img.shields.io/github/actions/workflow/status/joseareia/ipleiria-thesis/latex.yml?branch=master&label=Build%20Status&style=flat-square"></a>
+    <a href=""><img src="https://img.shields.io/badge/Build-Passing-brightgreen.svg?style=flat-square"></a>
 </p>
 <br/>
 
