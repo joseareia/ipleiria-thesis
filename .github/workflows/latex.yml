@@ -3,9 +3,11 @@ on:
   push:
     paths-ignore:
       - '**/README.md'
+      - 'Assets/**'
   pull_request:
     paths-ignore:
         - '**/README.md'
+        - 'Assets/**'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
