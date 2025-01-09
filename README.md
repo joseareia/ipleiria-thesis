@@ -1,10 +1,10 @@
-## Polytechnic University of Leiria: LaTeX Thesis Template
+# IPLeiria Thesis: LaTeX Thesis Template
 [![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg?color=green)](https://www.latex-project.org/)
 [![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-green.svg)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v2.1.1-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
+[![Release](https://img.shields.io/badge/Release-v2.2.0-green.svg)](https://github.com/joseareia/ipleiria-thesis/releases)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
 
-### Description
+## Description
 Optimize your academic document creation with this LaTeX template tailored for theses and dissertations at the [Polytechnic University of Leiria](https://www.ipleiria.pt/). Tailored specifically for students within the School of Management and Technology (ESTG), this template guarantees a refined, timeless, and professionally formatted document. With its clean and classic aesthetic, navigating through the template is exceptionally straightforward, making document creation a seamless and efficient endeavor. Curious? Explore the [demo](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf) to see more!
 
 <p float="left">
@@ -12,7 +12,7 @@ Optimize your academic document creation with this LaTeX template tailored for t
   <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="400"/>
 </p>
 
-### Getting Started
+## Getting Started
 To utilise this template, please follow the steps below.
 
 1. Download LaTeX:
@@ -28,15 +28,15 @@ To utilise this template, please follow the steps below.
 > To make the most of this template and for real-time collaboration, I highly recommend using [Overleaf](https://www.overleaf.com/home-2). You can access the ready-to-use template by clicking [here](https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt).
 
 
-### Getting Started: Using VSCode and DevContainer (Docker)
+## Getting Started: Using VSCode and DevContainer (Docker)
 
 The simplest way to get started is to install LaTeX and all the necessary tools in a Docker container via the `devcontainer` feature of VSCode.
 
 1. Install [Docker](https://docs.docker.com/engine/install/) and [VSCode](https://code.visualstudio.com/download).
-1. Open this directory in VSCode.
-1. Install the `Remote Development` extension pack in VSCode using the extensions panel.
-1. Do `Ctrl+Shift+P` and run `Dev Container: open folder in container`. 
-1. Open `IPleiriaMain.tex`, click the `TeX` icon the bar on the left, and click on `Build LaTeX project`.
+2. Open this directory in VSCode.
+3. Install the `Remote Development` extension pack in VSCode using the extensions panel.
+4. Do `Ctrl+Shift+P` and run `Dev Container: open folder in container`. 
+5. Open `IPleiriaMain.tex`, click the `TeX` icon the bar on the left, and click on `Build LaTeX project`.
 
 If you have access to Gitub Codespaces you can also start a codespace on this repository in order to work on the LaTeX document directly on the web without installing anything on your computer. Just do `Code` > `Codespaces` > `'+'`.
 
@@ -44,7 +44,7 @@ If you have access to Gitub Codespaces you can also start a codespace on this re
 > It might take upwards of 30 minutes to install texlive in the container.
 
 
-### Dependecies
+## Dependecies
 To use this template locally, ensure that you have the following dependencies installed:
 
 - **Lato Font:** Required for document styling. On debian-based systems install with `sudo apt install fonts-lato`. Can be downloaded [here](https://fonts.google.com/specimen/Lato?query=lato).
@@ -62,7 +62,7 @@ $ sudo apt install perl latexmk
 ```
 Make sure all these dependencies are in place to ensure smooth usage of the template.
 
-### Compile
+## Compile
 
 To compile this template, you have two options:
 
@@ -80,7 +80,7 @@ Both methods have been successfully tested with the following versions:
 
 Choose the method that best fits your workflow!
 
-### Content Overview
+## Content Overview
 This repository has the following structure.
 
 - **Bibliography**: Contains the bibliography file used for references.
@@ -92,17 +92,17 @@ This repository has the following structure.
 - **IPLeiriaMain.tex**: Main LaTeX file for compiling the thesis content.
 - **IPLeiriaThesis.cls**: LaTeX class file containing the formatting and styling specifications.
 
-### Multilanguage Support
+## Multilanguage Support
 This template offers multilanguage support in two languages: English and Portuguese. **If you wish to add support for more languages, please contact me**. To change the language, simply modify the first line (*document class definition*) of the `IPLeiriaThesis.tex` file to the desired language: `pt` for Portuguese and `en` for English. Here is an example: `\documentclass[en]{IPLeiriaThesis}`. Easy, right?
 
-### Ease of Changing Style
+## Ease of Changing Style
 Don't like the new modern cover? No problem, I’ve got you *covered*! This template now includes a new class option, `bwcover`, which allows you to switch the cover to a black-and-white mode. Simply add it like this: `\documentclass[en,bwcover]{IPLeiriaThesis}`, and the change will be applied automatically. If you have any other style suggestions, feel free to share them with me!
 
-### Getting Help
+## Getting Help
 If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an issue in this repository, or contact me via email at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
 
-### Contributing
+## Contributing
 Contributions to this template are welcome! If you encounter any issues, have suggestions for improvements, or would like to add new features, please submit a pull request. We appreciate your feedback and contributions to make this template even better.
 
-### License
+## License
 This project is under the [LPPL 1.3c](https://www.latex-project.org/lppl/lppl-1-3c/) license.
