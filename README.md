@@ -1,20 +1,36 @@
 <p align="center">
-    <img width="50%" src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/03_Logo.png" alt="Logo">
+    <img width="80%" src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/03_Logo.png" alt="Logo">
 </p>
 
 <p align="center">
-[Report a Bug](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=bug)
+    <a href="https://github.com/joseareia/ipleiria-thesis/issues/new?labels=bug" target="_blank">Report a Bug</a>
 ·
-[Request a Feature](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=enhancement)
+    <a href="https://github.com/joseareia/ipleiria-thesis/issues/new?labels=enhancement" target="_blank">Request a Feature</a>
 ·
-[Ask a Question](https://github.com/joseareia/ipleiria-thesis/issues/new?labels=question)
+    <a href="https://github.com/joseareia/ipleiria-thesis/issues/new?labels=question" target="_blank">Ask a Question</a>
+</p>
 
-[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-green.svg?style=flat-square)](https://www.latex-project.org/)
-[![GitHub license](https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=flat-square)](https://www.latex-project.org/lppl/lppl-1-3c)
-[![Release](https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=flat-square)](https://github.com/joseareia/ipleiria-thesis/releases)
-[![Maintenance](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=flat-square)](https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity)
+<p align="center">
+    <a href="https://www.latex-project.org"><img src="https://img.shields.io/badge/Made%20with-LaTeX-green.svg?style=flat-square"></a>
+    <a href="https://www.latex-project.org/lppl/lppl-1-3c"><img src="https://img.shields.io/badge/License-LaTeX%20v1.3c-yellow.svg?style=flat-square"></a>
+    <a href="https://github.com/joseareia/ipleiria-thesis/releases"><img src="https://img.shields.io/badge/Release-v2.2.0-8892BF.svg?style=flat-square"></a>
+    <a href="https://github.com/joseareia/ipleiria-thesis/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained-Yes-brightgreen.svg?style=flat-square"></a>
+</p>
+<br/>
 
-An open-source LaTeX template for professional, polished theses and reports at Polytechnic University of Leiria.
+<p float="left">
+<a href="https://github.com/joseareia/ipleiria-thesis">IPLeiria Thesis</a> is an open-source LaTeX template <b>designed for creating professional theses, dissertations, and academic reports</b> specifically tailored for the <a href="https://www.ipleiria.pt/" target="_blank">Polytechnic University of Leiria</a> students. It was developed to ensure a <b>clean, aesthetically pleasing, and professional design</b> while remaining highly customizable to suit various needs. The template is also user-friendly, making it accessible even for newcomers.
+
+Curious to see it in action? Check out the <a href="https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf" target="_blank">PDF</a> demo for a preview!
+</p>
+
+<p align="center">
+  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/01_B.png" width="400"/>
+  <img src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/02_B.png" width="400"/>
+</p>
+
+<p float="left">
+This repository contains all the <b>source code for the template</b>, organised into a clear and well-structured file hierarchy. It also includes various tools and <b>configuration files necessary for compiling</b> the template across different workspaces.
 </p>
 
 <!-- ## About
