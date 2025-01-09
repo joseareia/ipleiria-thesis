@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="90%" src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/04_Logo.png" alt="Logo">
+    <img width="90%" src="https://github.com/joseareia/ipleiria-thesis/blob/master/Assets/04_2_Logo.png" alt="Logo">
 </p>
 
 <p align="center">
