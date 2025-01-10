@@ -3,10 +3,16 @@ on:
   push:
     paths-ignore:
       - '**/README.md'
+      - '**/LICENSE'
+      - '**/.gitignore'
+      - '**/Makefile'
       - 'Assets/**'
   pull_request:
     paths-ignore:
         - '**/README.md'
+        - '**/LICENSE'
+        - '**/.gitignore'
+        - '**/Makefile'
         - 'Assets/**'
 jobs:
   build_latex:
