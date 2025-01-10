@@ -36,12 +36,10 @@ This repository contains all the <b>source code for the template</b>, organised 
 </p>
 
 ## Installation and Documentation
-This template is available online on [Overleaf](https://www.overleaf.com/latex/templates/polytechnic-university-of-leiria-thesis-template/tqgbrncfhwgt), providing a **hassle-free way to compile it without the need to install any dependencies**. If you plan to use the template locally or have any questions, please refer to our [GitHub Wiki](https://github.com/joseareia/ipleiria-thesis/wiki) for comprehensive guidance. 
-
-Before you start using the template, be sure to read the [Instructions for Using the Template](https://github.com/joseareia/ipleiria-thesis/wiki/Instructions-for-Using-the-Template) to gain a better understanding of its features and setup.
+This template is available online on [Overleaf](https://www.overleaf.com/latex/templates/polytechnic-university-of-leiria-thesis-template/tqgbrncfhwgt), providing a **hassle-free way to compile it without the need to install any dependencies**. If you plan to use the template locally or have any questions, please refer to our [GitHub Wiki](https://github.com/joseareia/ipleiria-thesis/wiki) for comprehensive guidance. However, before you start using the template, be sure to read the [Instructions for Using the Template](https://github.com/joseareia/ipleiria-thesis/wiki/Instructions-for-Using-the-Template) to gain a better understanding of its features and setup.
 
 ## Getting Help
-If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an issue in this repository, or contact me via email at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
+If you have any questions regarding the template, its usage, or encounter any errors you're struggling with, please feel free to open an [issue](https://github.com/joseareia/ipleiria-thesis/issues), start a new [discussion](https://github.com/joseareia/ipleiria-thesis/discussions), or email me at <a href="mailto:jose.apareia@gmail.com">jose.apareia@gmail.com</a>.
 
 ## Contributing
 Contributions to this template are welcome! If you encounter any issues, have suggestions for improvements, or would like to add new features, please submit a pull request. We appreciate your feedback and contributions to make this template even better.
