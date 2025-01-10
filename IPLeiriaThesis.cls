@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.0 - 2025/01/08
+% Version: 2.2.0 - 2025/01/10
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 
 %%% Class Information %%%
@@ -69,8 +69,7 @@
 \LoadClass[a4paper,twoside,11pt]{report}
 
 %%% Load Babel Package (Language) %%%
-\RequirePackage[main=english,portuguese]{babel}
-\expandafter\selectlanguage\expandafter{\LanguageOption}
+\expandafter\RequirePackage\expandafter[\LanguageOption]{babel}
 
 %%% Required Packages %%%
 \RequirePackage{ifthen} % Provides conditional statements.
