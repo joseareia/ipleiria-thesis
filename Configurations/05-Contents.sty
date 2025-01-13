@@ -1,0 +1,36 @@
+%%% Custom ToC Entries %%%
+\newcommand{\bookmarktocentry}{\pdfbookmark[0]{\contentsname}{toc}}
+\ProvideDocumentCommand\MakeLinkTarget{sO{}m}{}
+\patchcmd{\listoffigures}
+{\chapter*{\listfigurename}}
+{\chapter*{\listfigurename}\MakeLinkTarget*{listoffigures}%
+\addcontentsline{toc}{frontmatter}{\listfigurename}}{}{}
+
+\patchcmd{\listoftables}
+{\chapter*{\listtablename}}
+{\chapter*{\listtablename}\MakeLinkTarget*{listoftables}%
+\addcontentsline{toc}{frontmatter}{\listtablename}}{}{}
+
+\NewCommandCopy\l@frontmatter\l@chapter
+\NewCommandCopy\l@backmatter\l@chapter
+
+\providecommand*{\toclevel@frontmatter}{0}
+\providecommand*{\toclevel@backmatter}{0}
+
+\patchcmd{\l@frontmatter}{\bfseries}{\itshape}{}{}
+\patchcmd{\l@frontmatter}{\nobreak\hfil}{\upshape\nobreak\hfil}{}{}
+\patchcmd{\l@frontmatter}{1.0em}{3pt}{}{} 
+\patchcmd{\l@backmatter}{\bfseries}{\itshape}{}{}
+\patchcmd{\l@backmatter}{\nobreak\hfil}{\upshape\nobreak\hfil}{}{}
+
+\defbibheading{bibintoc}{\chapter*{#1}\addcontentsline{toc}{backmatter}{\refname}}
+
+\newcommand{\glossarytoc}{\MakeLinkTarget*{glossary}%
+\addcontentsline{toc}{frontmatter}{\glossaryname}}
+
+\newcommand{\acronymtoc}{\MakeLinkTarget*{acronym}%
+\addcontentsline{toc}{frontmatter}{\acronymname}}
+
+% Align LoF and LoT entries to the corrected margin.
+\renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}} % Default: 1.5em/2.3em
+\let\l@table\l@figure
