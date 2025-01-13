@@ -1,22 +1,38 @@
-# Co-Author: José Areia (jose.apareia@gmail.com)
-# Date: 2024-11-07
-# Version: 1.0.0
+# Author: José Areia (jose.apareia@gmail.com)
+# Creation Date: 2024/11/07
+# Version: 2.0.0
 # Original Reference: Stéphane Caron - Makefiles for LaTeX
 # Reference Link: https://scaron.info/blog/makefiles-for-latex.html
-# Dependencies: ["rubber", "inotify-tools"]
+# Dependencies: ["rubber", "latexmk", "inotify-tools"]
 
 PAPER=IPLeiriaMain.tex
 SHELL=/bin/bash
+TOOL=rubber
 
 all:
-	@echo "Building $(PAPER)..."
-	rubber --pdf --module xelatex --shell-escape $(PAPER)
-	@echo "Build complete."
+	@echo "Building $(PAPER) with $(TOOL)..."
+	ifeq ($(TOOL),rubber)
+		rubber --pdf --module xelatex --shell-escape $(PAPER)
+	else ifeq ($(TOOL),latexmk)
+		latexmk -pdf -xelatex -shell-escape $(PAPER)
+	else
+		@echo "Error: Unsupported tool '$(TOOL)'. Use 'rubber' or 'latexmk'."
+		@exit 1
+	endif
+		@echo "Build complete."
 
 clean:
 	@echo "Cleaning up..."
-	rubber --clean $(PAPER)
-	rm *.acn *.acr *.alg *.fls *.xdv *.fdb_latexmk *.toc
+	ifeq ($(TOOL),rubber)
+		rubber --clean $(PAPER)
+	else ifeq ($(TOOL),latexmk)
+		latexmk -C
+	endif
+		@for ext in acn acr alg fls xdv fdb_latexmk toc; do \
+			if compgen -G "*.$$ext" > /dev/null; then \
+				rm -f *.$$ext; \
+			fi; \
+		done
 	@echo "Clean complete."
 
 watch:
