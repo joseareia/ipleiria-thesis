@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.0 - 2025/01/10
+% Version: 2.2.0 - 2025/01/13
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 
 %%% Class Information %%%
@@ -54,13 +54,13 @@
 \newcommand{\CoverOption}{\g_IPLeiriaThesis_mycover_tl}
 \newcommand{\ChapterOption}{\g_IPLeiriaThesis_style_tl}
 
-\AtBeginDocument
-{
-    \iow_log:e { School:~\g_IPLeiriaThesis_myschool_tl }
-    \iow_log:e { Cover:~\g_IPLeiriaThesis_mycover_tl }
-    \iow_log:e { Language:~\g_IPLeiriaThesis_mylanguage_tl }
-    \iow_log:e { Style:~\g_IPLeiriaThesis_style_tl }
-}
+% \AtBeginDocument
+% {
+%     \iow_log:e { School:~\g_IPLeiriaThesis_myschool_tl }
+%     \iow_log:e { Cover:~\g_IPLeiriaThesis_mycover_tl }
+%     \iow_log:e { Language:~\g_IPLeiriaThesis_mylanguage_tl }
+%     \iow_log:e { Style:~\g_IPLeiriaThesis_style_tl }
+% }
 
 \ProcessKeyOptions[IPLeiriaThesis]
 \ExplSyntaxOff
@@ -111,13 +111,14 @@
 
 %%% Import Configurations - Maintain the Specified Order! %%%
 \usepackage{Configurations/00-Fonts}
-\usepackage{Configurations/01-Layout}
-\usepackage{Configurations/02-References}
-\usepackage{Configurations/03-Formatting}
-\usepackage{Configurations/04-Structure}
-\usepackage{Configurations/05-Terms}
-\usepackage{Configurations/06-Chapters}
-\usepackage{Configurations/07-Elements}
-\usepackage{Configurations/08-Code}
-\usepackage{Configurations/09-Macros}
-\usepackage{Configurations/10-Metadata}
+\usepackage{Configurations/01-Colours}
+\usepackage{Configurations/02-Margins}
+\usepackage{Configurations/03-References}
+\usepackage{Configurations/04-Headers}
+\usepackage{Configurations/05-Contents}
+\usepackage{Configurations/06-Glossary}
+\usepackage{Configurations/07-Chapters}
+\usepackage{Configurations/08-Tables}
+\usepackage{Configurations/09-Code}
+\usepackage{Configurations/10-Macros}
+\usepackage{Configurations/11-Metadata}
