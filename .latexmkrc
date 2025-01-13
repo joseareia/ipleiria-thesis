@@ -2,7 +2,7 @@
 
 # Author [0]: Miguel Negrão (-)
 # Author [1]: José Areia (jose.apareia@gmail.com)
-# Date: 2025-01-08
+# Date: 2025/01/08
 # Version: 1.1.0
 # Original Reference: Matthias Geier - Latexmk
 # Reference Link: https://mg.readthedocs.io/latexmk.html
