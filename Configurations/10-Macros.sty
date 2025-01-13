@@ -1,0 +1,89 @@
+%%% Document Macros and Extras %%%
+
+% Blank page with a warning indicating it is intentionally left blank.
+\newcommand\blankpage{
+    \clearpage
+    \thispagestyle{empty}%
+    \addtocounter{page}{1}%
+    \vspace*{\fill}
+    \begin{center}
+        \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+            \textcolor{gray!50}{\textit{Página intencionalmente deixada em branco.}}
+        }{%
+            \textcolor{gray!50}{\textit{This page intentionally left blank.}}
+        }
+    \end{center}
+    \vspace*{\fill}
+    \clearpage
+} 
+
+% Command that will combine a plain page style and a blank one.
+\newcommand{\plainblankpage}{\thispagestyle{plain}\blankpage}
+
+% Indicates that a writing guide will be displayed.
+\newcommand{\guideinfo}[1]{%
+    \textcolor{note}{\faInfoCircle\ \textbf{Writing Guidance}}%
+    \\[.55em]%
+    \noindent #1%
+}
+\newcommand{\guiainfo}[1]{%
+    \textcolor{note}{\faInfoCircle\ \textbf{Orientação Para a Escrita}}%
+    \\[.55em]%
+    \noindent #1%
+}
+
+% Redefine the underline command.
+\setlength{\ULdepth}{1.8pt}\contourlength{1.3pt}
+\newcommand{\myuline}[1]{
+    \uline{\phantom{#1}}%
+    \llap{\contour{white}{#1}}%
+}
+
+% Abstract keywords.
+\NewDocumentCommand{\keywordsen}{m}{\vspace{.4cm}\noindent\textbf{Keywords:} #1}
+\NewDocumentCommand{\keywordspt}{m}{\vspace{.4cm}\noindent\textbf{Palavras-Chave:} #1}
+
+% Landscape mode - the proper way!
+\def\ifGm@preamble#1{\@firstofone}
+\appto\restoregeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}
+\apptocmd\newgeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}{}{}
+\newenvironment{landscapemode}[2]{%
+    \newgeometry{paperwidth=#1,paperheight=#2,hmargin=3cm,vmargin=5cm,top=3cm,landscape}
+    \fancyheadoffset{0pt}
+    %\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+}{%
+    \restoregeometry
+    \fancyheadoffset{0pt}
+}
+
+% Markdown quote block implementation in LaTeX.
+\newtcolorbox[auto counter,number within=section]{block}[1][]{
+    enhanced jigsaw,
+    frame hidden,
+    colback=white,
+    coltitle=#1,
+    fonttitle=\bfseries\itshape,
+    sharp corners,
+    detach title,
+    borderline west={.85mm}{0pt}{#1},
+    pad at break=1mm,
+    title={\ifstrequal{#1}{todo}{To-Do}{\capitalisewords{#1}}},
+    code={\ifdefempty{\tcbtitletext}{}{\tcbset{before upper={\tcbtitle\par\medskip}}}}
+}
+
+% Capitalise the first letter in '\autoref' for both English and Portuguese.
+\addto\extrasenglish{\def\figureautorefname{Figure}}
+\addto\extrasenglish{\def\chapterautorefname{Chapter}}
+\addto\extrasenglish{\def\sectionautorefname{Section}}
+\addto\extrasenglish{\def\subsectionautorefname{Section}}
+\addto\extrasenglish{\def\subsubsectionautorefname{Section}}
+\addto\extrasenglish{\def\tableautorefname{Table}}
+\addto\extrasenglish{\def\partautorefname{Part}}
+\addto\extrasenglish{\def\appendixautorefname{Appendix}}
+\addto\extrasportuguese{\def\sectionautorefname{Secção}}
+\addto\extrasportuguese{\def\subsectionautorefname{Secção}}
+\addto\extrasportuguese{\def\subsubsectionautorefname{Secção}}
