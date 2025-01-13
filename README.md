@@ -22,7 +22,7 @@
 <p float="left">
 <a href="https://github.com/joseareia/ipleiria-thesis">IPLeiria Thesis</a> is an open-source LaTeX template <b>designed for creating professional theses, dissertations, and academic reports</b> specifically tailored for the <a href="https://www.ipleiria.pt/" target="_blank">Polytechnic University of Leiria</a> students. It was developed to ensure a <b>clean, aesthetically pleasing, and professional design</b> while remaining highly customizable to suit various needs. The template is also user-friendly, making it accessible even for newcomers.
 
-Curious to see it in action? Check out the <a href="https://www.overleaf.com/latex/templates/unofficial-polytechnic-university-of-leiria-estg-thesis-slash-report-template/tqgbrncfhwgt.pdf" target="_blank">PDF</a> demo for a preview!
+Curious to see it in action? Check out the <a href="https://www.overleaf.com/latex/templates/polytechnic-university-of-leiria-thesis-template/tqgbrncfhwgt" target="_blank">PDF</a> demo for a preview!
 </p>
 
 <p align="center">
