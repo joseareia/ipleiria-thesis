@@ -2,6 +2,7 @@
 % Author Contact: jose.apareia@gmail.com
 % Version: 2.2.1 - 2025/01/13
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
+% Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
 %%% Class Information %%%
 \NeedsTeXFormat{LaTeX2e}
