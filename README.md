@@ -45,4 +45,4 @@ If you have any questions regarding the template, its usage, or encounter any er
 Contributions to this template are welcome! If you encounter any issues, have suggestions for improvements, or would like to add new features, please submit a pull request. We appreciate your feedback and contributions to make this template even better.
 
 ## License
-The **IPLeiria Thesis** project is released under the under terms of the [LPPL 1.3c License](https://www.latex-project.org/lppl/lppl-1-3c/).
+The **IPLeiria Thesis** project is released under the terms of the [LPPL 1.3c License](https://www.latex-project.org/lppl/lppl-1-3c/).
