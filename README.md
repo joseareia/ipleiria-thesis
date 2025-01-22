@@ -8,6 +8,8 @@
     <a href="https://github.com/joseareia/ipleiria-thesis/issues/new?labels=enhancement" target="_blank">Request a Feature</a>
 ·
     <a href="https://github.com/joseareia/ipleiria-thesis/issues/new?labels=question" target="_blank">Ask a Question</a>
+·
+    <a href="https://github.com/joseareia/ipleiria-thesis/wiki" target="_blank">Read the Wiki</a>
 </p>
 
 <p align="center">
