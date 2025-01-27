@@ -16,7 +16,7 @@
     \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Front-Page-BG.pdf}%
     \vfill
     }}}
-} 
+}
 
 \AddToShipoutPictureBG*{\BackgroundPicCover}
 
@@ -141,7 +141,13 @@
         {\noindent\fontsize{10}{12}\selectfont\GetCourse}
 	\fi
 
-    \vspace{125pt}
+    \ifthenelse{\equal{\StatusOption}{working}}{
+        \vspace{62pt}
+        {\noindent\fontsize{10}{12}\selectfont\overwritecolor{yellow}{\GetDocumentVersion}} 
+        \vspace{62pt}
+    }{
+        \vspace{125pt}
+    }
 
     % Local & Date.
 	{\noindent\fontsize{10}{12}\selectfont\GetDate}
