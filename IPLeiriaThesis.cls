@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.1 - 2025/01/13
+% Version: 2.2.2 - 2025/01/27
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -46,6 +46,14 @@
     chapterstyle .default:n = { classic },
     chapterstyle .initial:n = { classic },
 
+    status .choices:nn = 
+        { working, final } 
+        { \tl_gset:Nn \g_IPLeiriaThesis_status_tl { #1 } },
+    status / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'status'~not~available.~Defaulting~to~'working'} },
+    status .default:n = { working },
+    status .initial:n = { working },
+
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
 }
@@ -54,6 +62,7 @@
 \newcommand{\SchoolOption}{\g_IPLeiriaThesis_myschool_tl}
 \newcommand{\CoverOption}{\g_IPLeiriaThesis_mycover_tl}
 \newcommand{\ChapterOption}{\g_IPLeiriaThesis_style_tl}
+\newcommand{\StatusOption}{\g_IPLeiriaThesis_status_tl}
 
 % \AtBeginDocument
 % {
