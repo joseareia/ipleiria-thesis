@@ -11,35 +11,35 @@ TOOL=rubber
 
 all:
 	@echo "Building $(PAPER) with $(TOOL)..."
-	ifeq ($(TOOL),rubber)
-		rubber --pdf --module xelatex --shell-escape $(PAPER)
-	else ifeq ($(TOOL),latexmk)
-		latexmk -pdf -xelatex -shell-escape $(PAPER)
-	else
-		@echo "Error: Unsupported tool '$(TOOL)'. Use 'rubber' or 'latexmk'."
-		@exit 1
-	endif
-		@echo "Build complete."
+ifeq ($(TOOL),rubber)
+	@rubber --pdf --module xelatex --shell-escape $(PAPER)
+else ifeq ($(TOOL),latexmk)
+	@latexmk -pdf -xelatex -shell-escape $(PAPER)
+else
+	@echo "Error: Unsupported tool '$(TOOL)'. Use 'rubber' or 'latexmk'."
+	@exit 1
+endif
+	@echo "Build complete."
 
 clean:
 	@echo "Cleaning up..."
-	ifeq ($(TOOL),rubber)
-		rubber --clean $(PAPER)
-	else ifeq ($(TOOL),latexmk)
-		latexmk -C
-	endif
-		@for ext in acn acr alg fls xdv fdb_latexmk toc; do \
-			if compgen -G "*.$$ext" > /dev/null; then \
-				rm -f *.$$ext; \
-			fi; \
-		done
+ifeq ($(TOOL),rubber)
+	@rubber --clean $(PAPER)
+else ifeq ($(TOOL),latexmk)
+	@latexmk -C
+endif
+	@for ext in acn acr alg fls xdv fdb_latexmk toc; do \
+		if compgen -G "*.$$ext" > /dev/null; then \
+			rm -f *.$$ext; \
+		fi; \
+	done
 	@echo "Clean complete."
 
 watch:
-	ifeq ($(SHELL),/bin/zsh)
-		@echo "Watching $(PAPER) for changes (zsh)..."
-		@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
-	else
-		@echo "Watching $(PAPER) for changes (bash)..."
-		@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
-	endif
+ifeq ($(SHELL),/bin/zsh)
+	@echo "Watching $(PAPER) for changes (zsh)..."
+	@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
+else
+	@echo "Watching $(PAPER) for changes (bash)..."
+	@while true; do inotifywait -e close_write $(PAPER); sleep 0.01; make all; done
+endif
