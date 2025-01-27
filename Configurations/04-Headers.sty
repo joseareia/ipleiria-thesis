@@ -15,7 +15,17 @@
 
 % Style for plain pages (e.g., chapter starting pages).
 \fancypagestyle{plain}{%
-    \fancyhf{}% Clear header and footer.
-    \renewcommand{\headrulewidth}{0pt}% Remove header rule.
-    \fancyfoot[ORF,ELF]{\thepage\vspace{3pt}}% Place page number at the bottom.
+    \fancyhf{} % Clear header and footer.
+    \renewcommand{\headrulewidth}{0pt} % Remove header rule.
+    \fancyfoot[ORF,ELF]{\thepage\vspace{3pt}} % Place page number at the bottom.
+
+    % Add the document version to the footer of the document.
+    \ifthenelse{\equal{\StatusOption}{working}}{
+        \fancyfoot[OCF,ECF]{\GetDocumentVersion}
+    }{}
 }
+
+% Add the document version to the footer of the document.
+\ifthenelse{\equal{\StatusOption}{working}}{
+    \fancyfoot[OCF,ECF]{\GetDocumentVersion}
+}{}
