@@ -20,12 +20,12 @@
     \fancyfoot[ORF,ELF]{\thepage\vspace{3pt}} % Place page number at the bottom.
 
     % Add the document version to the footer of the document.
-    \ifthenelse{\equal{\StatusOption}{working}}{
-        \fancyfoot[OCF,ECF]{\GetDocumentVersion}
+    \ifthenelse{\equal{\DocStageOption}{working}}{
+        \fancyfoot[OCF,ECF]{\small\GetDocumentVersion~-~\textit{\today}}
     }{}
 }
 
 % Add the document version to the footer of the document.
-\ifthenelse{\equal{\StatusOption}{working}}{
-    \fancyfoot[OCF,ECF]{\GetDocumentVersion}
+\ifthenelse{\equal{\DocStageOption}{working}}{%
+    \fancyfoot[OCF,ECF]{\small\GetDocumentVersion~-~\textit{\today}}%
 }{}
