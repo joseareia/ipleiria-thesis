@@ -46,13 +46,22 @@
     chapterstyle .default:n = { classic },
     chapterstyle .initial:n = { classic },
 
-    status .choices:nn = 
+    docstage .choices:nn = 
         { working, final } 
-        { \tl_gset:Nn \g_IPLeiriaThesis_status_tl { #1 } },
-    status / unknown .code:n = 
-        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'status'~not~available.~Defaulting~to~'working'} },
-    status .default:n = { working },
-    status .initial:n = { working },
+        { \tl_gset:Nn \g_IPLeiriaThesis_docstage_tl { #1 } },
+    docstage / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'docstage'~not~available.~Defaulting~to~'working'} },
+    docstage .default:n = { working },
+    docstage .initial:n = { working },
+
+    media .choices:nn = 
+        { paper, screen } 
+        { \tl_gset:Nn \g_IPLeiriaThesis_media_tl { #1 } },
+    media / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'media'~not~available.~Defaulting~to~'paper'} },
+    media .default:n = { paper },
+    media .initial:n = { paper },
+    
 
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
@@ -62,14 +71,12 @@
 \newcommand{\SchoolOption}{\g_IPLeiriaThesis_myschool_tl}
 \newcommand{\CoverOption}{\g_IPLeiriaThesis_mycover_tl}
 \newcommand{\ChapterOption}{\g_IPLeiriaThesis_style_tl}
-\newcommand{\StatusOption}{\g_IPLeiriaThesis_status_tl}
+\newcommand{\DocStageOption}{\g_IPLeiriaThesis_docstage_tl}
+\newcommand{\MediaOption}{\g_IPLeiriaThesis_media_tl}
 
 % \AtBeginDocument
 % {
 %     \iow_log:e { School:~\g_IPLeiriaThesis_myschool_tl }
-%     \iow_log:e { Cover:~\g_IPLeiriaThesis_mycover_tl }
-%     \iow_log:e { Language:~\g_IPLeiriaThesis_mylanguage_tl }
-%     \iow_log:e { Style:~\g_IPLeiriaThesis_style_tl }
 % }
 
 \ProcessKeyOptions[IPLeiriaThesis]
@@ -101,7 +108,7 @@
 \RequirePackage{titling} % Control over title and titlepage formatting.
 \RequirePackage[toc,page]{appendix} % Formatting for appendices.
 \RequirePackage[acronym]{glossaries} % Create glossaries and acronyms.
-\RequirePackage[calc]{datetime2} % Enhanced date and time formatting.
+\RequirePackage[calc,datesep={/}]{datetime2} % Enhanced date and time formatting.
 \RequirePackage[bookmarks,pdfusetitle]{hyperref} % Hyperlinks and PDF metadata.
 \RequirePackage{xparse} % Advanced argument parsing for custom macros.
 \RequirePackage{typearea} % Page layout adjustments (KOMA-Script).
