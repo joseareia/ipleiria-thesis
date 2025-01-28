@@ -4,7 +4,7 @@
     \addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}}
 }
 
-\blankpage
+\ifthenelse{\equal{\MediaOption}{paper}}{\blankpage}{\clearpage}
 \begin{center}
     \minionfont
     \thispagestyle{empty}
@@ -17,4 +17,4 @@
     }
     \vspace*{\fill}
 \end{center}
-\blankpage
+\MediaOptionLogicBlank
