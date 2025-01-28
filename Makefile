@@ -7,7 +7,7 @@
 
 PAPER=IPLeiriaMain.tex
 SHELL=/bin/bash
-TOOL=rubber
+TOOL=latexmk
 
 all:
 	@echo "Building $(PAPER) with $(TOOL)..."
