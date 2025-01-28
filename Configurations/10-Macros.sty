@@ -87,3 +87,39 @@
 \addto\extrasportuguese{\def\sectionautorefname{Secção}}
 \addto\extrasportuguese{\def\subsectionautorefname{Secção}}
 \addto\extrasportuguese{\def\subsubsectionautorefname{Secção}}
+
+% Command to overwrite the colour of a given command.
+\newcommand{\overwritecolor}[2]{%
+    \textcolor{#1}{%
+        \renewcommand\color[2][]{}%
+    #2}%
+}
+
+% Wrapping bot glossary and acronyms commands.
+\newcommand{\printnormalglossary}{\printglossary}
+\newcommand{\printacronymglossary}{\printglossary[type=\acronymtype]}
+
+% Logic to add or omit a blank page depending on the '\MediaOption' value.
+\newcommand{\MediaOptionLogic}{%
+    \ifthenelse{\equal{\MediaOption}{paper}}{\plainblankpage}{\thispagestyle{plain}}%
+}
+
+\newcommand{\MediaOptionLogicAcr}{%
+    \ifthenelse{\equal{\MediaOption}{paper}}{\plainblankpage}{\clearpage\thispagestyle{plain}}%
+}
+
+\newcommand{\MediaOptionLogicBlank}{%
+    \ifthenelse{\equal{\MediaOption}{paper}}{\blankpage}{}%
+}
+
+\newcommand{\MediaOptionLogicAnnexes}{%
+    \ifthenelse{\equal{\MediaOption}{paper}}{\blankpage}{\clearpage}%
+}
+
+% Update various elements based on the '\MediaOption' value.
+\apptocmd{\tableofcontents}{\MediaOptionLogic}{}{\fail}
+\apptocmd{\listoffigures}{\MediaOptionLogic}{}{\fail}
+\apptocmd{\listoftables}{\MediaOptionLogic}{}{\fail}
+\apptocmd{\printnormalglossary}{\MediaOptionLogic}{}{\fail}
+\apptocmd{\printacronymglossary}{\MediaOptionLogicAcr}{}{\fail}
+\pretocmd{\printbibliography}{\MediaOptionLogic}{}{\fail}
