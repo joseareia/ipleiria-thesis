@@ -10,11 +10,12 @@
     language=english,
     chapterstyle=classic,
     coverstyle=classic,
-    status=working
-]{IPLeiriaThesis}
+    docstage=final,
+    media=paper
+]{IPLeiriaThesis} % Refer to the Wiki for a list of available options.
 
 %%% Document Version %%%
-\DocumentVersion{1.0.0} % This is required only if the 'status' is set to 'working'.
+\DocumentVersion{1.0.0} % This is required only if the 'docstage' is set to 'working'.
 
 %%% Document Metadata %%%
 \input{Metadata/Metadata}
@@ -28,7 +29,7 @@
 
 %%% Front Matter %%%
 \include{Matter/00-Cover}
-\include{Matter/01-FPage}
+\include{Matter/01-Front-Page}
 
 %%% Copyright Statement %%%
 \include{Matter/02-Copyright}
@@ -43,13 +44,13 @@
 \include{Chapters/00-Abstract}
 
 %%% Table of Contents, List of Figures and List of Tables %%%
-\bookmarktocentry\tableofcontents\plainblankpage
-\listoffigures\plainblankpage
-\listoftables\plainblankpage
+\bookmarktocentry\tableofcontents
+\listoffigures
+\listoftables
 
 %%% Print: Glossary and Acronyms %%%
-\glossarytoc\printglossary\plainblankpage
-\acronymtoc\printglossary[type=\acronymtype]\plainblankpage
+\glossarytoc\printnormalglossary
+\acronymtoc\printacronymglossary
 
 %%% Arabic Numeration %%%
 \pagenumbering{arabic}
@@ -60,7 +61,7 @@
 \include{Chapters/03-Latex-Tutorial}
 
 %%% Bibliography %%%
-\blankpage\printbibliography[title={\refname},heading=bibintoc]
+\printbibliography[title={\refname},heading=bibintoc]
 
 %%% Appendices: Work that *YOU* Developed %%%
 \appendix
@@ -73,6 +74,6 @@
 \input{Chapters/Annexes/00-AnnexA}
 
 %%% Back Page %%%
-\input{Matter/08-BPage}
+\input{Matter/08-Back-Page}
 
 \end{document}
