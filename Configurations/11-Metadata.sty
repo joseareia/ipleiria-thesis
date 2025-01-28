@@ -31,18 +31,11 @@
 
 % Document version command.
 \NewDocumentCommand{\DocumentVersion}{m}{%
-    \newcommand{\GetDocumentVersion}{\color{gray}{%
+    \newcommand{\GetDocumentVersion}{\color{black}{%
         \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
             \textit{Versão Preliminar #1}%
-        }{
+        }{%
             \textit{Draft Version #1}%
-        }
+        }%
     }}%
-}
-
-% Command to overwrite the colour of a given command.
-\newcommand{\overwritecolor}[2]{%
-    \textcolor{#1}{%
-        \renewcommand\color[2][]{}%
-    #2}%
 }
