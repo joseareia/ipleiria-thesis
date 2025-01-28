@@ -1,5 +1,5 @@
 {
-  "name": "estg-ipleiria-latex",
+  "name": "ipleiria-thesis",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/prulloac/devcontainer-features/latex:1.3.1": {
