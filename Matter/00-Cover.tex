@@ -141,9 +141,9 @@
         {\noindent\fontsize{10}{12}\selectfont\GetCourse}
 	\fi
 
-    \ifthenelse{\equal{\StatusOption}{working}}{
+    \ifthenelse{\equal{\DocStageOption}{working}}{
         \vspace{62pt}
-        {\noindent\fontsize{10}{12}\selectfont\overwritecolor{yellow}{\GetDocumentVersion}} 
+        {\noindent\fontsize{10}{12}\selectfont\overwritecolor{yellow}{\GetDocumentVersion \\ \textit{\today}}} 
         \vspace{62pt}
     }{
         \vspace{125pt}
@@ -155,4 +155,4 @@
     \vspace{68pt}
 \end{titlepage}
 \restoregeometry
-\blankpage
+\MediaOptionLogicBlank
