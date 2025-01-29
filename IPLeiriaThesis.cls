@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.2 - 2025/01/27
+% Version: 2.2.3 - 2025/01/29
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -61,8 +61,14 @@
         { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'media'~not~available.~Defaulting~to~'paper'} },
     media .default:n = { paper },
     media .initial:n = { paper },
-    
 
+    colour .code:n = 
+        { \regex_match:nnTF { \b[0-9A-Fa-f]{6}\b } { #1 } 
+        { \tl_gset:Nn \g_IPLeiriaThesis_colour_tl { #1 } }
+        { \ClassWarningNoLine{IPLeiriaThesis}{Invalid~colour~specified.~Using~default~hexadecimal~code~720000} } }, 
+    colour .default:n = { 720000 },
+    colour .initial:n = { 720000 },
+    
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
 }
@@ -73,11 +79,7 @@
 \newcommand{\ChapterOption}{\g_IPLeiriaThesis_style_tl}
 \newcommand{\DocStageOption}{\g_IPLeiriaThesis_docstage_tl}
 \newcommand{\MediaOption}{\g_IPLeiriaThesis_media_tl}
-
-% \AtBeginDocument
-% {
-%     \iow_log:e { School:~\g_IPLeiriaThesis_myschool_tl }
-% }
+\newcommand{\ColourOption}{\g_IPLeiriaThesis_colour_tl}
 
 \ProcessKeyOptions[IPLeiriaThesis]
 \ExplSyntaxOff
@@ -101,8 +103,8 @@
 \RequirePackage{enumitem} % Customisation of lists.
 \RequirePackage{amsmath} % Advanced mathematical expressions.
 \RequirePackage{amssymb} % Extended mathematical symbols.
-\RequirePackage[dvipsnames]{xcolor} % Extended color support.
-\RequirePackage{tcolorbox} % Creating colored and highlighted boxes.
+\RequirePackage[dvipsnames]{xcolor} % Extended colour support.
+\RequirePackage{tcolorbox} % Creating coloured and highlighted boxes.
 \RequirePackage{varwidth} % Allows variable-width boxes.
 \RequirePackage{titlesec} % Customisation of section and chapter titles.
 \RequirePackage{titling} % Control over title and titlepage formatting.
