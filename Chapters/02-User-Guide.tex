@@ -45,39 +45,74 @@ The two files mentioned earlier, \texttt{IPLeiriaMain.tex} and \texttt{IPLeiriaT
 \label{sec:class-options}
 The first thing you need to do is specify the options within the \texttt{IPLeiriaMain.tex} file. How do you do that? It's simple. On the very first line, you will find a \texttt{documentclass} command that loads the custom class for this template. In this call, you can pass the options you need. The available options, presented in a key-argument style, are listed in \autoref{tab:template-options}.
 
-\begin{table}[!htpb]
-    \centering
-    \setlength{\extrarowheight}{0pt}
-    \caption{Options supported by the template.}
-    \label{tab:template-options}
-    \begin{tabularx}{\textwidth}{lX}
-        \toprule
-        % \\[-1.5\normalbaselineskip]
-        \textbf{Options} & \textbf{Description} \\
-        \midrule
-        
-        \textbf{school=OPT} & \textbf{Choosing a school and its corresponding logo.} \\
-        \multirow[t]{2}{*}{\footnotesize{\textit{estg, esecs, esslei, esad, estm}}} & \footnotesize{\textit{$\Rightarrow$ Default: school=estg}} \\
-        & \footnotesize{\textit{This option only modifies the school name and the corresponding logo, which will be displayed on the cover and front page.}} \\[1.70em]
-        
-        \textbf{language=OPT} & \textbf{Language preference selection.} \\
-        \footnotesize{\textit{portuguese, english}} & \footnotesize{\textit{$\Rightarrow$ Default: language=english}} \\[0.85em]
-        
-        \textbf{chapterstyle=OPT} & \textbf{Selection of a cover design style.} \\
-        \multirow[t]{2}{*}{\footnotesize{\textit{classic, modern, fancy}}} & \footnotesize{\textit{$\Rightarrow$ Default: chapterstyle=classic}} \\
-        & \footnotesize{\textit{This option modifies the appearance of the chapter, including its title and numbering style. Explore the available styles and apply the one you prefer.}} \\[1.70em]
-        
-        \textbf{coverstyle=OPT} & \textbf{Choosing a style for the chapter.} \\
-        \multirow[t]{3}{*}{\footnotesize{\textit{classic, bw}}} & \footnotesize{\textit{$\Rightarrow$ Default: coverstyle=classic}} \\
-        & \footnotesize{\textit{classic $\rightarrow$ Put the cover on in the original red.}} \\
-        & \footnotesize{\textit{bw $\rightarrow$ Make the cover black and white.}} \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+{
+\setlength{\extrarowheight}{-1.75pt}
+\begin{xltabular}{\textwidth}{lX}
+\caption{Class options supported by the template.}
+\label{tab:template-options} \\
+%
+\toprule 
+\multicolumn{1}{l}{\textbf{Options}} & \multicolumn{1}{l}{\textbf{Description}} \\ 
+\midrule
+\endfirsthead
+%
+\multicolumn{2}{c}%
+{{\textit{\bfseries Table \thetable\ continued from previous page.}}} \\
+%
+\toprule 
+\multicolumn{1}{l}{\textbf{Options}} & \multicolumn{1}{l}{\textbf{Description}} \\ 
+\midrule
+\endhead
+%
+\bottomrule
+\addlinespace[1mm]
+\multicolumn{2}{r}%
+{{\textit{Continued on the next page.}}} \\
+\endfoot
+\bottomrule
+\endlastfoot
 
-\begin{block}[warning]
-\textit{If any option or argument is passed and it does not exist, an error or a warning will be raised, respectively. Please pay attention to warnings and strive to keep the template and/or your document free of warnings.}
+\textbf{school=OPT} & \textbf{Choosing a school and its corresponding logo.} \\
+\multirow[t]{2}{*}{\footnotesize{\textit{estg, esecs, esslei, esad, estm}}} & \footnotesize{\textit{$\Rightarrow$ Default: school=estg}} \\
+& \footnotesize{\textit{This option only modifies the school name and the corresponding logo, which will be displayed on the cover and front page.}} \\[1.70em]
+
+\textbf{language=OPT} & \textbf{Language preference selection.} \\
+\footnotesize{\textit{portuguese, english}} & \footnotesize{\textit{$\Rightarrow$ Default: language=english}} \\[0.85em]
+        
+\textbf{chapterstyle=OPT} & \textbf{Selection of a cover design style.} \\
+\multirow[t]{2}{*}{\footnotesize{\textit{classic, modern, fancy}}} & \footnotesize{\textit{$\Rightarrow$ Default: chapterstyle=classic}} \\
+& \footnotesize{\textit{This option modifies the appearance of the chapter, including its title and numbering style. Explore the available styles and apply the one you prefer.}} \\[1.70em]
+
+\textbf{coverstyle=OPT} & \textbf{Choosing a style for the chapter.} \\
+\multirow[t]{3}{*}{\footnotesize{\textit{classic, bw}}} & \footnotesize{\textit{$\Rightarrow$ Default: coverstyle=classic}} \\
+& \footnotesize{\textit{classic $\rightarrow$ Put the cover on in the original red.}} \\
+& \footnotesize{\textit{bw $\rightarrow$ Make the cover black and white.}} \\
+
+\pagebreak
+
+\textbf{docstage=OPT} & \textbf{Choosing a stage for you document.} \\
+\multirow[t]{3}{*}{\footnotesize{\textit{final, working}}} & \footnotesize{\textit{$\Rightarrow$ Default: docstage=final}} \\
+& \footnotesize{\textit{final $\rightarrow$ Assumes this is the final version of the document.}} \\
+& \footnotesize{\textit{working $\rightarrow$ It assumes the document is a work in progress.}} \\[.3em]
+
+\textbf{media=OPT} & \textbf{Project media type.} \\
+\multirow[t]{3}{*}{\footnotesize{\textit{paper, screen}}} & \footnotesize{\textit{$\Rightarrow$ Default: media=paper}} \\
+& \footnotesize{\textit{paper $\rightarrow$ Blank pages will appear between sections.}} \\
+& \footnotesize{\textit{screen $\rightarrow$ Blank pages will not appear between sections.}} \\[.3em]
+
+\textbf{colorlink=OPT} & \textbf{Main theme color.} \\
+\multirow[t]{2}{*}{\footnotesize{\textit{color}}} & \footnotesize{\textit{$\Rightarrow$ Default: colorlink=black}} \\
+& \footnotesize{\textit{This option requires a valid color name. Refer to the xcolor manual (subsection 4.2) to select a valid color.}} \\
+\end{xltabular}
+}
+
+\begin{block}[tip]
+\textit{Although the default option for \texttt{linkcolor} is \texttt{black}, it is highly advisable to use \texttt{red!45!black} instead. The same applies to \texttt{coverstyle}, for which it is preferred to use the \texttt{classic} option.}
 \end{block}
+
+% \begin{block}[warning]
+% \textit{If any option or argument is passed and it does not exist, an error or a warning will be raised, respectively. Please pay attention to warnings and strive to keep the template and/or your document free of warnings.}
+% \end{block}
 
 After setting the options within the main class, you're ready to proceed with the metadata customisation. How can you do that? Please refer to \autoref{sec:metadata}.
 
@@ -94,12 +129,19 @@ While options like language and school can be passed as arguments to the main cl
 %
 \multicolumn{3}{c}%
 {{\textit{\bfseries Table \thetable\ continued from previous page.}}} \\
+%
 \toprule
 \textbf{Variable} & \textbf{Macro Commands} & \textbf{Mandatory} \\ \midrule
 \endhead
 %
 \bottomrule
+%
+\addlinespace[1mm]
+\multicolumn{3}{r}%
+{{\textit{Continued on the next page.}}} \\
 \endfoot
+%
+\bottomrule
 %
 \endlastfoot
 %
@@ -113,7 +155,7 @@ Course           & \verb|\GetCourse|        & -            \\
 Local and date   & \verb|\GetDate|          & $\checkmark$  \\ 
 Academic year    & \verb|\GetAcademicYear|  & $\checkmark$ \\ 
 
-Thesis type (\footnotesize{\textit{Dissertation, Project or Internship}}) & \verb|\GetThesisType| & $\checkmark$ \\
+Thesis type (\scriptsize{\textit{Dissertation, Project or Internship}}) & \verb|\GetThesisType| & $\checkmark$ \\
 
 First author name           & \verb|\GetFirstAuthor|        & $\checkmark$ \\
 First author identification & \verb|\GetFirstAuthorNumber|  & $\checkmark$ \\ 
@@ -135,7 +177,6 @@ Co-supervisor title and affiliation & \verb|\GetCoSupervisorTitle|  & - \\
 Second co-supervisor name                   & \verb|\GetSecCoSupervisor|      & - \\
 Second co-supervisor e-mail                 & \verb|\GetSecCoSupervisorMail|  & - \\
 Second co-supervisor title and affiliation  & \verb|\GetSecCoSupervisorTitle| & - \\
-\bottomrule
 \end{longtable}
 
 If, by any chance, \textbf{you want to add more options}, please contact me by opening an issue in the official GitHub repository or via the email provided in this document.
