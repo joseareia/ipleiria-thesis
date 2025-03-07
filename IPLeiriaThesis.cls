@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.3 - 2025/01/29
+% Version: 2.2.4 - 2025/03/07
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -62,12 +62,24 @@
     media .default:n = { paper },
     media .initial:n = { paper },
 
-    colour .code:n = 
-        { \regex_match:nnTF { \b[0-9A-Fa-f]{6}\b } { #1 } 
-        { \tl_gset:Nn \g_IPLeiriaThesis_colour_tl { #1 } }
-        { \ClassWarningNoLine{IPLeiriaThesis}{Invalid~colour~specified.~Using~default~hexadecimal~code~720000} } }, 
-    colour .default:n = { 720000 },
-    colour .initial:n = { 720000 },
+    linkcolor .code:n =
+        { \tl_gset:Nn \g_IPLeiriaThesis_linkcolor_tl { #1 } 
+            \color_if_exist:nTF { #1 } { }
+            { 
+                \tl_gset:Nn \g_IPLeiriaThesis_linkcolor_tl { black } 
+                \ClassWarningNoLine{IPLeiriaThesis}{Specified~'linkcolor'~not~available.~Defaulting~to~'black'} 
+            }
+        },
+    linkcolor .default:n = { black },
+    linkcolor .initial:n = { black },
+
+    doctype .choices:nn = 
+        { thesis, report } 
+        { \tl_gset:Nn \g_IPLeiriaThesis_doctype_tl { #1 } },
+    doctype / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'doctype'~not~available.~Defaulting~to~'thesis'} },
+    doctype .default:n = { thesis },
+    doctype .initial:n = { thesis },
     
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
@@ -79,7 +91,8 @@
 \newcommand{\ChapterOption}{\g_IPLeiriaThesis_style_tl}
 \newcommand{\DocStageOption}{\g_IPLeiriaThesis_docstage_tl}
 \newcommand{\MediaOption}{\g_IPLeiriaThesis_media_tl}
-\newcommand{\ColourOption}{\g_IPLeiriaThesis_colour_tl}
+\newcommand{\ColorOption}{\g_IPLeiriaThesis_linkcolor_tl}
+\newcommand{\DocTypeOption}{g_IPLeiriaThesis_doctype_tl}
 
 \ProcessKeyOptions[IPLeiriaThesis]
 \ExplSyntaxOff
@@ -96,6 +109,7 @@
 \RequirePackage{graphicx} % For including and manipulating images.
 \RequirePackage{subcaption} % Subfigures and side-by-side captions.
 \RequirePackage{tabularx} % Flexible-width tables.
+\RequirePackage{xltabular} % Same as tabularx but to be used in long tables.
 \RequirePackage{booktabs} % Professional table styling.
 \RequirePackage{multirow} % Support for multirow cells in tables.
 \RequirePackage{longtable} % Tables spanning multiple pages.
@@ -103,8 +117,8 @@
 \RequirePackage{enumitem} % Customisation of lists.
 \RequirePackage{amsmath} % Advanced mathematical expressions.
 \RequirePackage{amssymb} % Extended mathematical symbols.
-\RequirePackage[dvipsnames]{xcolor} % Extended colour support.
-\RequirePackage{tcolorbox} % Creating coloured and highlighted boxes.
+\RequirePackage[dvipsnames]{xcolor} % Extended color support.
+\RequirePackage{tcolorbox} % Creating colored and highlighted boxes.
 \RequirePackage{varwidth} % Allows variable-width boxes.
 \RequirePackage{titlesec} % Customisation of section and chapter titles.
 \RequirePackage{titling} % Control over title and titlepage formatting.
@@ -130,7 +144,7 @@
 
 %%% Import Configurations - Maintain the Specified Order! %%%
 \usepackage{Configurations/00-Fonts}
-\usepackage{Configurations/01-Colours}
+\usepackage{Configurations/01-Colors}
 \usepackage{Configurations/02-Margins}
 \usepackage{Configurations/03-References}
 \usepackage{Configurations/04-Headers}
