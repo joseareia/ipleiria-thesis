@@ -19,7 +19,7 @@ We present two distinct approaches for citing entries in the bibliography. The f
 \noindent\textbf{Example:} A novel signature scheme is introduced, along with an implementation of the Diffie-Hellman key distribution scheme that accomplishes a public key cryptosystem \citep{Elgamal1985}. According to \citet{Elgamal1985}, a new signature scheme that accomplishes a public key cryptosystem is introduced (...) This template was created by \citeauthor{IPLeiriaThesis}, with the title \citetitle{IPLeiriaThesis}.
 
 \section{References}
-Much like citations, it is advisable to employ references in your document for citing crucial elements such as chapters, sections, figures, or tables. To reference these elements, begin by creating a label. This label can be generated using \verb|\label{TEXT}|, and it should be positioned within the element you intend to refer to. Once the element is created, you can utilise \verb|\ref{LABEL}| to generate an in-text reference. \textbf{We strongly recommend using} \verb|\autoref{LABEL}|. This command automatically creates a custom link with colour corresponding to the type of element being referred to. For instance, a chapter reference will appear like this: \autoref{cp:introduction}, rather than simply Chapter \ref{cp:introduction}. 
+Much like citations, it is advisable to employ references in your document for citing crucial elements such as chapters, sections, figures, or tables. To reference these elements, begin by creating a label. This label can be generated using \verb|\label{TEXT}|, and it should be positioned within the element you intend to refer to. Once the element is created, you can utilise \verb|\ref{LABEL}| to generate an in-text reference. \textbf{We strongly recommend using} \verb|\autoref{LABEL}|. This command automatically creates a custom link with color corresponding to the type of element being referred to. For instance, a chapter reference will appear like this: \autoref{cp:introduction}, rather than simply Chapter \ref{cp:introduction}. 
 
 \begin{block}[tip]
 \textit{Properly referencing elements within the document, such as \textbf{chapters, sections, figures, tables, or listings}, is crucial.}
@@ -124,7 +124,11 @@ At times, when dealing with exceptionally lengthy tables, it becomes necessary t
 \endhead
 %
 \bottomrule
+\addlinespace[1mm]
+\multicolumn{4}{r}%
+{{\textit{Continued on the next page.}}} \\
 \endfoot
+\bottomrule
 %
 \endlastfoot
 %
@@ -167,7 +171,6 @@ Paul King & paul.king@email.com & Territory Manager \\
 Queen Foster & queen.foster@email.com & Paralegal \\
 Rebecca Adams & rebecca.adams@email.com & Copy Editor \\
 Steven Martin & steven.martin@email.com & Robotics Engineer \\
-\bottomrule
 \end{longtable}
 
 \subsection{Complex Tables}
@@ -233,16 +236,12 @@ You can also nest list entries by creating a list inside another list of the sam
     \begin{enumerate}
         \item Third level item
         \item Third level item
-    \begin{enumerate}
-        \item Fourth level item
-        \item Fourth level item
-    \end{enumerate}
     \end{enumerate}
     \end{enumerate}
 \end{enumerate}
 
 \begin{block}[tip]
-\textit{Please note that the labels change automatically regardless of the environment being the same for every list. \textbf{This demonstrates that there's no need to worry about changing the environment for something different.} However, if desired, you have the flexibility to do so.}
+\textit{Please note that the labels change automatically regardless of the environment being the same for every list. \textbf{This demonstrates that there's no need to worry about changing the environment for something different.}}
 \end{block}
 
 You can also modify the label of your list to something entirely different that suits your needs. To accomplish this, insert a new \verb|\item| and enclose your desired label in square brackets. For example, \verb|\item[!]| will result in an exclamation point as your new label. Below are some examples of modified labels.
@@ -267,6 +266,8 @@ Finally, you can create a description list. Unlike having a bullet point or a nu
 At times, you may want to include source code from your programs and applications within your document. To achieve this, you can use two nested environments: \verb|\begin{listing}| to create a listing with both caption and label, and \verb|\begin{minted}| for code highlighting. \autoref{listing:c-code} provides an example of a source code in C.
 
 \begin{listing}[!htpb]
+\caption{Hello world in C.}
+\label{listing:c-code}
 \begin{minted}{c}
 #include <stdio.h>
 int main() {
@@ -274,16 +275,14 @@ int main() {
    return 0;
 }
 \end{minted}
-\caption{Hello world in C.}
-\label{listing:c-code}
 \end{listing}
 
 The code mentioned above was inserted into the document. However, an alternative approach is to input your code from an external file. To do so, you just need to use the command \verb|\inputminted{CODE_LANGUAGE}{FILE}|. Of course, you should place that command inside of the \verb|\begin{listing}| environment. \autoref{listing:haskell-code} illustrates an example of Haskell source code that has been input from an external file.
 
 \begin{listing}[!htpb]
-\inputminted{haskell}{Code/Factorial.hs}
 \caption{Factorial in Haskell.}
 \label{listing:haskell-code}
+\inputminted{haskell}{Code/Factorial.hs}
 \end{listing}
 
 In some cases, when you simply want to highlight a specific command, it's recommended not to use \verb|listing| or \verb|minted|. Instead, you should utilise the \verb|\verb| command for inline highlighting or the \verb|\begin{verbatim}| environment for longer sections of highlighted code. An example of a lengthy \verb|verbatim| section is provided below, demonstrating how to create a \verb|listing| with an input code:
@@ -299,6 +298,8 @@ In some cases, when you simply want to highlight a specific command, it's recomm
 Sometimes it is necessary to display longer code that occupies more than one page. For this purpose, please use the environment \verb|\begin{longlisting}|. This environment will easily break your code into multiple pages for better readability without you worrying about the size of your code. An example is shown below in \autoref{listing:lisp-code}.
 
 \begin{longlisting}
+\caption{A sample of functions in Lisp.}
+\label{listing:lisp-code}
 \begin{minted}{lisp}
 (defun factorial (n)
   "Calculate the factorial of a number."
@@ -339,8 +340,6 @@ Sometimes it is necessary to display longer code that occupies more than one pag
 
 (example-function 10)
 \end{minted}
-\caption{A sample of functions in Lisp.}
-\label{listing:lisp-code}
 \end{longlisting}
 
 \section{Equations}
