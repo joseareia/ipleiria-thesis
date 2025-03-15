@@ -1,6 +1,6 @@
 % Author Name: José António Portela Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.4 - 2025/03/07
+% Version: 2.2.5 - 2025/03/15
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -12,6 +12,12 @@
 
 %%% Handle Class Options %%%
 \ExplSyntaxOn
+
+\cs_new:Npn \IPLeiriaThesis_check_color:n #1 {
+  \tl_set:Nn \l_tmpa_tl { #1 }
+  \color_set:nn { \l_tmpa_tl } { #1 }
+}
+
 \keys_define:nn { IPLeiriaThesis } {
     school .choices:nn =
         { estg, esecs, esslei, esad, estm }
@@ -62,14 +68,14 @@
     media .default:n = { paper },
     media .initial:n = { paper },
 
-    linkcolor .code:n =
-        { \tl_gset:Nn \g_IPLeiriaThesis_linkcolor_tl { #1 } 
-            \color_if_exist:nTF { #1 } { }
-            { 
-                \tl_gset:Nn \g_IPLeiriaThesis_linkcolor_tl { black } 
-                \ClassWarningNoLine{IPLeiriaThesis}{Specified~'linkcolor'~not~available.~Defaulting~to~'black'} 
-            }
-        },
+    linkcolor .code:n = {
+        \tl_gset:Nn \g_IPLeiriaThesis_linkcolor_tl { #1 }
+        \IPLeiriaThesis_check_color:n { #1 }
+        \tl_if_eq:NNTF \l_tmpa_tl \q_no_value {
+            \tl_gset:Nn \g_IPLeiriaThesis_linkcolor_tl { black }
+            \ClassWarningNoLine{IPLeiriaThesis}{Specified~'linkcolor'~not~available.~Defaulting~to~'black'}
+        }
+    },
     linkcolor .default:n = { black },
     linkcolor .initial:n = { black },
 
