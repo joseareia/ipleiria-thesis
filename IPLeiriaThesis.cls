@@ -143,6 +143,8 @@
 \RequirePackage{contour} % Countour words in a given color.
 \RequirePackage[normalem]{ulem} % A better underline.
 \RequirePackage{mfirstuc} % Capitalise words in a sentence.
+\RequirePackage{tikz} % Create high-quality graphics programmatically.
+\RequirePackage{psvectorian} % To include in-text ornamatentions. 
 \RequirePackage{blindtext} % Generate placeholder text.
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
