@@ -1,6 +1,6 @@
-% Author Name: José António Portela Areia 
+% Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.5 - 2025/03/15
+% Version: 2.2.5 - 2025/04/16
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
