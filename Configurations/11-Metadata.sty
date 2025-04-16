@@ -23,7 +23,7 @@
 \NewDocumentCommand{\ThesisType}{m}{\newcommand{\GetThesisType}{#1}}
 \NewDocumentCommand{\AcademicYear}{m}{\newcommand{\GetAcademicYear}{#1}}
 
-% Redefine the commands to Pascal Case.
+% Redefine the commands to Pascal case.
 \let\Title\title
 \newcommand{\GetTitle}{\@title}
 \let\Date\date
@@ -38,4 +38,14 @@
             \textit{Draft Version #1}%
         }%
     }}%
+}
+
+% Define the PDF document metadata.
+\AfterPreamble{
+    \hypersetup{
+        pdfauthor={\GetFirstAuthor},
+        pdftitle={\GetTitle},
+        pdfproducer={LaTeX},
+        pdfcreator={XeLaTeX}
+    }
 }
