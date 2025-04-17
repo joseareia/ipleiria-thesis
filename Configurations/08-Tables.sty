@@ -4,6 +4,11 @@
 \AtBeginEnvironment{tabularx}{\customtableformatting} % Apply to tabularx.
 \preto\longtable{\customtableformatting} % Apply to longtable.
 
+\renewcommand\tabularxcolumn[1]{m{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X} % Center the 'X' command in tabularx.
+\newcolumntype{L}{>{\raggedright\arraybackslash}X} % Left the 'X' command in tabularx.
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} % Right the 'X' command in tabularx.
+
 %%% Captions %%%
 \captionsetup{skip=6pt} % Whitespace between figures/tables and the caption.
 \captionsetup{
