@@ -88,8 +88,7 @@ The conventional \verb|\begin{tabular}| environment enables you to create a simp
 \end{table}
 
 \subsection{Tabularx Environment}
-Employ the \verb|\begin{tabularx}| package to construct a table featuring automatically expanding multi-columns. To achieve this automatic behaviour for multi-columns, you can use the following environment: \verb|\begin{tabularx}{\textwidth}{lX}|, where \verb|X| is the column that will function as a multi-column. \autoref{tab:table-02} showcases the usage of the \verb|begin{tabularx}| environment.
-%Take note that we substitute \verb|X| in place of \verb|l| or \verb|c|, explicitly indicating that the column will function as a multi-column, occupying the entire available space.
+Employ the \verb|\begin{tabularx}| package to construct a table featuring automatically expanding multi-columns. To achieve this automatic behaviour for multi-columns, you can use the following environment: \verb|\begin{tabularx}{\textwidth}{lX}|, where \verb|X| is the column that will function as a multi-column. Use \verb|C| to centre the multi-column, and \verb|L| and \verb|R| to align left and right respectively. \autoref{tab:table-02} showcases the usage of the \verb|\begin{tabularx}| environment.
 
 \begin{table}[!htpb]
     \caption{A table showcasing the usage of the tabularx environment.}
@@ -102,7 +101,7 @@ Employ the \verb|\begin{tabularx}| package to construct a table featuring automa
         Ipsum Dolor & Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur aliquet quam id dui. \\
         Dolor Sit & Phasellus condimentum elementum justo, quis interdum est sagittis ac. Vestibulum non arcu sit amet justo lobortis semper. \\
         Amet Consectetuer & Integer nec odio praesent libero sed cursus ante dapibus diam sed nisi vestibulum non arcu. \\
-        Consectetuer Adipiscing & Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. \\
+        % Consectetuer Adipiscing & Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. \\
         \bottomrule
     \end{tabularx}
 \end{table}
