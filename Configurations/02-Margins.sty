@@ -1,12 +1,29 @@
 %%% Margins %%%
-\usepackage[
-	top=2.5cm, % Set top margin.
-	bottom=2.5cm, % Set bottom margin.
-	left=3.15cm, % Set left margin.
-	right=3.15cm, % Set right margin.
-	footskip=1.6cm, % Distance from bottom margin to footer.
-	headsep=0.75cm, % Distance from top margin to header.
-	% showframe % Uncomment to display margin frames for debugging.
-]{geometry}
+\usepackage{geometry}
+\ifthenelse{\equal{\BookPrintOption}{false}}{%
+    \geometry{
+        paper=a4paper,
+        top=2.54cm,
+        bottom=2.54cm,
+        left=3.15cm,
+        right=3.15cm,
+        footskip=1.6cm,
+        headsep=0.75cm,
+        % showframe % Uncomment to display margin frames for debugging.
+    }
+}{%
+    \geometry{
+        paper=a4paper,
+        top=2.54cm,
+        bottom=2.54cm,
+        inner=2.54cm,
+        outer=3.81cm,
+        footskip=1.6cm,
+        headsep=0.75cm,
+        bindingoffset=0.5cm,
+        % showframe % Uncomment to display margin frames for debugging.
+    }
+}
+
 \addtolength{\textheight}{-20pt} % Decrease text height slightly.
 \setlength{\headheight}{20pt} % Set header height.
