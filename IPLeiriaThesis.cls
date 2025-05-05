@@ -1,6 +1,6 @@
 % Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.6 (WIP) - TBD
+% Version: 2.2.6 - NOT RELEASED YET - TBD
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -86,6 +86,14 @@
         { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'doctype'~not~available.~Defaulting~to~'thesis'} },
     doctype .default:n = { thesis },
     doctype .initial:n = { thesis },
+
+    bookprint .choices:nn = 
+        { true, false } 
+        { \tl_gset:Nn \g_IPLeiriaThesis_bookprint_tl { #1 } },
+    bookprint / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'bookprint'~not~available.~Defaulting~to~'false'} },
+    bookprint .default:n = { false },
+    bookprint .initial:n = { false },
     
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
@@ -98,13 +106,14 @@
 \newcommand{\DocStageOption}{\g_IPLeiriaThesis_docstage_tl}
 \newcommand{\MediaOption}{\g_IPLeiriaThesis_media_tl}
 \newcommand{\ColorOption}{\g_IPLeiriaThesis_linkcolor_tl}
-\newcommand{\DocTypeOption}{g_IPLeiriaThesis_doctype_tl}
+\newcommand{\DocTypeOption}{\g_IPLeiriaThesis_doctype_tl}
+\newcommand{\BookPrintOption}{\g_IPLeiriaThesis_bookprint_tl}
 
 \ProcessKeyOptions[IPLeiriaThesis]
 \ExplSyntaxOff
 
 %%% Load Master Class %%%
-\LoadClass[a4paper,twoside,11pt]{report}
+\LoadClass[a4paper,11pt,twoside]{report}
 
 %%% Load Babel Package (Language) %%%
 \expandafter\RequirePackage\expandafter[\LanguageOption]{babel}
