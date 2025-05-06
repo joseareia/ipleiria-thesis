@@ -1,6 +1,6 @@
 % Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.6 - NOT RELEASED YET - TBD
+% Version: 2.2.6 - 2025/05/06
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -94,6 +94,14 @@
         { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'bookprint'~not~available.~Defaulting~to~'false'} },
     bookprint .default:n = { false },
     bookprint .initial:n = { false },
+
+    aiack .choices:nn = 
+        { true, false } 
+        { \tl_gset:Nn \g_IPLeiriaThesis_aiack_tl { #1 } },
+    aiack / unknown .code:n = 
+        { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'aiack'~not~available.~Defaulting~to~'true'} },
+    aiack .default:n = { true },
+    aiack .initial:n = { true },
     
     unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
@@ -108,6 +116,7 @@
 \newcommand{\ColorOption}{\g_IPLeiriaThesis_linkcolor_tl}
 \newcommand{\DocTypeOption}{\g_IPLeiriaThesis_doctype_tl}
 \newcommand{\BookPrintOption}{\g_IPLeiriaThesis_bookprint_tl}
+\newcommand{\AiAckOption}{\g_IPLeiriaThesis_aiack_tl}
 
 \ProcessKeyOptions[IPLeiriaThesis]
 \ExplSyntaxOff
