@@ -1,6 +1,6 @@
 % Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.6 - NOT RELEASED YET - TBD
+% Version: 2.2.6 - 2025/05/06
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -13,7 +13,8 @@
     bookprint=false,
     linkcolor=red!45!black,
     chapterstyle=classic,
-    coverstyle=classic
+    coverstyle=classic,
+    aiack=false
 ]{IPLeiriaThesis} % Refer to the Wiki for a list of available options.
 
 %%% Document Version %%%
@@ -24,8 +25,8 @@
 
 %%% Loading of Glossary and Acronyms %%%
 \makeglossaries
-\loadglsentries{Matter/04-Glossary}
-\loadglsentries[\acronymtype]{Matter/05-Acronyms}
+\loadglsentries{Matter/05-Glossary}
+\loadglsentries[\acronymtype]{Matter/06-Acronyms}
 
 \begin{document}
 
@@ -44,6 +45,9 @@
 
 %%% Abstract %%%
 \include{Chapters/00-Abstract}
+
+%%% AI Acknowledgement %%%
+\include{Matter/04-AI}
 
 %%% Table of Contents, List of Figures and List of Tables %%%
 \bookmarktocentry\tableofcontents
@@ -68,15 +72,15 @@
 
 %%% Appendices: Work that *YOU* Developed %%%
 \appendix
-\input{Matter/06-Appendices}
+\input{Matter/07-Appendices}
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
 %%% Annexes: Work that *YOU DID NOT* Develop %%%
-\input{Matter/07-Annexes}
+\input{Matter/08-Annexes}
 \input{Chapters/Annexes/00-AnnexA}
 
 %%% Back Page %%%
-\input{Matter/08-Back-Page}
+\input{Matter/09-Back-Page}
 
 \end{document}
