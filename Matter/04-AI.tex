@@ -1,0 +1,41 @@
+\ifthenelse{\equal{\AiAckOption}{true}}{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \chapter*{Declaração sobre o Uso de Inteligência Artificial}
+
+        \guideinfo{Considera-se boa prática académica incluir uma breve declaração que reconheça como, porquê e quando foram utilizadas tecnologias de inteligência artificial. Articular claramente não só o que foi feito, mas também a lógica subjacente, incentiva uma abordagem mais crítica e reflexiva da seleção e utilização de tais ferramentas. Esta prática também promove uma compreensão mais profunda do papel da IA no processo de aprendizagem e ajuda a avaliar o seu impacto na qualidade e integridade do seu trabalho.}
+    
+        \vspace{2em}
+        
+        \exampleinfo{%
+        Reconheço a utilização do ChatGPT (\url{https://chatgpt.com}) para aperfeiçoar o tom académico e melhorar a precisão linguística deste trabalho, incluindo aspectos de gramática, pontuação e vocabulário.
+        
+        \vspace{1em}
+        
+        \noindent\textbf{Descrição da Utilização}
+        
+        \prompt[1]{Num parágrafo, descreva simplesmente o que é o LaTeX.}
+        
+        \aioutput[1]{O LaTeX é um sistema de composição de alta qualidade, normalmente utilizado para produzir documentos científicos e matemáticos, devido ao seu poderoso manuseamento de fórmulas e bibliografias. Ao contrário dos processadores de texto, utiliza ficheiros de texto simples com etiquetas de marcação para definir a estrutura e a formatação de um documento, permitindo um controlo preciso da disposição e do aspeto. É especialmente popular no meio académico e na investigação para a criação de teses, artigos de revistas e apresentações.}
+        }
+    }{%
+        \chapter*{AI Acknowledgement}
+
+        \guideinfo{It is considered good academic practice to include a brief statement acknowledging how, why, and when AI technologies have been used. Clearly articulating not only what was done, but also the rationale behind it, encourages a more critical and reflective approach to the selection and use of such tools. This practice also fosters a deeper understanding of the role of AI in the learning process and helps to evaluate its impact on the quality and integrity of your work.}
+    
+        \vspace{2em}
+        
+        \exampleinfo{%
+        I acknowledge the use of ChatGPT (\url{https://chatgpt.com}) to refine the academic tone and improve the linguistic accuracy of this work, including aspects of grammar, punctuation, and vocabulary.
+        
+        \vspace{1em}
+        
+        \noindent\textbf{Description of Use}
+        
+        \prompt[1]{In a paragraph, simply describe what LaTeX is.}
+        
+        \aioutput[1]{LaTeX is a high-quality typesetting system commonly used for producing scientific and mathematical documents due to its powerful handling of formulas and bibliographies. Unlike word processors, it uses plain text files with markup tags to define the structure and formatting of a document, allowing precise control over layout and appearance. It is especially popular in academia and research for creating theses, journal articles, and presentations.}
+        }
+    }
+    
+    \MediaOptionLogicBlank   
+}{}
