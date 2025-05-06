@@ -21,12 +21,21 @@
 
 % Indicates that a writing guide will be displayed.
 \newcommand{\guideinfo}[1]{%
-    \textcolor{note}{\faInfoCircle\ \textbf{Writing Guidance}}%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \noindent\textcolor{note}{\faInfoCircle\ \textbf{Orientação Para a Escrita}}%
+    }{
+        \noindent\textcolor{note}{\faInfoCircle\ \textbf{Writing Guidance}}%
+    }
     \\[.55em]%
     \noindent #1%
 }
-\newcommand{\guiainfo}[1]{%
-    \textcolor{note}{\faInfoCircle\ \textbf{Orientação Para a Escrita}}%
+
+\newcommand{\exampleinfo}[1]{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \noindent\textcolor{black}{\faInfoCircle\ \textbf{Exemplo de Utilização}}%
+    }{
+        \noindent\textcolor{black}{\faInfoCircle\ \textbf{Example of Use}}%
+    }
     \\[.55em]%
     \noindent #1%
 }
@@ -122,3 +131,27 @@
 \apptocmd{\printnormalglossary}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\printacronymglossary}{\MediaOptionLogicAcr}{}{\fail}
 \pretocmd{\printbibliography}{\MediaOptionLogic}{}{\fail}
+
+\NewDocumentCommand{\prompt}{o m}{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \IfNoValueTF{#1}
+        {\noindent\textbf{Instrução:} #2}
+        {\noindent\textbf{Instrução #1:} #2}
+    }{
+        \IfNoValueTF{#1}
+        {\noindent\textbf{Prompt:} #2}
+        {\noindent\textbf{Prompt #1:} #2}
+    }
+}
+
+\NewDocumentCommand{\aioutput}{o m}{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \IfNoValueTF{#1}
+        {\noindent\textbf{Resposta:} #2}
+        {\noindent\textbf{Resposta #1:} #2}
+    }{
+        \IfNoValueTF{#1}
+        {\noindent\textbf{Output:} #2}
+        {\noindent\textbf{Output #1:} #2}
+    }
+}
