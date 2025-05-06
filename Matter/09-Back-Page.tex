@@ -1,0 +1,31 @@
+\ifthenelse{\equal{\MediaOption}{paper}}{\blankpage}{}
+
+\clearpage
+\null
+\thispagestyle{empty}
+
+\ifthenelse{\equal{\CoverOption}{classic}}{
+    \newcommand\BackgroundPicBackPage{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Back-Page-BG.pdf}%
+    \vfill
+    }}}
+}{
+    \newcommand\BackgroundPicBackPage{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Back-Page-BG-W.pdf}%
+    \vfill
+    }}}
+}
+
+\AddToShipoutPictureBG*{\BackgroundPicBackPage}
+
+\newgeometry{margin=1.98cm, top=1.47cm, bottom=1.47cm}
+\noindent\clearpage
+\restoregeometry
