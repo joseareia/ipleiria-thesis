@@ -1,19 +1,14 @@
 \chapter[Essential LaTeX Tutorial: Fundamentals and Key Concepts]{Essential LaTeX Tutorial Fundamentals and Key Concepts}
 \label{cp:latex-tutorial}
 
-{
-\parindent0pt
-
-In this chapter, we will introduce the \LaTeX~working environment, highlighting the basic essentials you will need to produce your thesis. First of all, \LaTeX~(pronounced ``LAY-tek'' or ``LAH-tek'') is a tool for creating professional-quality documents. Unlike \textit{What You See Is What You Get} editors like Microsoft Word, \LaTeX~uses plain text files containing both content and formatting commands. These files are processed by a TeX engine, which interprets the commands to produce a polished, typeset PDF. This approach lets you focus on your content, leaving the precise formatting and layout to \LaTeX~and the TeX engine, ensuring a professional result every time. While this chapter will introduce you to some important functionalities of \LaTeX~, please take the time to learn \LaTeX~from the beginning. You can always refer to the Overleaf \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Learn LaTeX} series for guidance.
-
-% Moreover, if you are spending an enormous amount of time writing your thesis, it's better to use a proper tool where you don't need to worry about professional layout but can focus solely on the content.
+This chapter introduces the \LaTeX~working environment and the essentials for producing your thesis. \LaTeX~(pronounced ``LAY-tek'' or ``LAH-tek'') is a tool for creating professional documents using plain text with formatting commands, unlike WYSIWYG editors like Microsoft Word. These files are processed by a TeX engine to generate a polished PDF, allowing you to focus on content while \LaTeX~handles the layout. While this chapter covers key features, it's worth learning \LaTeX~from the start. For a quick introduction, see Overleaf \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Learn LaTeX} series for guidance.
 
 \section{Citations}
 \label{sec:citations}
-We present two distinct approaches for citing entries in the bibliography. The first method involves in-text citations, executed using \verb|\citet{ENTRY}|, while the second method employs \verb|\citep{ENTRY}| for citations within a paragraph. Below is an example demonstrating both usages. It's essential to note that you can cite multiple works within the same citation environment. To achieve this, you should use the following format: \verb|\citep{ENTRY1, ENTRY2, ...}|. It is also possible to cite only the title of the work or the author of the same. To do this, please use \verb|\citetitle{ENTRY}| for title citations and \verb|\citeauthor{ENTRY}| for author citations.
+We present two distinct approaches for citing entries in the bibliography. The first method involves in-text citations, executed using \verb|\citet{ENTRY}|, while the second method employs \verb|\citep{ENTRY}| for citations within a paragraph. Below is an example that demonstrates both usages. You can cite multiple works in the same citation environment using \verb|\citep{ENTRY1, ENTRY2, ...}|. For citing only the title, use \verb|\citetitle{ENTRY}|, and for the author, use \verb|\citeauthor{ENTRY}|.
 
 \begin{block}[tip]
-\textit{Proper citations play a crucial role in academic writing, serving as the foundation for credibility, transparency, and the advancement of knowledge. They are a fundamental aspect of responsible scholarly writing. Please ensure accurate and appropriate citations.}
+Proper citations are vital in academic writing and ensure credibility, transparency, and knowledge advancement. They are essential for responsible scholarship. Ensure accuracy and appropriateness.
 \end{block}
 
 \noindent\textbf{Example:} A novel signature scheme is introduced, along with an implementation of the Diffie-Hellman key distribution scheme that accomplishes a public key cryptosystem \citep{Elgamal1985}. According to \citet{Elgamal1985}, a new signature scheme that accomplishes a public key cryptosystem is introduced (...) This template was created by \citeauthor{IPLeiriaThesis}, with the title \citetitle{IPLeiriaThesis}.
@@ -22,14 +17,14 @@ We present two distinct approaches for citing entries in the bibliography. The f
 Much like citations, it is advisable to employ references in your document for citing crucial elements such as chapters, sections, figures, or tables. To reference these elements, begin by creating a label. This label can be generated using \verb|\label{TEXT}|, and it should be positioned within the element you intend to refer to. Once the element is created, you can utilise \verb|\ref{LABEL}| to generate an in-text reference. \textbf{We strongly recommend using} \verb|\autoref{LABEL}|. This command automatically creates a custom link with color corresponding to the type of element being referred to. For instance, a chapter reference will appear like this: \autoref{cp:introduction}, rather than simply Chapter \ref{cp:introduction}. 
 
 \begin{block}[tip]
-\textit{Properly referencing elements within the document, such as \textbf{chapters, sections, figures, tables, or listings}, is crucial.}
+Properly referencing elements within the document, such as \textbf{chapters, sections, figures, tables, or listings}, is crucial.
 \end{block}
 
 \section{Glossary and Acronyms}
 The document includes both a glossary and an acronym list, accessible at the beginning of the document. You can create a new entry in either the \verb|Matter/02-Glossary| or \verb|Matter/03-Acronyms| sections, depending on the type of entry you intend to add. Once the entry is created, you can reference it using \verb|\gls{ENTRY}| for glossary entries. For acronym entries, there are two ways to reference them. The first method, \verb|\acrfull{ENTRY}|, should be used the first time the acronym appears in the text as it automatically provides the definition in-text. Subsequently, to refer to the acronym without repeating its meaning, use \verb|\acrshort{ENTRY}|.
 
 \vspace{.875em}
-\textbf{Example:} Utilising \Gls{latex} for \Gls{maths} is essential (...). It is advisable to seek both the \acrfull{gcd} and \acrfull{lcm} because (...). Subsequently, with the aid of \acrshort{gcd} and \acrshort{lcm}, we can (...).
+\noindent\textbf{Example:} Utilising \Gls{latex} for \Gls{maths} is essential (...). It is advisable to seek both the \acrfull{gcd} and \acrfull{lcm} because (...). Subsequently, with the aid of \acrshort{gcd} and \acrshort{lcm}, we can (...).
 
 \section{Figures}
 In \LaTeX, integrating figures is a straightforward process. To insert them, you should utilise the environment \verb|\begin{figure}|. You can customise the \verb|width| parameter according to your requirements, but it is crucial to select a high-quality figure when inserting it into your documents. It is equally crucial to furnish a well-crafted caption. If necessary, consider including citations or references to indicate the figure's origin. The caption environment is denoted as \verb|\caption{TEXT}|. To generate a smaller caption for the Table of Figures, be sure to utilise the format \verb|\caption[SMALL_TEXT]{BIG_TEXT}|. By following the aforementioned tips, we can create a figure as demonstrated in \autoref{fig:figure-01}.
@@ -41,7 +36,7 @@ In \LaTeX, integrating figures is a straightforward process. To insert them, you
     \label{fig:figure-01}
 \end{figure}
 
-For the purpose of comparing or for other reasons, you can insert side-by-side figures using both the \verb|\begin{figure}| and \verb|\begin{subfigure}| environments. You can also refer to the sub-figure as \autoref{fig:figure-02.1} and \autoref{fig:figure-02.2}.
+For comparison or for other reasons, you can insert side-by-side figures using both the \verb|\begin{figure}| and \verb|\begin{subfigure}| environments. You can also refer to the sub-figure as \autoref{fig:figure-02.1} and \autoref{fig:figure-02.2}.
 
 \begin{figure}[!htpb]
     \centering
@@ -66,7 +61,7 @@ For the purpose of comparing or for other reasons, you can insert side-by-side f
 Tables are vital for presenting findings effectively. This chapter explores techniques for conveying information through tables using various template environments. Defining tables in \LaTeX\ seems complex, but this template simplifies the process.
 
 \begin{block}[tip]
-\textit{Prior to showcasing the different table environments, it's crucial to note that each one must be enclosed within a \texttt{\textbackslash begin\{table\}} environment. Additionally, it is recommended to utilise the \texttt{[!htpb]} float options for improved document placement. \textbf{This advice should be taken into consideration when positioning figures as well}.}
+Different table environments must be within a \texttt{\textbackslash begin\{table\}} environment and use \texttt{[!htpb]} float options for better placement. \textbf{This advice should be taken into consideration when positioning figures as well}.
 \end{block}
 
 \subsection{Tabular Environment}
@@ -240,7 +235,7 @@ You can also nest list entries by creating a list inside another list of the sam
 \end{enumerate}
 
 \begin{block}[tip]
-\textit{Please note that the labels change automatically regardless of the environment being the same for every list. \textbf{This demonstrates that there's no need to worry about changing the environment for something different.}}
+Please note that the labels change automatically regardless of the environment being the same for every list. \textbf{This demonstrates that there's no need to worry about changing the environment for something different.}
 \end{block}
 
 You can also modify the label of your list to something entirely different that suits your needs. To accomplish this, insert a new \verb|\item| and enclose your desired label in square brackets. For example, \verb|\item[!]| will result in an exclamation point as your new label. Below are some examples of modified labels.
@@ -364,4 +359,3 @@ Equations can be a bit challenging to create, so we advise using an online edito
 Sometimes it is important to present information that is not central to the main text in a footnote. In \LaTeX\, this can be easily achieved using the command \verb|\footnote{TEXT}|. The text will appear at the bottom of the page\footnote{This is a simple footnote.}.
 
 If you want to use footnotes within tables, it is best to reconsider, as \LaTeX\ does not provide an easy way to handle them. Instead, you can place a ``*'' wherever you want the footnote reference to appear. Then, below the table \textbf{but before ending the table environment}, place the ``*'' along with the footnote text. This will create a similar footnote, but it will appear below the table rather than at the bottom of the page.
-}
