@@ -1,10 +1,7 @@
 \chapter[Comprehensive User Guide: Instructions for Using the Template]{Comprehensive User Guide Instructions for Using the Template}
 \label{cp:user-guide}
 
-{
-\parindent0pt
-
-If you plan to use this template, please read this chapter carefully. It provides all the information you need to effectively use the template, including the mandatory modifications (\textit{e.g.}, title, subtitle, author information) and other configurations that, while not highly recommended, are optional. The template comprises various directories and files, including a total of seven distinct directories and dozens of files. Among these, the most important are \texttt{IPLeiriaMain.tex} and \texttt{IPLeiriaThesis.cls}. Below, \autoref{tab:file-structure} presents the different directories available, along with their descriptions and a check-mark indicating whether you need to access the directory to make changes. Of course, the check-mark indicates that you can make changes to the content, while a hyphen signifies that you should not modify it.
+If you plan to use this template, please read this chapter carefully. It provides all the information you need to effectively use the template, including the mandatory modifications (\textit{e.g.}, title, subtitle, author information) and other configurations that, while not highly recommended, are optional. The template comprises various directories and files, including a total of seven distinct directories and dozens of files. Among these, the most important are \texttt{IPLeiriaMain.tex} and \texttt{IPLeiriaThesis.cls}. Below, \autoref{tab:file-structure} presents the different directories available, along with their descriptions and a check-mark indicating whether you need to access the directory to make changes. Of course, the check mark indicates that you can make changes to the content, while a hyphen signifies that you should not modify it.
 
 \begin{table}[!htpb]
     \setlength{\extrarowheight}{2pt}
@@ -26,17 +23,10 @@ If you plan to use this template, please read this chapter carefully. It provide
     \end{tabularx}
 \end{table}
 
-It is crucial to note that the files are organized according to a specific naming convention, which must be \textbf{respected} and \textbf{maintained}. The naming convention consists of an ascending two-digit numeric value, followed by a hyphen, and then the file name in capital letters. The name should always aim to be a single word. If more than one word is necessary, they should be separated by a hyphen and capitalised.
-
-% \begin{verbatim}
-% 00-Abstract.tex
-% 01-Introduction.tex
-% 02-User-Guide.tex
-% ...
-% \end{verbatim}
+It is crucial to note that the files are organised according to a specific naming convention, which must be \textbf{respected} and \textbf{maintained}. The naming convention consists of an ascending two-digit numeric value, followed by a hyphen, and then the file name in capital letters. The name should always aim to be a single word. If more than one word is necessary, they should be separated by a hyphen and capitalised.
 
 \begin{block}[note]
-\textit{While \autoref{tab:file-structure} indicates that the \textit{Matter} directory is not modifiable, two files within that directory should be altered when necessary: \texttt{04-Glossary.tex} and \texttt{05-Acronyms.tex}. Although the names are fairly self-explanatory, these files should contain the glossary and acronyms entries, respectively.}
+While \autoref{tab:file-structure} indicates that the \textit{Matter} directory is not modifiable, two files within that directory should be altered when necessary: \texttt{04-Glossary.tex} and \texttt{05-Acronyms.tex}. Although the names are fairly self-explanatory, these files should contain the glossary and acronyms entries, respectively.
 \end{block}
 
 The two files mentioned earlier, \texttt{IPLeiriaMain.tex} and \texttt{IPLeiriaThesis.cls}, should be used with caution. The main file, as the name suggests, is the master file where you will add the necessary chapters to be included in your work. The class file, on the other hand, requires even more caution, and it is not recommended to alter it.
@@ -88,8 +78,6 @@ The first thing you need to do is specify the options within the \texttt{IPLeiri
 & \footnotesize{\textit{classic $\rightarrow$ Put the cover on in the original red.}} \\
 & \footnotesize{\textit{bw $\rightarrow$ Make the cover black and white.}} \\
 
-\pagebreak
-
 \textbf{docstage=OPT} & \textbf{Choosing a stage for you document.} \\
 \multirow[t]{3}{*}{\footnotesize{\textit{final, working}}} & \footnotesize{\textit{$\Rightarrow$ Default: docstage=final}} \\
 & \footnotesize{\textit{final $\rightarrow$ Assumes this is the final version of the document.}} \\
@@ -100,10 +88,9 @@ The first thing you need to do is specify the options within the \texttt{IPLeiri
 & \footnotesize{\textit{paper $\rightarrow$ Blank pages will appear between sections.}} \\
 & \footnotesize{\textit{screen $\rightarrow$ Blank pages will not appear between sections.}} \\[.3em]
 
-\textbf{colorlink=OPT} & \textbf{Main theme color.} \\
-\multirow[t]{2}{*}{\footnotesize{\textit{color}}} & \footnotesize{\textit{$\Rightarrow$ Default: colorlink=black}} \\
+\textbf{linkcolor=OPT} & \textbf{Main theme color.} \\
+\multirow[t]{2}{*}{\footnotesize{\textit{color}}} & \footnotesize{\textit{$\Rightarrow$ Default: linkcolor=red!45!black}} \\
 & \footnotesize{\textit{This option requires a valid color name. Refer to the xcolor manual (subsection 4.2) to select a valid color.}} \\[.3em]
-
 
 \textbf{bookprint=OPT} & \textbf{For book printing.} \\
 \multirow[t]{2}{*}{\footnotesize{\textit{true, false}}} & \footnotesize{\textit{$\Rightarrow$ Default: bookprint=false}} \\
@@ -115,19 +102,11 @@ The first thing you need to do is specify the options within the \texttt{IPLeiri
 \end{xltabular}
 }
 
-\begin{block}[tip]
-\textit{Although the default option for \texttt{linkcolor} is \texttt{black}, it is highly advisable to use \texttt{red!45!black} instead. The same applies to \texttt{coverstyle}, for which it is preferred to use the \texttt{classic} option.}
-\end{block}
-
-% \begin{block}[warning]
-% \textit{If any option or argument is passed and it does not exist, an error or a warning will be raised, respectively. Please pay attention to warnings and strive to keep the template and/or your document free of warnings.}
-% \end{block}
-
-After setting the options within the main class, you're ready to proceed with the metadata customisation. How can you do that? Please refer to \autoref{sec:metadata}.
+After setting the desired options in the main class, you are all set to personalise the metadata. To learn how, simply refer to \autoref{sec:metadata}.
 
 \section{Metadata Customisation}
 \label{sec:metadata}
-While options like language and school can be passed as arguments to the main class, other options, such as author and title, need to be defined manually. Since this template supports a wide range of metadata options, a dedicated file is provided for this purpose. The file is located at \texttt{Metadata/Metadata.tex} and contains the metadata variables you can modify, along with comments explaining each variable and whether it is mandatory for the document. To omit a variable, simply comment it out. Below, \autoref{tab:metadata} presents all the available metadata variables, their GET command, and whether they are mandatory. The GET command is important if you want to automatically retrieve the name or information stored in a given variable.
+While options like language and school can be passed as arguments to the main class, other options, such as author and title, must be defined manually. Since this template supports a wide range of metadata options, a dedicated file is provided for this purpose. The file at \texttt{Metadata/Metadata.tex} lists metadata variables, with comments on whether they are mandatory. Comment out the variables to omit them. \autoref{tab:metadata} includes all metadata variables, their GET command, and if they are mandatory. The GET command automatically retrieves the information from the stored variable.
 
 \begin{longtable}[c]{llc}
 \caption{Metadata variables within the template.}
@@ -190,6 +169,9 @@ Second co-supervisor title and affiliation  & \verb|\GetSecCoSupervisorTitle| & 
 
 If, by any chance, \textbf{you want to add more options}, please contact me by opening an issue in the official GitHub repository or via the email provided in this document.
 
+\section{Custom Chapter Insertion}
+As stated before, to use this template, you need to do three things: set the appropriate options in the document class (see \autoref{sec:class-options}), update the document metadata (see \autoref{sec:metadata}), and create and import your custom chapters. To create and import a custom chapter, follow these steps: \(i\) create a TeX file in the Chapters directory that follows the predefined naming convention and \(ii)\) include it in the main file using the command \verb|\include{CHAPTER}|. And voilà, your first chapter is ready!
+
 \section{Custom Commands}
 Within this template, some custom commands are also available for your use. For example, if you are writing your thesis and want to add a to-do note, you can easily insert a block with the option \verb|todo|, as follows: \verb|\begin{block}[todo]|. This will insert a to-do block with a style similar to Markdown. Other available options are: \verb|tip|, \verb|warning|, and \verb|note|. Below is a visual example for each one.
 
@@ -198,13 +180,13 @@ Within this template, some custom commands are also available for your use. For 
     raster columns=2, 
     raster equal height, 
     nobeforeafter, 
-    raster column skip=2cm
+    raster column skip=1cm
 ]
 \begin{block}[todo]
-    \textit{This is a to-do block.}
+    This is a to-do block.
 \end{block}
 \begin{block}[tip]
-    \textit{This is a tip block.}
+    This is a tip block.
 \end{block}
 \end{tcbraster}
 
@@ -212,19 +194,15 @@ Within this template, some custom commands are also available for your use. For 
     raster columns=2, 
     raster equal height, 
     nobeforeafter, 
-    raster column skip=2cm
+    raster column skip=1cm
 ]
 \begin{block}[warning]
-    \textit{This is a warning block.}
+    This is a warning block.
 \end{block}
 \begin{block}[note]
-    \textit{This is a note block.}
+    This is a note block.
 \end{block}
 \end{tcbraster}
 \vspace{.875em}
 
 Another custom command that can come in handy is \verb|\myuline{TEXT}|, which creates a visually improved underline. The default \LaTeX~underline is not ideal because it sits directly below the bottom margin of the word, increasing the line height of the paragraph. This new command provides a \myuline{better} and more \myuline{stylish} underline.
-
-\section{Custom Chapter Insertion}
-As stated before, to use this template, you need to do three things: set the appropriate options in the document class (refer to \autoref{sec:class-options}), update the document metadata (refer to \autoref{sec:metadata}), and create and import your custom chapters. To create and import a custom chapter, follow these steps: \(i\) create a TeX file under the Chapters directory that follows the predefined naming convention, and \(ii)\) include it in the main file using the command \verb|\include{CHAPTER}|. And voilà, your first chapter is ready!
-}
