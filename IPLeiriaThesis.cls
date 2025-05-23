@@ -1,6 +1,6 @@
 % Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.7 WIP - TBD
+% Version: 2.2.7 - 2025-05-23
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -158,8 +158,7 @@
 \RequirePackage{silence} % Suppress specific package warnings.
 \RequirePackage{fontawesome5} % Font awesome icons.
 \RequirePackage{calc} % Infix notation arithmetic.
-\RequirePackage{contour} % Countour words in a given color.
-\RequirePackage[normalem]{ulem} % A better underline.
+\RequirePackage{soul} % A better underline.
 \RequirePackage{mfirstuc} % Capitalise words in a sentence.
 \RequirePackage{tikz} % Create high-quality graphics programmatically.
 \RequirePackage{psvectorian} % To include in-text ornamatentions. 
