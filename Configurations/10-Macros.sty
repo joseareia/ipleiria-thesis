@@ -40,13 +40,6 @@
     \noindent #1%
 }
 
-% Redefine the underline command.
-\setlength{\ULdepth}{1.8pt}\contourlength{1.3pt}
-\newcommand{\myuline}[1]{
-    \uline{\phantom{#1}}%
-    \llap{\contour{white}{#1}}%
-}
-
 % Abstract keywords.
 \NewDocumentCommand{\keywordsen}{m}{\vspace{.4cm}\noindent\textbf{Keywords:} #1}
 \NewDocumentCommand{\keywordspt}{m}{\vspace{.4cm}\noindent\textbf{Palavras-Chave:} #1}
