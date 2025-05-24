@@ -310,3 +310,7 @@ TSWLatexianTemp*
 
 # glossaries
 *.glstex
+
+### Overleaf Bundle Script ###
+overleaf-bundle.sh
+ipleiria-thesis-overleaf-*.zip
