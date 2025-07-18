@@ -1,6 +1,6 @@
 % Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.9 - 2025-06-23
+% Version: 2.2.10 - 2025-07-18
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -148,7 +148,7 @@
 \RequirePackage{titling} % Control over title and titlepage formatting.
 \RequirePackage[toc,page]{appendix} % Formatting for appendices.
 \RequirePackage[bookmarks,pdfusetitle]{hyperref} % Hyperlinks and PDF metadata.
-\RequirePackage[acronym]{glossaries} % Create glossaries and acronyms.
+\RequirePackage[symbols,acronym]{glossaries} % Create glossaries and acronyms.
 \RequirePackage[calc,datesep={/}]{datetime2} % Enhanced date and time formatting.
 \RequirePackage{xparse} % Advanced argument parsing for custom macros.
 \RequirePackage{typearea} % Page layout adjustments (KOMA-Script).
