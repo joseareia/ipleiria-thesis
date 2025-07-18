@@ -1,0 +1,19 @@
+\ifthenelse{\equal{\LanguageOption}{portuguese}}{
+    \addtocontents{toc}{\protect\contentsline{chapter}{Apêndices}{}{}}
+}{
+    \addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}}
+}
+
+\ifthenelse{\equal{\MediaOption}{paper}}{\blankpage}{\clearpage}
+\begin{center}
+    \thispagestyle{empty}
+        
+    \vspace*{\fill}
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        {\LARGE\fontsize{26}{26}\selectfont\textcolor{maincolor}{Apêndices}\par}
+    }{%
+        {\LARGE\fontsize{26}{26}\selectfont\textcolor{maincolor}{Appendices}\par}
+    }
+    \vspace*{\fill}
+\end{center}
+\MediaOptionLogicBlank
