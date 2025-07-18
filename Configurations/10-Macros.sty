@@ -101,6 +101,7 @@
 % Wrapping bot glossary and acronyms commands.
 \newcommand{\printnormalglossary}{\printglossary}
 \newcommand{\printacronymglossary}{\printglossary[type=\acronymtype]}
+\newcommand{\printsymbolglossary}{\printglossary[type=symbols]}
 
 % Logic to add or omit a blank page depending on the '\MediaOption' value.
 \newcommand{\MediaOptionLogic}{%
@@ -125,6 +126,7 @@
 \apptocmd{\listoftables}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\printnormalglossary}{\MediaOptionLogic}{}{\fail}
 \apptocmd{\printacronymglossary}{\MediaOptionLogicAcr}{}{\fail}
+\apptocmd{\printsymbolglossary}{\MediaOptionLogicAcr}{}{\fail}
 \pretocmd{\printbibliography}{\MediaOptionLogic}{}{\fail}
 
 \NewDocumentCommand{\prompt}{o m}{%
