@@ -20,11 +20,11 @@ Much like citations, it is advisable to employ references in your document for c
 Properly referencing elements within the document, such as \textbf{chapters, sections, figures, tables, or listings}, is crucial.
 \end{block}
 
-\section{Glossary and Acronyms}
-The document includes both a glossary and an acronym list, accessible at the beginning of the document. You can create a new entry in either the \verb|Matter/02-Glossary| or \verb|Matter/03-Acronyms| sections, depending on the type of entry you intend to add. Once the entry is created, you can reference it using \verb|\gls{ENTRY}| for glossary entries. For acronym entries, there are two ways to reference them. The first method, \verb|\acrfull{ENTRY}|, should be used the first time the acronym appears in the text as it automatically provides the definition in-text. Subsequently, to refer to the acronym without repeating its meaning, use \verb|\acrshort{ENTRY}|.
+\section{Glossary, Acronyms and Symbols}
+The document includes a glossary, and an acronym and symbol list, accessible at the beginning of the document. You can create a new entry in either the \verb|Matter/05-Glossary|, \verb|Matter/06-Acronyms| or \verb|Matter/07-Symbols| sections, depending on the type of entry you intend to add. Once the entry is created, you can reference it using \verb|\gls{ENTRY}| for both glossary and symbol entries. For acronym entries, there are two ways to reference them. The first method, \verb|\acrfull{ENTRY}|, should be used the first time the acronym appears in the text as it automatically provides the definition in-text. Subsequently, to refer to the acronym without repeating its meaning, use \verb|\acrshort{ENTRY}|.
 
 \vspace{.875em}
-\noindent\textbf{Example:} Utilising \Gls{latex} for \Gls{maths} is essential (...). It is advisable to seek both the \acrfull{gcd} and \acrfull{lcm} because (...). Subsequently, with the aid of \acrshort{gcd} and \acrshort{lcm}, we can (...).
+\noindent\textbf{Example:} Utilising \Gls{latex} for \Gls{maths} is essential (...). It is advisable to seek both the \acrfull{gcd} and \acrfull{lcm} because (...). Subsequently, with the aid of \acrshort{gcd} and \acrshort{lcm}, we can find both \gls{alpha} and \gls{beta} (...).
 
 \section{Figures}
 In \LaTeX, integrating figures is a straightforward process. To insert them, you should utilise the environment \verb|\begin{figure}|. You can customise the \verb|width| parameter according to your requirements, but it is crucial to select a high-quality figure when inserting it into your documents. It is equally crucial to furnish a well-crafted caption. If necessary, consider including citations or references to indicate the figure's origin. The caption environment is denoted as \verb|\caption{TEXT}|. To generate a smaller caption for the Table of Figures, be sure to utilise the format \verb|\caption[SMALL_TEXT]{BIG_TEXT}|. By following the aforementioned tips, we can create a figure as demonstrated in \autoref{fig:figure-01}.
@@ -42,14 +42,14 @@ For comparison or for other reasons, you can insert side-by-side figures using b
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{Figures/PezizaTuberosa.jpg}
+        \includegraphics[width=\textwidth]{Figures/PezizaTuberosa.jpg}
         \caption{Caption for figure 1.}
         \label{fig:figure-02.1}
     \end{subfigure}
     \hspace{.5cm} % Adjust the space as needed.
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{Figures/PezizaTuberosa.jpg}
+        \includegraphics[width=\textwidth]{Figures/PezizaTuberosa.jpg}
         \caption{Caption for figure 2.}
         \label{fig:figure-02.2}
     \end{subfigure}
