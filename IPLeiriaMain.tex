@@ -1,6 +1,6 @@
 % Author Name: José Areia 
 % Author Contact: jose.apareia@gmail.com
-% Version: 2.2.9 - 2025-06-23
+% Version: 2.2.10 - 2025-07-18
 % Public Repository: https://github.com/joseareia/ipleiria-thesis
 % Wiki/Getting Help: https://github.com/joseareia/ipleiria-thesis/wiki
 
@@ -27,6 +27,7 @@
 \makeglossaries
 \loadglsentries{Matter/05-Glossary}
 \loadglsentries[\acronymtype]{Matter/06-Acronyms}
+\loadglsentries[\symboltype]{Matter/07-Symbols}
 
 \begin{document}
 
@@ -57,6 +58,7 @@
 %%% Print: Glossary and Acronyms %%%
 \glossarytoc\printnormalglossary
 \acronymtoc\printacronymglossary
+\symboltoc\printsymbolglossary
 
 %%% Arabic Numeration %%%
 \pagenumbering{arabic}
@@ -72,15 +74,15 @@
 
 %%% Appendices: Work that *YOU* Developed %%%
 \appendix
-\input{Matter/07-Appendices}
+\input{Matter/08-Appendices}
 \input{Chapters/Appendices/00-AppendixA}
 \input{Chapters/Appendices/01-AppendixB}
 
 %%% Annexes: Work that *YOU DID NOT* Develop %%%
-\input{Matter/08-Annexes}
+\input{Matter/09-Annexes}
 \input{Chapters/Annexes/00-AnnexA}
 
 %%% Back Page %%%
-\input{Matter/09-Back-Page}
+\input{Matter/10-Back-Page}
 
 \end{document}
