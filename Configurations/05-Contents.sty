@@ -31,6 +31,9 @@
 \newcommand{\acronymtoc}{\MakeLinkTarget*{acronym}%
 \addcontentsline{toc}{frontmatter}{\acronymname}}
 
+\newcommand{\symboltoc}{\MakeLinkTarget*{symbol}%
+\addcontentsline{toc}{frontmatter}{\glssymbolsgroupname}}
+
 % Align LoF and LoT entries to the corrected margin.
 \renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}} % Default: 1.5em/2.3em
 \let\l@table\l@figure
