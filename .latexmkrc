@@ -17,7 +17,7 @@
 $pdf_mode = 5;
 
 # Main TeX file.
-$root_filename = 'IPleiriaMain.tex';
+$root_filename = 'IPLeiriaMain.tex';
 
 # Additional flags for the TeX engine.
 set_tex_cmds("--shell-escape --synctex=1 --file-line-error --halt-on-error %O %S");

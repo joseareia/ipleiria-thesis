@@ -163,7 +163,7 @@
 \RequirePackage{typearea} % Page layout adjustments (KOMA-Script).
 \RequirePackage{eso-pic} % Adding elements to the page background.
 \RequirePackage{setspace} % Adjust line spacing.
-\RequirePackage[newfloat]{minted} % Syntax highlighting for code.
+\RequirePackage[newfloat,outputdir=.aux]{minted} % Syntax highlighting for code.
 \RequirePackage{silence} % Suppress specific package warnings.
 \RequirePackage{fontawesome5} % Font awesome icons.
 \RequirePackage{calc} % Infix notation arithmetic.
