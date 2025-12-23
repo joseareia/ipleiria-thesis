@@ -34,9 +34,11 @@
     \newcommand{\GetDocumentVersion}{\color{black}{%
         \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
             \textit{Versão Preliminar #1}%
+        }{\ifthenelse{\equal{\LanguageOption}{spanish}}{%
+            \textit{Versión Preliminar #1}%
         }{%
             \textit{Draft Version #1}%
-        }%
+        }}%
     }}%
 }
 

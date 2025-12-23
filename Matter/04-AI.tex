@@ -17,10 +17,28 @@
         
         \aioutput[1]{O LaTeX é um sistema de composição de alta qualidade, normalmente utilizado para produzir documentos científicos e matemáticos, devido ao seu poderoso manuseamento de fórmulas e bibliografias. Ao contrário dos processadores de texto, utiliza ficheiros de texto simples com etiquetas de marcação para definir a estrutura e a formatação de um documento, permitindo um controlo preciso da disposição e do aspeto. É especialmente popular no meio académico e na investigação para a criação de teses, artigos de revistas e apresentações.}
         }
+    }{\ifthenelse{\equal{\LanguageOption}{spanish}}{%
+        \chapter*{Declaración sobre el Uso de Inteligencia Artificial}
+
+        \guideinfo{Es una buena práctica académica indicar brevemente cómo, por qué y cuándo se utilizó la IA. Explicar las acciones tomadas y las razones detrás de ellas fomenta la reflexión crítica, profundiza la comprensión del papel de la IA en el aprendizaje y ayuda a evaluar su impacto en la calidad e integridad del trabajo. Esta página puede eliminarse configurando la opción \texttt{aiack} como \texttt{false} en las opciones de clase del documento.}
+    
+        \vspace{2em}
+        
+        \exampleinfo{%
+        Reconozco el uso de ChatGPT (\url{https://chatgpt.com}) para perfeccionar el tono académico y mejorar la precisión lingüística de este trabajo, incluyendo aspectos de gramática, puntuación y vocabulario.
+        
+        \vspace{1em}
+        
+        \noindent\textbf{Descripción del Uso}
+        
+        \prompt[1]{En un párrafo, describa simplemente qué es LaTeX.}
+        
+        \aioutput[1]{LaTeX es un sistema de composición tipográfica de alta calidad, comúnmente utilizado para producir documentos científicos y matemáticos debido a su potente manejo de fórmulas y bibliografías. A diferencia de los procesadores de texto, utiliza archivos de texto plano con etiquetas de marcado para definir la estructura y el formato de un documento, permitiendo un control preciso sobre la disposición y apariencia. Es especialmente popular en el ámbito académico y de investigación para la creación de tesis, artículos de revistas y presentaciones.}
+        }
     }{%
         \chapter*{AI Acknowledgement}
 
-        \guideinfo{It is good academic practice to briefly state how, why, and when AI was used. Explaining both the actions taken and the reasons behind them encourages critical reflection, deepens understanding of AI's role in learning, and supports the evaluation of its impact on your work’s quality and integrity. This page can be removed by setting the option \texttt{aiack} to \texttt{false} in the document class options.}
+        \guideinfo{It is good academic practice to briefly state how, why, and when AI was used. Explaining both the actions taken and the reasons behind them encourages critical reflection, deepens understanding of AI's role in learning, and supports the evaluation of its impact on your work's quality and integrity. This page can be removed by setting the option \texttt{aiack} to \texttt{false} in the document class options.}
 
         \vspace{2em}
         
@@ -35,7 +53,7 @@
         
         \aioutput[1]{LaTeX is a high-quality typesetting system commonly used for producing scientific and mathematical documents due to its powerful handling of formulas and bibliographies. Unlike word processors, it uses plain text files with markup tags to define the structure and formatting of a document, allowing precise control over layout and appearance. It is especially popular in academia and research for creating theses, journal articles, and presentations.}
         }
-    }
+    }}
     
     \MediaOptionLogicBlank   
 }{}

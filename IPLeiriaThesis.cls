@@ -37,7 +37,7 @@
     coverstyle .initial:n = { classic },
 
     language .choices:nn = 
-        { english, portuguese } 
+        { english, portuguese, spanish } 
         { \tl_gset:Nn \g_IPLeiriaThesis_mylanguage_tl { #1 } },
     language / unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}{Specified~'language'~not~available.~Defaulting~to~'english'} },
