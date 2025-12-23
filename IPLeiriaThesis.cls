@@ -20,7 +20,7 @@
 
 \keys_define:nn { IPLeiriaThesis } {
     school .choices:nn =
-        { estg, esecs, esslei, esad, estm }
+        { estg, esecs, esslei, esad, estm, utnfrba }
         { \tl_gset:Nn \g_IPLeiriaThesis_myschool_tl { #1 } },
     school / unknown .code:n = 
         { \ClassWarningNoLine{IPLeiriaThesis}
