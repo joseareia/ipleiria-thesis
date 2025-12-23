@@ -1,8 +1,10 @@
 \ifthenelse{\equal{\LanguageOption}{portuguese}}{
     \addtocontents{toc}{\protect\contentsline{chapter}{Anexos}{}{}}
+}{\ifthenelse{\equal{\LanguageOption}{spanish}}{
+    \addtocontents{toc}{\protect\contentsline{chapter}{Anexos}{}{}}
 }{
     \addtocontents{toc}{\protect\contentsline{chapter}{Annexes}{}{}}
-}
+}}
 
 \setcounter{chapter}{11} % To start at the "L" chapter.
 \MediaOptionLogicAnnexes
@@ -13,9 +15,11 @@
     \vspace*{\fill}
     \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
         {\LARGE\fontsize{26}{26}\selectfont\textcolor{maincolor}{Anexos}\par}
+    }{\ifthenelse{\equal{\LanguageOption}{spanish}}{%
+        {\LARGE\fontsize{26}{26}\selectfont\textcolor{maincolor}{Anexos}\par}
     }{%
         {\LARGE\fontsize{26}{26}\selectfont\textcolor{maincolor}{Annexes}\par}
-    }
+    }}
     \vspace*{\fill}
 \end{center}
 \MediaOptionLogicBlank
