@@ -2,9 +2,11 @@
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
     \SetupFloatingEnvironment{listing}{name=Listagem,within=none}
+}{\ifthenelse{\equal{\LanguageOption}{spanish}}{%
+    \SetupFloatingEnvironment{listing}{name=Listado,within=none}
 }{%
     \SetupFloatingEnvironment{listing}{name=Listing,within=none}
-}
+}}
 \captionsetup[listing]{position=above,skip=-6pt}
 \newenvironment{longlisting}{\bigskip\medskip\captionsetup{type=listing}}{}
 
