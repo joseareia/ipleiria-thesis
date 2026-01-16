@@ -34,7 +34,8 @@ build:
 ifeq ($(TOOL),rubber)
 	@rubber --pdf --module xelatex --shell-escape $(DOCUMENT)
 else ifeq ($(TOOL),latexmk)
-	@latexmk -pdf -xelatex -shell-escape $(DOCUMENT)
+	#@latexmk -pdf -xelatex -shell-escape $(DOCUMENT)
+	@latexmk
 else
 	@echo "Error: Unsupported tool '$(TOOL)'. Use 'rubber' or 'latexmk'."
 	@exit 1
