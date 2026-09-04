@@ -14,42 +14,88 @@
     \color{frontpagedark}
     \vspace*{\baselineskip}
 
-    \ifthenelse{\equal{\SchoolOption}{estg}}{
-        \begin{figure}
-            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-B.pdf}
-            % \includegraphics[width=0.4\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-Old.png}
-        \end{figure}
-    }
-    
-    \ifthenelse{\equal{\SchoolOption}{esad}}{
-        \begin{figure}
-            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-B.pdf}
-        \end{figure}
-    }
-    
-    \ifthenelse{\equal{\SchoolOption}{esslei}}{
-        \begin{figure}
-            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-B.pdf}
-        \end{figure}
-    }
-    
-    \ifthenelse{\equal{\SchoolOption}{estm}}{
-        \begin{figure}
-            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-B.pdf}
-        \end{figure}
-    }
-    
-    \ifthenelse{\equal{\SchoolOption}{esecs}}{
-        \begin{figure}
-            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-B.pdf}
-        \end{figure}
-    }
-    
-    \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
-        \begin{figure}
-            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-B.pdf}
-        \end{figure}
-        \vspace{-1.8\baselineskip}
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{
+        \ifthenelse{\equal{\SchoolOption}{estg}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-ESTG-Logo-PT-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{esad}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{esslei}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{estm}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{esecs}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-B.pdf}
+            \end{figure}
+            \vspace{-1.8\baselineskip}
+        }{}
+     } { % cover=bw, language=english
+        \ifthenelse{\equal{\SchoolOption}{estg}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{esad}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{esslei}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{estm}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{esecs}}{
+            \begin{figure}
+                % TODO: change to proper school logo when available
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+            \end{figure}
+        }{}
+
+        \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-B.pdf}
+            \end{figure}
+            \vspace{-1.8\baselineskip}
+        }{}
     }
 
     \vspace{3.5\baselineskip}
@@ -78,7 +124,7 @@
 
     % Author.
     {\noindent\bfseries\fontsize{14}{19}\selectfont\GetFirstAuthor}
-    
+
     {\noindent\itshape\fontsize{10}{10}\selectfont Student No. \GetFirstAuthorNumber}
 
     \ifdefined\GetSecondAuthor
@@ -91,7 +137,7 @@
         {\noindent\bfseries\fontsize{14}{19}\selectfont\GetThirdAuthor}
 	\fi
 
-    \vfill    
+    \vfill
 
     {
     \noindent
@@ -101,24 +147,24 @@
     \hspace*{-2.5pt}\begin{tabular}{@{}r@{\hspace{5pt}}>{\raggedright\arraybackslash}m{6cm}@{}}
         \textbf{Supervisor:} & \GetSupervisor \\ [-.7ex]
         & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \GetSupervisorTitle} \\ [2ex]
-        
+
         \ifdefined\GetCoSupervisor
             \textbf{Co-supervisor:} & \GetCoSupervisor \\ [-.7ex]
             & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \GetCoSupervisorTitle} \\ [.5ex]
         \fi
 
-        \ifdefined\GetSecCoSupervisor        
+        \ifdefined\GetSecCoSupervisor
             & \GetSecCoSupervisor \\ [-.7ex]
             & \setstretch{0.9}{\fontsize{8}{10}\selectfont\itshape \GetSecCoSupervisorTitle} \\
         \fi
     \end{tabular}
     }
-    
+
     \vfill
-	
+
     % School.
 	{\noindent\fontsize{10}{12}\selectfont\GetSchool}
-	
+
     % Department.
 	{\noindent\fontsize{10}{12}\selectfont\GetDepartment}
 
