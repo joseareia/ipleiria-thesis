@@ -27,80 +27,173 @@
     \vspace*{\baselineskip}
 
     \ifthenelse{\equal{\CoverOption}{classic}}{
-        \ifthenelse{\equal{\SchoolOption}{estg}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-W.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{esad}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-W.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{esslei}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-W.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{estm}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-W.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{esecs}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-W.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-W.pdf}
-            \end{figure}
-            \vspace{-1.8\baselineskip}
-        }{}
-    } {
-        \ifthenelse{\equal{\SchoolOption}{estg}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-B.pdf}
-                % \includegraphics[width=0.4\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-Old.png}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{esad}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-B.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{esslei}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-B.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{estm}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-B.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{esecs}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-B.pdf}
-            \end{figure}
-        }{}
-        
-        \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
-            \begin{figure}
-                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-B.pdf}
-            \end{figure}
-            \vspace{-1.8\baselineskip}
-        }{}
+        \ifthenelse{\equal{\LanguageOption}{portuguese}}{
+            \ifthenelse{\equal{\SchoolOption}{estg}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-ESTG-Logo-PT-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esad}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esslei}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{estm}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esecs}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-W.pdf}
+                \end{figure}
+                \vspace{-1.8\baselineskip}
+            }{}
+        } { % cover=classic, language=english
+            \ifthenelse{\equal{\SchoolOption}{estg}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esad}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esslei}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{estm}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esecs}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-W.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-W.pdf}
+                \end{figure}
+                \vspace{-1.8\baselineskip}
+            }{}
+        }
+    } { % cover=wb
+        \ifthenelse{\equal{\LanguageOption}{portuguese}}{
+            \ifthenelse{\equal{\SchoolOption}{estg}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-ESTG-Logo-PT-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esad}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esslei}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{estm}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esecs}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-PT-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-B.pdf}
+                \end{figure}
+                \vspace{-1.8\baselineskip}
+            }{}
+         } { % cover=bw, language=english
+            \ifthenelse{\equal{\SchoolOption}{estg}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esad}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esslei}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{estm}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{esecs}}{
+                \begin{figure}
+                    % TODO: change to proper school logo when available
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/ULO-Logo-EN-B.pdf}
+                \end{figure}
+            }{}
+
+            \ifthenelse{\equal{\SchoolOption}{utnfrba}}{
+                \begin{figure}
+                    \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/UTN-FRBA-Logo-B.pdf}
+                \end{figure}
+                \vspace{-1.8\baselineskip}
+            }{}
+        }
     }
 
     \vspace{5.5\baselineskip}
@@ -125,7 +218,7 @@
         }
     }
 
-    \vspace{35pt}  
+    \vspace{35pt}
 
     % Author.
     {\noindent\bfseries\fontsize{14}{19}\selectfont\GetFirstAuthor}
@@ -139,12 +232,12 @@
         \vspace{8pt}
         {\noindent\bfseries\fontsize{14}{19}\selectfont\GetThirdAuthor}
 	\fi
- 
+
 	\vfill
 
     % School.
 	{\noindent\fontsize{10}{12}\selectfont\GetSchool}
-	
+
     % Department.
 	{\noindent\fontsize{10}{12}\selectfont\GetDepartment}
 
@@ -158,7 +251,7 @@
 
     \ifthenelse{\equal{\DocStageOption}{working}}{
         \vspace{62pt}
-        {\noindent\fontsize{10}{12}\selectfont\overwritecolor{yellow}{\GetDocumentVersion \\ \textit{\today}}} 
+        {\noindent\fontsize{10}{12}\selectfont\overwritecolor{yellow}{\GetDocumentVersion \\ \textit{\today}}}
         \vspace{62pt}
     }{
         \vspace{125pt}
